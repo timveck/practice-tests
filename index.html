@@ -752,7 +752,7 @@ function buildWriteFromDictation(fi, ans) {
 /* ---- shared pieces ---- */
 function buildImageBox(item) {
   if (!item.imageFile) return '';
-  const src = 'assets/images/' + item.imageFile;
+  const src = 'assets/' + item.imageFile;
   return `<div class="media-box">
     <img src="${src}" alt="${escapeHtml(item.title || '')}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
     <div class="media-missing hidden" style="display:none;">Image not found — add <code>${escapeHtml(src)}</code></div>
@@ -762,7 +762,7 @@ function buildImageBox(item) {
 function buildAudioPanel(fi) {
   const track = fi.item.trackNumber;
   if (!track) return '';
-  const src = 'assets/audio/' + track + '.mp3';
+  const src = 'assets/' + track + '.mp3';
   const already = !!app.audioPlayed[fi.id];
   return `<div class="media-box">
     <div class="audio-panel">
@@ -1043,7 +1043,7 @@ function playItemAudio(fi) {
   btn.classList.add('playing');
   audioEl.addEventListener('error', () => {
     const note = document.getElementById('audio-missing-note');
-    if (note) { note.classList.remove('hidden'); note.textContent = 'Audio file not found — add assets/audio/' + fi.item.trackNumber + '.mp3'; }
+    if (note) { note.classList.remove('hidden'); note.textContent = 'Audio file not found — add assets/' + fi.item.trackNumber + '.mp3'; }
     onAudioFinished(fi);
   }, { once: true });
   audioEl.addEventListener('ended', () => onAudioFinished(fi), { once: true });
