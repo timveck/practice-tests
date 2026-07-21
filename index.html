@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PTE Mock Exam 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --pearson-blue: #047a9c; --ink-blue: #005a70; --ice-blue: #daf0ed;
+    --turquoise: #19a5a3; --sunshine: #ffb81c; --sunflower: #ff9a19;
+    --white: #ffffff; --white-gray: #f5f5f5; --moonlight: #ededed;
+    --charcoal: #252525; --graphite: #505759; --medium-gray: #6a7070;
+    --concrete: #c9cccc; --success: #1f8a4c; --success-bg: #e7f5ec;
+    --danger: #c23934; --danger-bg: #fbebea; --font: 'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  }
+  body { font-size: 17px; font-family: var(--font); background: var(--white-gray); color: var(--charcoal); -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  a { color: var(--pearson-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .hidden { display: none !important; }
+  .page { max-width: 1100px; margin: 0 auto; padding: 28px 24px 60px; }
+  .flex { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+
+  .topbar { background: var(--pearson-blue); color: var(--white); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20.5px; }
+  .logo-mark { width: 26px; height: 26px; border-radius: 50%; background: var(--sunshine); display: flex; align-items: center; justify-content: center; color: var(--charcoal); font-weight: 800; font-size: 16px; }
+  .topbar-right { display: flex; align-items: center; gap: 16px; font-size: 16px; }
+  .topbar-right button, .topbar-right a { color: var(--white); opacity: .85; background: none; border: none; font-size: 15px; cursor: pointer; font-family: inherit; }
+  .topbar-right button:hover, .topbar-right a:hover { opacity: 1; }
+
+  .hero { background: linear-gradient(120deg, var(--ink-blue) 0%, var(--pearson-blue) 100%); color: var(--white); border-radius: 8px; padding: 30px 32px; margin-bottom: 24px; }
+  .hero h1 { font-size: 30px; margin: 0 0 4px; }
+  .hero .sub { font-size: 17px; opacity: .9; margin-bottom: 8px; }
+  .hero .meta { font-size: 15px; opacity: .85; display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
+
+  .info-banner { background: #fff2d9; border: 1px solid var(--sunshine); border-radius: 8px; padding: 14px 20px; margin-bottom: 22px; font-size: 15px; color: #7a5000; }
+  .info-banner strong { color: #5c3c00; }
+
+  .section-card { background: var(--white); border: 1px solid var(--concrete); border-radius: 8px; padding: 22px 26px; margin-bottom: 20px; }
+  .section-card .heading { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .section-card h2 { font-size: 21px; color: var(--charcoal); }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; letter-spacing: .3px; background: var(--moonlight); color: var(--graphite); }
+  .badge-blue { background: var(--ice-blue); color: var(--ink-blue); }
+  .badge-gold { background: #fff2d9; color: #8a5a00; }
+  .badge-turq { background: #e6f3f2; color: var(--turquoise); }
+  .badge-context { background: var(--moonlight); color: var(--graphite); }
+
+  .test-card { background: var(--white); border: 1px solid var(--concrete); border-radius: 8px; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; transition: border-color .2s; }
+  .test-card:hover { border-color: var(--pearson-blue); }
+  .test-card.disabled { opacity: .55; }
+  .test-card .info h3 { font-size: 19px; margin-bottom: 2px; }
+  .test-card .info .sub { font-size: 14px; color: var(--medium-gray); }
+
+  .btn { padding: 10px 18px; border-radius: 4px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; transition: .2s; font-family: inherit; }
+  .btn-primary { background: var(--pearson-blue); color: var(--white); }
+  .btn-primary:hover { background: var(--ink-blue); }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+  .btn-sunshine { background: var(--sunshine); color: var(--charcoal); }
+  .btn-sunshine:hover { background: var(--sunflower); }
+  .btn-outline { background: transparent; color: var(--graphite); border: 1px solid var(--concrete); }
+  .btn-outline:hover { border-color: var(--graphite); }
+  .btn-danger { background: var(--danger); color: var(--white); }
+  .btn-sm { font-size: 13px; padding: 6px 13px; }
+
+  .examtop { background: var(--white); border-bottom: 1px solid var(--concrete); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; position: sticky; top: 0; z-index: 100; }
+  .examtop-left { display: flex; align-items: center; gap: 10px; }
+  .examtop .logo-mark { background: var(--pearson-blue); color: var(--white); border-radius: 4px; }
+  .exam-title { font-size: 16px; font-weight: 700; }
+  .exam-sub { font-size: 13.5px; color: var(--medium-gray); }
+  .examtop-center { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .examtop-right { display: flex; align-items: center; gap: 12px; }
+
+  .timer { display: flex; align-items: center; gap: 8px; background: var(--ice-blue); color: var(--ink-blue); padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 15px; white-space: nowrap; }
+  .timer.low { background: #fde8e6; color: var(--danger); }
+  .timer.prep { background: #fff2d9; color: #8a5a00; }
+  .timer-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); }
+  .timer.low .timer-dot { background: var(--danger); }
+
+  .volume-box { display: flex; align-items: center; gap: 6px; background: var(--white-gray); border: 1px solid var(--concrete); border-radius: 20px; padding: 5px 12px; font-size: 13px; color: var(--graphite); }
+  .volume-box input[type=range] { accent-color: var(--pearson-blue); width: 80px; }
+
+  .exit-link { font-size: 14px; color: var(--medium-gray); border: 1px solid var(--concrete); padding: 6px 12px; border-radius: 4px; cursor: pointer; background: var(--white); font-family: inherit; }
+  .exit-link:hover { border-color: var(--danger); color: var(--danger); }
+
+  .exam-body { max-width: 1180px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 250px; gap: 20px; }
+  @media (max-width: 860px) { .exam-body { grid-template-columns: 1fr; } }
+
+  .question-panel { background: var(--white); border: 1px solid var(--concrete); border-radius: 6px; padding: 24px; }
+  .q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-size: 13px; color: var(--medium-gray); border-bottom: 1px solid var(--moonlight); padding-bottom: 10px; flex-wrap: wrap; gap: 6px; }
+  .q-tag { background: var(--moonlight); color: var(--graphite); padding: 3px 10px; border-radius: 4px; font-weight: 600; }
+  .q-instruction { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .q-passage { background: var(--white-gray); padding: 16px; border-radius: 6px; font-size: 16px; line-height: 1.7; margin: 12px 0; max-height: 320px; overflow-y: auto; }
+  .q-sub { font-size: 14px; color: var(--medium-gray); margin: 10px 0; }
+
+  .options { display: flex; flex-direction: column; gap: 10px; margin: 10px 0; }
+  .option { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--concrete); border-radius: 6px; font-size: 16px; cursor: pointer; }
+  .option:hover { border-color: var(--pearson-blue); background: var(--ice-blue); }
+  .option.selected { border-color: var(--pearson-blue); background: var(--ice-blue); }
+  .option input { accent-color: var(--pearson-blue); width: 16px; height: 16px; }
+
+  .text-input { width: 100%; padding: 12px 14px; border: 1px solid var(--concrete); border-radius: 6px; font-size: 16px; font-family: inherit; }
+  .text-input:focus { outline: none; border-color: var(--pearson-blue); }
+  .text-input:disabled { background: var(--white-gray); }
+  textarea.text-input { resize: vertical; min-height: 110px; line-height: 1.5; }
+  .word-count { font-size: 13px; color: var(--medium-gray); text-align: right; margin-top: 4px; }
+
+  .media-box { background: var(--white-gray); border: 2px dashed var(--concrete); border-radius: 8px; padding: 18px; text-align: center; margin: 12px 0; color: var(--medium-gray); }
+  .media-box img { max-width: 100%; max-height: 280px; border-radius: 4px; }
+  .media-missing { font-size: 13.5px; color: var(--danger); margin-top: 6px; }
+
+  .audio-panel { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .audio-btn { background: var(--pearson-blue); color: var(--white); border: none; padding: 9px 22px; border-radius: 20px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; transition: .2s; }
+  .audio-btn:hover { background: var(--ink-blue); }
+  .audio-btn.playing { background: var(--sunshine); color: var(--charcoal); }
+  .audio-btn:disabled { opacity: .5; cursor: not-allowed; }
+  .audio-note { font-size: 13px; color: var(--medium-gray); }
+
+  .record-panel { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 14px 0; padding: 16px; background: var(--white-gray); border-radius: 8px; }
+  .record-indicator { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: var(--graphite); }
+  .rec-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--concrete); }
+  .rec-dot.live { background: var(--danger); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .record-panel audio { width: 100%; margin-top: 6px; }
+  .mic-warning { font-size: 13px; color: #8a5a00; background: #fff2d9; padding: 8px 12px; border-radius: 6px; }
+
+  .fib-bank { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; padding: 12px; background: var(--white-gray); border-radius: 8px; }
+  .fib-chip { background: var(--white); border: 1px solid var(--pearson-blue); color: var(--ink-blue); padding: 6px 14px; border-radius: 16px; font-size: 14.5px; cursor: pointer; font-weight: 600; }
+  .fib-chip.used { opacity: .35; background: var(--moonlight); border-color: var(--concrete); color: var(--medium-gray); cursor: default; }
+  .blank-slot { display: inline-block; min-width: 90px; border-bottom: 2px solid var(--pearson-blue); padding: 2px 8px; margin: 0 2px; cursor: pointer; font-weight: 700; color: var(--ink-blue); background: var(--ice-blue); border-radius: 4px 4px 0 0; }
+  .blank-slot.empty { color: var(--medium-gray); background: transparent; font-weight: 400; }
+  .fib-text { font-size: 16.5px; line-height: 2.1; margin: 12px 0; }
+  select.blank-dropdown { font-size: 15px; padding: 4px 8px; border-radius: 4px; border: 1px solid var(--pearson-blue); background: var(--ice-blue); color: var(--ink-blue); font-weight: 600; font-family: inherit; margin: 0 3px; }
+
+  .dictation-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+  .dictation-row .text-input { width: 110px; text-align: center; }
+
+  .reorder-container { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+  .reorder-item { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--white-gray); border: 1px solid var(--concrete); border-radius: 6px; cursor: grab; user-select: none; font-size: 15px; }
+  .reorder-item.dragging { opacity: .4; }
+  .reorder-item .drag-handle { color: var(--medium-gray); }
+  .reorder-item .arrows { margin-left: auto; display: flex; gap: 4px; }
+  .reorder-item .arrows button { border: 1px solid var(--concrete); background: var(--white); border-radius: 4px; cursor: pointer; padding: 2px 8px; font-size: 13px; }
+
+  .ref-answer { margin-top: 16px; padding: 14px; border-radius: 6px; background: var(--success-bg); border: 1px solid var(--success); font-size: 15px; }
+  .ref-answer strong { color: #14532d; }
+  .your-answer-box { margin-top: 10px; padding: 12px; border-radius: 6px; background: var(--white-gray); font-size: 15px; }
+
+  .exam-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--moonlight); flex-wrap: wrap; gap: 10px; }
+  .btn-flag { background: transparent; color: #8a5a00; border: 1px solid var(--sunshine); }
+  .btn-flag.active { background: var(--sunshine); color: var(--charcoal); }
+
+  .navigator { background: var(--white); border: 1px solid var(--concrete); border-radius: 6px; padding: 16px; align-self: start; }
+  .navigator h4 { font-size: 15px; margin-bottom: 4px; }
+  .nav-progress { font-size: 13px; color: var(--medium-gray); margin-bottom: 14px; }
+  .nav-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 16px; }
+  .nav-item { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 13.5px; border-radius: 4px; background: var(--moonlight); color: var(--graphite); font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+  .nav-item.done { background: var(--pearson-blue); color: var(--white); }
+  .nav-item.current { background: var(--sunshine); color: var(--charcoal); }
+  .nav-item.flagged { border-color: var(--sunshine); }
+  .legend { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--medium-gray); }
+  .legend-row { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 3px; }
+
+  .results-summary { background: linear-gradient(120deg, var(--ink-blue) 0%, var(--pearson-blue) 100%); color: var(--white); border-radius: 8px; padding: 26px; margin-bottom: 22px; }
+  .results-summary h2 { font-size: 24px; margin-bottom: 6px; }
+  .results-summary p { opacity: .9; font-size: 15px; }
+  .result-item { background: var(--white); border: 1px solid var(--concrete); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .result-head { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .result-q { font-size: 15px; margin-bottom: 8px; white-space: pre-line; }
+
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
+  .modal-overlay.hidden { display: none; }
+  .modal-card { background: var(--white); max-width: 460px; width: 100%; border-radius: 12px; padding: 30px; box-shadow: 0 24px 48px rgba(0,0,0,.3); text-align: center; }
+  .modal-card h2 { margin-bottom: 8px; font-size: 24px; }
+  .modal-card p { color: var(--medium-gray); margin: 8px 0 16px; line-height: 1.5; }
+  .modal-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+
+  .boot-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; text-align: center; padding: 24px; }
+  .boot-spinner { width: 34px; height: 34px; border-radius: 50%; border: 4px solid var(--ice-blue); border-top-color: var(--pearson-blue); animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  footer { text-align: center; font-size: 13.5px; color: var(--medium-gray); padding: 18px 10px 6px; border-top: 1px solid var(--moonlight); margin-top: 18px; }
+</style>
+</head>
+<body>
+
+<div id="view-boot" class="boot-screen">
+  <div class="boot-spinner"></div>
+  <div style="color:var(--medium-gray);">Loading dashboard…</div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="view-dashboard" class="hidden">
+  <div class="topbar">
+    <div class="logo"><span class="logo-mark">P</span> PTE Mock Exam</div>
+    <div class="topbar-right">
+      <button id="reset-all-btn">Reset all progress</button>
+    </div>
+  </div>
+  <div class="page">
+    <div class="hero">
+      <h1>PTE Academic Mock Exam</h1>
+      <div class="sub">Full-length practice — Speaking, Writing, Reading &amp; Listening</div>
+      <div class="meta">
+        <span>⏱️ ~2 hours · one sitting</span>
+        <span>🎧 Real audio cues &amp; mic recording</span>
+        <span>📘 4 practice tests</span>
+      </div>
+    </div>
+
+    <div class="info-banner">
+      <strong>No auto-scoring.</strong> This simulator focuses on realistic timing, audio, images and recording so you can
+      practise under exam conditions. Reading &amp; Listening questions that have one clear correct answer will show a
+      <em>reference answer</em> in the review so you can self-check. Speaking &amp; Writing responses are never judged —
+      you'll see your typed answer or your own recording played back so you (or a tutor) can evaluate it.
+    </div>
+
+    <div class="section-card">
+      <div class="heading"><h2>Your Progress</h2><span class="badge badge-blue">Attempts</span></div>
+      <div id="progress-list"></div>
+    </div>
+
+    <div class="section-card">
+      <div class="heading"><h2>Select a Practice Test</h2><span class="badge badge-turq">Choose one</span></div>
+      <div id="test-list"></div>
+    </div>
+  </div>
+  <footer>Demo · not affiliated with Pearson · PTE Academic 2026</footer>
+</div>
+
+<!-- ================= EXAM ================= -->
+<div id="view-exam" class="hidden">
+  <div class="examtop">
+    <div class="examtop-left">
+      <div class="logo-mark">P</div>
+      <div>
+        <div class="exam-title" id="exam-title">Practice Test</div>
+        <div class="exam-sub" id="exam-sub">Section · Task</div>
+      </div>
+    </div>
+    <div class="examtop-center" id="examtop-center"></div>
+    <div class="examtop-right">
+      <div class="volume-box">🔊 <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="1"></div>
+      <button class="exit-link" id="exam-exit-btn">Exit to dashboard</button>
+    </div>
+  </div>
+
+  <div class="exam-body">
+    <div class="question-panel" id="question-panel"></div>
+    <div class="navigator">
+      <h4 id="nav-title">Questions</h4>
+      <div class="nav-progress" id="nav-progress">0 of 0</div>
+      <div class="nav-grid" id="nav-grid"></div>
+      <div class="legend">
+        <div class="legend-row"><span class="legend-swatch" style="background:var(--pearson-blue);"></span> Answered</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:var(--sunshine);"></span> Current</div>
+        <div class="legend-row"><span class="legend-swatch" style="background:var(--moonlight);"></span> Not answered</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= REVIEW ================= -->
+<div id="view-results" class="hidden">
+  <div class="topbar">
+    <div class="logo"><span class="logo-mark">P</span> PTE Mock Exam</div>
+    <div class="topbar-right">
+      <button id="results-back-btn">Back to dashboard</button>
+    </div>
+  </div>
+  <div class="page">
+    <div class="results-summary">
+      <h2 id="results-title">Test complete</h2>
+      <p>No score is calculated. Use the review below to self-check Reading &amp; Listening, and to replay/read your
+        Speaking &amp; Writing responses.</p>
+    </div>
+
+    <div class="section-card">
+      <div class="heading"><h2>Section Overview</h2><span class="badge badge-blue">Completion</span></div>
+      <div id="section-breakdown" style="display:flex;flex-direction:column;gap:8px;"></div>
+    </div>
+
+    <div class="section-card">
+      <div class="heading"><h2>Question Review</h2><span class="badge badge-turq">All questions</span></div>
+      <div id="results-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODALS ================= -->
+<div id="section-expiry-modal" class="modal-overlay hidden">
+  <div class="modal-card">
+    <h2>⏰ Section time's up</h2>
+    <p>Time for this section has ended. Any unanswered questions will be left blank and we'll move on to the next
+      section.</p>
+    <div class="modal-btns"><button class="btn btn-primary" id="section-expiry-continue">Continue</button></div>
+  </div>
+</div>
+
+<div id="exit-confirm-modal" class="modal-overlay hidden">
+  <div class="modal-card">
+    <h2>Exit exam?</h2>
+    <p>Your progress in this test will be lost unless you finish it.</p>
+    <div class="modal-btns">
+      <button class="btn btn-outline" id="exit-cancel-btn">Stay</button>
+      <button class="btn btn-danger" id="exit-confirm-btn">Exit anyway</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   0. CONSTANTS
+   ============================================================ */
+const TESTS = ['p1','p2','p3','p4'];
+const TEST_NAMES = { p1:'Practice Test 1', p2:'Practice Test 2', p3:'Practice Test 3', p4:'Practice Test 4' };
+const SECTIONS = ['speaking','writing','reading','listening'];
+const SECTION_LABELS = { speaking:'Speaking', writing:'Writing', reading:'Reading', listening:'Listening' };
+const TYPE_LABELS = {
+  readAloud:'Read Aloud', repeatSentence:'Repeat Sentence', describeImage:'Describe Image',
+  retellLecture:'Re-tell Lecture', answerShortQuestion:'Answer Short Question',
+  summarizeWrittenText:'Summarize Written Text', writeEssay:'Write Essay',
+  multipleChoiceSingle:'Multiple Choice (Single)', multipleChoiceMultiple:'Multiple Choice (Multiple)',
+  reorderParagraphs:'Re-order Paragraphs', fillInBlanksReading:'Fill in the Blanks',
+  fillInBlanksReadingWriting:'Fill in the Blanks (R&W)', summarizeSpokenText:'Summarize Spoken Text',
+  highlightCorrectSummary:'Highlight Correct Summary', selectMissingWord:'Select Missing Word',
+  highlightIncorrectWords:'Highlight Incorrect Words', writeFromDictation:'Write From Dictation',
+  fillInBlanks:'Fill in the Blanks (Listening)'
+};
+// default per-item response time (seconds) for types without an explicit timeLimit in the JSON
+const ITEM_TIME_DEFAULTS = {
+  summarizeSpokenText: 600, multipleChoiceMultiple: 60, fillInBlanks: 90, highlightCorrectSummary: 60,
+  multipleChoiceSingle: 60, selectMissingWord: 30, highlightIncorrectWords: 60, writeFromDictation: 60
+};
+const READING_SECTION_SECONDS = 32 * 60;
+const LISTENING_SECTION_SECONDS = 47 * 60;
+const PROGRESS_KEY = 'pte_mock_progress_v1';
+
+let app = {
+  testId: null, testData: null, flatItems: [], answers: {},
+  currentSection: null, currentIndexInSection: 0,
+  sectionTimerHandle: null, itemTimerHandle: null,
+  sectionRemaining: 0, phase: null, phaseRemaining: 0,
+  volume: 1, audioPlayed: {}, currentAudioEl: null,
+  mediaRecorder: null, recordedChunks: [], isRecording: false, micDenied: false,
+  audioCtx: null
+};
+
+/* ============================================================
+   1. HELPERS
+   ============================================================ */
+function formatTime(sec) {
+  if (sec < 0) sec = 0;
+  const m = Math.floor(sec / 60).toString().padStart(2,'0');
+  const s = Math.floor(sec % 60).toString().padStart(2,'0');
+  return m + ':' + s;
+}
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function wordCount(str) { return (str || '').trim().split(/\s+/).filter(Boolean).length; }
+function loadProgress() { try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch(e) { return {}; } }
+function saveProgress(p) { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }
+
+function beep(freq, dur) {
+  try {
+    app.audioCtx = app.audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const osc = app.audioCtx.createOscillator();
+    const gain = app.audioCtx.createGain();
+    osc.frequency.value = freq || 880;
+    gain.gain.setValueAtTime(Math.max(0.02, app.volume * 0.25), app.audioCtx.currentTime);
+    osc.connect(gain); gain.connect(app.audioCtx.destination);
+    osc.start();
+    osc.stop(app.audioCtx.currentTime + (dur || 180) / 1000);
+  } catch (e) { /* ignore */ }
+}
+
+/* ============================================================
+   2. DATA LOADING
+   ============================================================ */
+async function fetchTestData(testId) {
+  const res = await fetch(testId + '.json');
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+function flattenTestItems(testData) {
+  const flat = [];
+  SECTIONS.forEach(sec => {
+    const sectionData = testData.sections[sec];
+    if (!sectionData || !sectionData.tasks) return;
+    sectionData.tasks.forEach(task => {
+      if (!task.items) return;
+      task.items.forEach((item, iIdx) => {
+        flat.push({
+          id: item.id, section: sec, sectionLabel: SECTION_LABELS[sec],
+          task, item, type: task.type, taskLabel: TYPE_LABELS[task.type] || task.type,
+          itemLabel: item.title || item.id || ('Q' + (iIdx + 1))
+        });
+      });
+    });
+  });
+  return flat;
+}
+
+function getSectionItems(section) { return app.flatItems.filter(fi => fi.section === section); }
+function getCurrentItem() { return getSectionItems(app.currentSection)[app.currentIndexInSection] || null; }
+
+/* ============================================================
+   3. DASHBOARD
+   ============================================================ */
+async function renderDashboard() {
+  const progress = loadProgress();
+  const progEl = document.getElementById('progress-list');
+  const hasAny = TESTS.some(t => progress[t]);
+  progEl.innerHTML = hasAny ? '' : '<p style="color:var(--medium-gray);">Complete a test to see your attempt history here.</p>';
+  TESTS.forEach(t => {
+    if (!progress[t]) return;
+    const p = progress[t];
+    const div = document.createElement('div');
+    div.className = 'test-card';
+    div.innerHTML = `
+      <div class="info"><h3>${TEST_NAMES[t]}</h3>
+      <div class="sub">Last completed ${new Date(p.completedAt).toLocaleString()}</div></div>
+      <button class="btn btn-outline btn-sm" data-review="${t}">View review</button>`;
+    div.querySelector('button').addEventListener('click', () => openReviewFromStorage(t));
+    progEl.appendChild(div);
+  });
+
+  const listEl = document.getElementById('test-list');
+  listEl.innerHTML = '';
+  for (const t of TESTS) {
+    const card = document.createElement('div');
+    card.className = 'test-card';
+    let meta = null;
+    try { meta = (await fetchTestData(t)).testMetadata; } catch (e) { meta = null; }
+    const available = !!meta;
+    if (!available) card.classList.add('disabled');
+    card.innerHTML = `
+      <div class="info">
+        <h3>${TEST_NAMES[t]}</h3>
+        <div class="sub">${available ? (meta.testName || TEST_NAMES[t]) + ' · ' + (meta.source || '') : 'Add ' + t + '.json alongside index.html to unlock'}</div>
+      </div>
+      <button class="btn btn-primary btn-sm" ${available ? '' : 'disabled'}>${progress[t] ? 'Retake' : 'Start'}</button>`;
+    if (available) card.querySelector('button').addEventListener('click', () => startExam(t));
+    listEl.appendChild(card);
+  }
+
+  document.getElementById('reset-all-btn').addEventListener('click', () => {
+    if (confirm('Clear all saved attempts? This cannot be undone.')) {
+      localStorage.removeItem(PROGRESS_KEY);
+      renderDashboard();
+    }
+  });
+}
+
+/* ============================================================
+   4. START EXAM
+   ============================================================ */
+async function startExam(testId) {
+  try {
+    const data = await fetchTestData(testId);
+    app.testId = testId;
+    app.testData = data;
+    app.flatItems = flattenTestItems(data);
+    app.answers = {};
+    app.audioPlayed = {};
+    app.flatItems.forEach(fi => {
+      app.answers[fi.id] = { value: null, submitted: false, flagged: false, recordingUrl: null, timedOut: false };
+    });
+    app.currentSection = 'speaking';
+    app.currentIndexInSection = 0;
+
+    document.getElementById('view-dashboard').classList.add('hidden');
+    document.getElementById('view-results').classList.add('hidden');
+    document.getElementById('view-exam').classList.remove('hidden');
+    document.getElementById('exam-title').textContent = (data.testMetadata?.testName || TEST_NAMES[testId]);
+
+    enterSection('speaking');
+  } catch (err) {
+    alert('Could not load ' + testId + '.json — ' + err.message);
+  }
+}
+
+function sectionHasTimer(section) { return section === 'reading' || section === 'listening'; }
+
+function enterSection(section) {
+  clearInterval(app.sectionTimerHandle);
+  app.currentSection = section;
+  app.currentIndexInSection = 0;
+  if (sectionHasTimer(section)) {
+    app.sectionRemaining = section === 'reading' ? READING_SECTION_SECONDS : LISTENING_SECTION_SECONDS;
+    app.sectionTimerHandle = setInterval(() => {
+      app.sectionRemaining--;
+      updateExamTopBar();
+      if (app.sectionRemaining <= 0) {
+        clearInterval(app.sectionTimerHandle);
+        document.getElementById('section-expiry-modal').classList.remove('hidden');
+      }
+    }, 1000);
+  }
+  showQuestion();
+}
+
+document.getElementById('section-expiry-continue').addEventListener('click', () => {
+  document.getElementById('section-expiry-modal').classList.add('hidden');
+  advanceSection();
+});
+
+function advanceSection() {
+  const idx = SECTIONS.indexOf(app.currentSection);
+  if (idx < SECTIONS.length - 1) enterSection(SECTIONS[idx + 1]);
+  else finishExam();
+}
+
+/* ============================================================
+   5. TIMERS (item / phase level)
+   ============================================================ */
+function clearItemTimer() { clearInterval(app.itemTimerHandle); app.itemTimerHandle = null; app.phase = null; }
+
+function startPhase(phaseName, seconds, onDone) {
+  app.phase = phaseName;
+  app.phaseRemaining = seconds;
+  updateExamTopBar();
+  clearInterval(app.itemTimerHandle);
+  app.itemTimerHandle = setInterval(() => {
+    app.phaseRemaining--;
+    updateExamTopBar();
+    if (app.phaseRemaining <= 0) {
+      clearInterval(app.itemTimerHandle);
+      onDone();
+    }
+  }, 1000);
+}
+
+/* ============================================================
+   6. EXAM TOP BAR
+   ============================================================ */
+function updateExamTopBar() {
+  const fi = getCurrentItem();
+  const center = document.getElementById('examtop-center');
+  document.getElementById('exam-sub').textContent = fi ? `${fi.sectionLabel} · ${fi.taskLabel} · ${fi.itemLabel}` : '';
+  let html = '';
+  if (sectionHasTimer(app.currentSection)) {
+    const low = app.sectionRemaining <= 60;
+    html += `<div class="timer ${low ? 'low' : ''}"><span>⏱️ Section</span><span>${formatTime(app.sectionRemaining)}</span></div>`;
+  }
+  if (app.phase) {
+    const label = app.phase === 'prep' ? 'Preparation' : app.phase === 'response' ? 'Response' : 'Time';
+    const cls = app.phase === 'prep' ? 'prep' : (app.phaseRemaining <= 10 ? 'low' : '');
+    html += `<div class="timer ${cls}"><span class="timer-dot"></span><span>${label}: ${formatTime(app.phaseRemaining)}</span></div>`;
+  }
+  center.innerHTML = html;
+}
+
+/* ============================================================
+   7. SHOW QUESTION
+   ============================================================ */
+function showQuestion() {
+  clearItemTimer();
+  stopRecording();
+  const fi = getCurrentItem();
+  if (!fi) { advanceSection(); return; }
+  const ans = app.answers[fi.id];
+  updateNavigator();
+  updateExamTopBar();
+
+  const panel = document.getElementById('question-panel');
+  panel.innerHTML = buildQuestionHTML(fi, ans);
+  attachHandlers(fi, ans);
+  initTimingForItem(fi, ans);
+}
+
+function buildQuestionHTML(fi, ans) {
+  const items = getSectionItems(fi.section);
+  const posInSection = items.indexOf(fi) + 1;
+  let html = `<div class="q-meta">
+      <span class="q-tag">${fi.sectionLabel} · ${fi.taskLabel} · Q${posInSection}/${items.length}</span>
+    </div>`;
+  const prompt = fi.task.prompt || '';
+  if (prompt) html += `<p class="q-instruction">${escapeHtml(prompt)}</p>`;
+
+  const builders = {
+    readAloud: buildReadAloud, repeatSentence: buildRepeatSentence, describeImage: buildDescribeImage,
+    retellLecture: buildRetellLecture, answerShortQuestion: buildAnswerShortQuestion,
+    summarizeWrittenText: buildSummarizeWrittenText, writeEssay: buildWriteEssay,
+    multipleChoiceSingle: buildMcSingle, multipleChoiceMultiple: buildMcMultiple,
+    reorderParagraphs: buildReorder, fillInBlanksReading: buildFibReading,
+    fillInBlanksReadingWriting: buildFibReadingWriting, summarizeSpokenText: buildSummarizeSpokenText,
+    highlightCorrectSummary: buildHighlightSummary, selectMissingWord: buildSelectMissingWord,
+    highlightIncorrectWords: buildHighlightIncorrectWords, writeFromDictation: buildWriteFromDictation,
+    fillInBlanks: buildFibListening
+  };
+  const fn = builders[fi.type];
+  html += fn ? fn(fi, ans) : `<p>Unsupported question type: ${fi.type}</p>`;
+  html += buildControls(fi, ans);
+  return html;
+}
+
+/* ---- SPEAKING builders ---- */
+function buildReadAloud(fi, ans) {
+  return `<div class="q-passage">${escapeHtml(fi.item.text)}</div>${buildRecordPanel(fi, ans)}`;
+}
+function buildRepeatSentence(fi, ans) {
+  return `${buildAudioPanel(fi)}<p class="q-sub">Listen, then repeat the sentence exactly as you hear it.</p>${buildRecordPanel(fi, ans)}`;
+}
+function buildDescribeImage(fi, ans) {
+  return `${buildImageBox(fi.item)}${buildRecordPanel(fi, ans)}`;
+}
+function buildRetellLecture(fi, ans) {
+  return `${buildImageBox(fi.item)}${buildAudioPanel(fi)}<p class="q-sub">Retell the lecture in your own words.</p>${buildRecordPanel(fi, ans)}`;
+}
+function buildAnswerShortQuestion(fi, ans) {
+  return `${buildAudioPanel(fi)}<p class="q-sub">Answer with a single word or short phrase.</p>${buildRecordPanel(fi, ans)}`;
+}
+
+/* ---- WRITING builders ---- */
+function buildSummarizeWrittenText(fi, ans) {
+  return `<div class="q-passage">${escapeHtml(fi.item.text)}</div>
+    <p class="q-sub">Summarize in one sentence (50-70 words recommended).</p>
+    <textarea class="text-input" id="essay-input" ${ans.submitted ? 'disabled' : ''}>${escapeHtml(ans.value || '')}</textarea>
+    <div class="word-count" id="word-count">0 words</div>`;
+}
+function buildWriteEssay(fi, ans) {
+  return `<div class="q-passage">${escapeHtml(fi.item.topic)}</div>
+    <p class="q-sub">Write ${fi.task.wordLimit || '200-300'} words. Time limit: ${fi.task.timeLimit || 20} minutes.</p>
+    <textarea class="text-input" id="essay-input" style="min-height:220px;" ${ans.submitted ? 'disabled' : ''}>${escapeHtml(ans.value || '')}</textarea>
+    <div class="word-count" id="word-count">0 words</div>`;
+}
+
+/* ---- READING builders ---- */
+function buildMcSingle(fi, ans) {
+  const opts = (fi.item.options || []).map(opt => {
+    const sel = ans.value === opt ? 'selected' : '';
+    return `<label class="option ${sel}"><input type="radio" name="mcs" value="${escapeHtml(opt)}" ${ans.value === opt ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(opt)}</label>`;
+  }).join('');
+  const passage = fi.item.text ? `<div class="q-passage">${escapeHtml(fi.item.text)}</div>` : '';
+  return `${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildMcMultiple(fi, ans) {
+  const selected = Array.isArray(ans.value) ? ans.value : [];
+  const opts = (fi.item.options || []).map(opt => {
+    const sel = selected.includes(opt) ? 'selected' : '';
+    return `<label class="option ${sel}"><input type="checkbox" value="${escapeHtml(opt)}" ${selected.includes(opt) ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(opt)}</label>`;
+  }).join('');
+  const passage = fi.item.text ? `<div class="q-passage">${escapeHtml(fi.item.text)}</div>` : '';
+  return `${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildReorder(fi, ans) {
+  const sentences = fi.item.sentences || {};
+  const order = Array.isArray(ans.value) && ans.value.length ? ans.value : Object.keys(sentences);
+  const rows = order.map((key, i) => `
+    <div class="reorder-item" draggable="true" data-key="${escapeHtml(key)}">
+      <span class="drag-handle">⠿</span> ${escapeHtml(sentences[key])}
+      <span class="arrows"><button type="button" data-dir="up" data-key="${escapeHtml(key)}">↑</button><button type="button" data-dir="down" data-key="${escapeHtml(key)}">↓</button></span>
+    </div>`).join('');
+  return `<p class="q-sub">Drag the boxes (or use the arrows) into the correct order.</p>
+    <div class="reorder-container" id="reorder-container">${rows}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildFibReading(fi, ans) {
+  const text = fi.item.textWithBlanks || '';
+  const parts = text.split('[___]');
+  const numBlanks = parts.length - 1;
+  const value = Array.isArray(ans.value) && ans.value.length === numBlanks ? ans.value : new Array(numBlanks).fill(null);
+  ans.value = value;
+  let html = '<div class="fib-text">';
+  parts.forEach((part, i) => {
+    html += escapeHtml(part);
+    if (i < numBlanks) {
+      const filled = value[i];
+      html += `<span class="blank-slot ${filled ? '' : 'empty'}" data-blank="${i}">${filled ? escapeHtml(filled) : '_____'}</span>`;
+    }
+  });
+  html += '</div>';
+  const usedWords = value.filter(Boolean);
+  const bank = (fi.item.wordBank || []).map(w => {
+    const used = usedWords.includes(w);
+    return `<button type="button" class="fib-chip ${used ? 'used' : ''}" data-word="${escapeHtml(w)}" ${used || ans.submitted ? 'disabled' : ''}>${escapeHtml(w)}</button>`;
+  }).join('');
+  return `<p class="q-sub">Click a word below to place it in the next empty blank. Click a filled blank to remove it.</p>
+    ${html}<div class="fib-bank">${bank}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildFibReadingWriting(fi, ans) {
+  const text = fi.item.textWithBlanks || '';
+  const optionsByBlank = {};
+  (fi.item.options || []).forEach(o => optionsByBlank[o.blank] = o.options);
+  const value = ans.value && typeof ans.value === 'object' ? ans.value : {};
+  ans.value = value;
+  const parts = text.split(/(\[\d+\])/g);
+  let html = '<div class="fib-text">';
+  parts.forEach(part => {
+    const m = part.match(/^\[(\d+)\]$/);
+    if (m) {
+      const blankNum = m[1];
+      const opts = optionsByBlank[blankNum] || [];
+      const selected = value[blankNum] || '';
+      const optHtml = ['<option value="">--</option>'].concat(opts.map(o => `<option value="${escapeHtml(o)}" ${selected === o ? 'selected' : ''}>${escapeHtml(o)}</option>`)).join('');
+      html += `<select class="blank-dropdown" data-blank="${blankNum}" ${ans.submitted ? 'disabled' : ''}>${optHtml}</select>`;
+    } else html += escapeHtml(part);
+  });
+  html += '</div>';
+  return html + buildRefAnswer(fi, ans);
+}
+
+/* ---- LISTENING builders ---- */
+function buildSummarizeSpokenText(fi, ans) {
+  return `${buildAudioPanel(fi)}<p class="q-sub">Write a summary (50-70 words).</p>
+    <textarea class="text-input" id="essay-input" ${ans.submitted ? 'disabled' : ''}>${escapeHtml(ans.value || '')}</textarea>
+    <div class="word-count" id="word-count">0 words</div>`;
+}
+function buildMcListeningMultiple(fi, ans) { return buildMcMultiple(fi, ans); }
+function buildFibListening(fi, ans) {
+  const blanks = fi.item.blanks || [];
+  const value = Array.isArray(ans.value) && ans.value.length === blanks.length ? ans.value : new Array(blanks.length).fill('');
+  ans.value = value;
+  const row = blanks.map((b, i) => `<input type="text" class="text-input" data-blank="${i}" placeholder="Blank ${b.position || i+1}" value="${escapeHtml(value[i])}" ${ans.submitted ? 'disabled' : ''}>`).join('');
+  return `${buildAudioPanel(fi)}<p class="q-sub">Type the missing word(s) for each blank, in order.</p>
+    <div class="dictation-row">${row}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildHighlightSummary(fi, ans) {
+  const summaries = fi.item.summaries || [];
+  const opts = summaries.map(s => {
+    const sel = ans.value === s.id ? 'selected' : '';
+    return `<label class="option ${sel}"><input type="radio" name="hcs" value="${escapeHtml(s.id)}" ${ans.value === s.id ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(s.text)}</label>`;
+  }).join('');
+  return `${buildAudioPanel(fi)}<p class="q-sub">Select the paragraph that best matches the recording.</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildSelectMissingWord(fi, ans) {
+  const opts = (fi.item.options || []).map(opt => {
+    const sel = ans.value === opt ? 'selected' : '';
+    return `<label class="option ${sel}"><input type="radio" name="smw" value="${escapeHtml(opt)}" ${ans.value === opt ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(opt)}</label>`;
+  }).join('');
+  return `${buildAudioPanel(fi)}<p class="q-sub">The recording ends with a beep. Select the word/phrase that completes it.</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildHighlightIncorrectWords(fi, ans) {
+  const words = (fi.item.transcriptWithErrors || '').split(/\s+/);
+  const selected = Array.isArray(ans.value) ? ans.value : [];
+  const spans = words.map((w, i) => {
+    const isSel = selected.includes(i);
+    return `<span class="option" style="padding:4px 8px;margin:2px;display:inline-block;border:1px solid ${isSel ? 'var(--pearson-blue)' : 'transparent'};background:${isSel ? 'var(--ice-blue)' : 'transparent'};border-radius:4px;cursor:pointer;" data-widx="${i}">${escapeHtml(w)}</span>`;
+  }).join('');
+  return `${buildAudioPanel(fi)}<p class="q-sub">Click the words in the transcript that differ from what you hear.</p>
+    <div style="display:flex;flex-wrap:wrap;">${spans}</div>${buildRefAnswer(fi, ans)}`;
+}
+function buildWriteFromDictation(fi, ans) {
+  return `${buildAudioPanel(fi)}<p class="q-sub">Type the sentence exactly as you hear it.</p>
+    <input type="text" class="text-input" id="wfd-input" value="${escapeHtml(ans.value || '')}" ${ans.submitted ? 'disabled' : ''}>${buildRefAnswer(fi, ans)}`;
+}
+
+/* ---- shared pieces ---- */
+function buildImageBox(item) {
+  if (!item.imageFile) return '';
+  const src = 'assets/images/' + item.imageFile;
+  return `<div class="media-box">
+    <img src="${src}" alt="${escapeHtml(item.title || '')}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="media-missing hidden" style="display:none;">Image not found — add <code>${escapeHtml(src)}</code></div>
+    ${item.description ? `<div style="margin-top:8px;font-size:13.5px;">${escapeHtml(item.description)}</div>` : ''}
+  </div>`;
+}
+function buildAudioPanel(fi) {
+  const track = fi.item.trackNumber;
+  if (!track) return '';
+  const src = 'assets/audio/' + track + '.mp3';
+  const already = !!app.audioPlayed[fi.id];
+  return `<div class="media-box">
+    <div class="audio-panel">
+      <button class="audio-btn" id="play-audio-btn" ${already ? 'disabled' : ''}>${already ? '✔ Played' : '▶ Play Audio'}</button>
+      <span class="audio-note">Track ${escapeHtml(track)} · plays once, like the real exam</span>
+    </div>
+    <audio id="item-audio" src="${src}" preload="none"></audio>
+    <div id="audio-missing-note" class="media-missing hidden"></div>
+  </div>`;
+}
+function buildRecordPanel(fi, ans) {
+  return `<div class="record-panel" id="record-panel">
+    <div class="record-indicator"><span class="rec-dot" id="rec-dot"></span><span id="rec-status">Not started</span></div>
+    ${ans.recordingUrl ? `<audio controls src="${ans.recordingUrl}"></audio>` : ''}
+    <div id="mic-warning" class="mic-warning hidden">Microphone unavailable — timing will still run, but no audio will be captured.</div>
+  </div>`;
+}
+function buildRefAnswer(fi, ans) {
+  // Only show reference answer during the exam if the question has been submitted or timed out.
+  // We'll rely on the review page for the full expected answer.
+  if (!ans.submitted && !ans.timedOut) return '';
+  const ref = getReferenceAnswerText(fi);
+  if (!ref) return '';
+  return `<div class="ref-answer"><strong>Reference answer:</strong> ${escapeHtml(ref)}</div>`;
+}
+/* ============================================================
+   UPDATED getReferenceAnswerText – covers all types
+   ============================================================ */
+function getReferenceAnswerText(fi) {
+  const item = fi.item;
+  switch (fi.type) {
+    // Speaking
+    case 'readAloud':
+    case 'describeImage':
+    case 'retellLecture':
+    case 'summarizeWrittenText':
+    case 'writeEssay':
+      return item.expectedAnswer || '';
+    case 'repeatSentence':
+    case 'writeFromDictation':
+      return item.sentence || '';
+    case 'answerShortQuestion':
+      return item.answer || '';
+    // Reading & Listening – Single choice
+    case 'multipleChoiceSingle':
+    case 'highlightCorrectSummary':
+    case 'selectMissingWord':
+      return item.correctAnswer || item.expectedAnswer || '';
+    // Reading & Listening – Multiple choice
+    case 'multipleChoiceMultiple':
+      if (Array.isArray(item.correctAnswers)) return item.correctAnswers.join(', ');
+      if (Array.isArray(item.expectedAnswers)) return item.expectedAnswers.join(', ');
+      return '';
+    case 'reorderParagraphs':
+      if (Array.isArray(item.correctOrder)) return item.correctOrder.join(' → ');
+      if (Array.isArray(item.expectedAnswer)) return item.expectedAnswer.join(' → ');
+      return '';
+    case 'fillInBlanksReading':
+      if (Array.isArray(item.correctAnswers)) return item.correctAnswers.join(', ');
+      if (Array.isArray(item.expectedAnswers)) return item.expectedAnswers.join(', ');
+      return '';
+    case 'fillInBlanksReadingWriting':
+      if (Array.isArray(item.options)) {
+        return item.options.map(o => `[${o.blank}] ${o.correctAnswer || o.expectedAnswer}`).join('  ');
+      }
+      return '';
+    case 'fillInBlanks': // listening
+      if (Array.isArray(item.blanks)) {
+        return item.blanks.map(b => b.correctAnswer || b.expectedAnswer).join(', ');
+      }
+      return '';
+    case 'highlightIncorrectWords':
+      if (Array.isArray(item.incorrectWords) && Array.isArray(item.correctWords) && item.incorrectWords.length === item.correctWords.length) {
+        return item.incorrectWords.map((w, i) => `${w} → ${item.correctWords[i]}`).join(', ');
+      }
+      if (Array.isArray(item.correctWords)) return item.correctWords.join(', ');
+      if (Array.isArray(item.expectedAnswers)) return item.expectedAnswers.join(', ');
+      return '';
+    default:
+      return '';
+  }
+}
+
+/* ============================================================
+   Format the learner's own answer for the review screen.
+   Needed because a couple of answer shapes aren't plain
+   strings/arrays-of-strings: fillInBlanksReadingWriting stores
+   an object keyed by blank number, and highlightIncorrectWords
+   stores an array of word-position indices rather than the
+   words themselves.
+   ============================================================ */
+function formatYourAnswer(fi, ans) {
+  const v = ans.value;
+  if (fi.type === 'highlightIncorrectWords') {
+    if (Array.isArray(v) && v.length) {
+      const words = (fi.item.transcriptWithErrors || '').split(/\s+/);
+      return v.slice().sort((a, b) => a - b).map(i => words[i]).filter(Boolean).join(', ');
+    }
+    return '';
+  }
+  if (fi.type === 'fillInBlanksReadingWriting') {
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      const keys = Object.keys(v).sort((a, b) => Number(a) - Number(b));
+      if (!keys.length) return '';
+      return keys.map(k => `[${k}] ${v[k] || '—'}`).join('  ');
+    }
+    return '';
+  }
+  if (Array.isArray(v)) return v.join(', ');
+  return v || (ans.submitted ? '(recorded / completed)' : '');
+}
+
+/* ============================================================
+   8. CONTROLS
+   ============================================================ */
+function buildControls(fi, ans) {
+  const items = getSectionItems(fi.section);
+  const curIdx = items.indexOf(fi);
+  const isLast = curIdx === items.length - 1;
+  const needsExplicitSubmit = ['multipleChoiceSingle','multipleChoiceMultiple','reorderParagraphs','fillInBlanksReading',
+    'fillInBlanksReadingWriting','summarizeWrittenText','writeEssay','summarizeSpokenText','highlightCorrectSummary',
+    'selectMissingWord','highlightIncorrectWords','writeFromDictation','fillInBlanks'].includes(fi.type);
+  // Speaking items run on their own automatic prep/response timers rather than an explicit
+  // submit button. Until that response is actually recorded/submitted, offer an explicit
+  // "Skip" action instead of a "Next question" button, so it's clear the item is being
+  // skipped rather than normally advanced.
+  const isTimedSpeaking = fi.section === 'speaking';
+  let html = '<div class="exam-controls">';
+  html += `<button class="btn btn-flag ${ans.flagged ? 'active' : ''}" id="flag-btn">${ans.flagged ? '⭐ Flagged' : 'Mark for review'}</button>`;
+  html += '<div style="display:flex;gap:10px;flex-wrap:wrap;">';
+  if (curIdx > 0) html += `<button class="btn btn-outline" id="prev-btn">Previous</button>`;
+  if (needsExplicitSubmit && !ans.submitted) {
+    html += `<button class="btn btn-primary" id="submit-btn">Submit &amp; ${isLast ? 'Finish section' : 'Next'}</button>`;
+  } else if (isTimedSpeaking && !ans.submitted) {
+    html += `<button class="btn btn-outline" id="skip-btn">Skip this question</button>`;
+  } else if (ans.submitted || !needsExplicitSubmit) {
+    html += `<button class="btn btn-outline" id="next-btn" style="background:var(--pearson-blue);color:var(--white);">${isLast ? 'Finish section' : 'Next question'}</button>`;
+  }
+  html += '</div></div>';
+  return html;
+}
+
+/* ============================================================
+   9. ATTACH HANDLERS
+   ============================================================ */
+function attachHandlers(fi, ans) {
+  const flagBtn = document.getElementById('flag-btn');
+  if (flagBtn) flagBtn.addEventListener('click', () => { ans.flagged = !ans.flagged; updateNavigator(); showQuestion(); });
+
+  const prevBtn = document.getElementById('prev-btn');
+  if (prevBtn) prevBtn.addEventListener('click', () => { app.currentIndexInSection--; showQuestion(); });
+
+  const nextBtn = document.getElementById('next-btn');
+  if (nextBtn) nextBtn.addEventListener('click', () => goNext(fi));
+
+  const skipBtn = document.getElementById('skip-btn');
+  if (skipBtn) skipBtn.addEventListener('click', () => goNext(fi));
+
+  const submitBtn = document.getElementById('submit-btn');
+  if (submitBtn) submitBtn.addEventListener('click', () => { gatherAnswer(fi, ans); ans.submitted = true; goNext(fi); });
+
+  // radios / checkboxes
+  document.querySelectorAll('input[name="mcs"]').forEach(el => el.addEventListener('change', () => { if (el.checked) ans.value = el.value; }));
+  document.querySelectorAll('input[name="hcs"]').forEach(el => el.addEventListener('change', () => { if (el.checked) ans.value = el.value; }));
+  document.querySelectorAll('input[name="smw"]').forEach(el => el.addEventListener('change', () => { if (el.checked) ans.value = el.value; }));
+  document.querySelectorAll('input[type="checkbox"]').forEach(el => el.addEventListener('change', () => {
+    const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+    ans.value = Array.from(checked).map(c => c.value);
+  }));
+
+  // textareas / text inputs (live update + word count)
+  const essayInput = document.getElementById('essay-input');
+  if (essayInput) {
+    const wc = document.getElementById('word-count');
+    const update = () => { ans.value = essayInput.value; if (wc) wc.textContent = wordCount(essayInput.value) + ' words'; };
+    essayInput.addEventListener('input', update); update();
+  }
+  const wfdInput = document.getElementById('wfd-input');
+  if (wfdInput) wfdInput.addEventListener('input', () => ans.value = wfdInput.value);
+
+  // fill-in-blanks (listening) plain inputs
+  document.querySelectorAll('input[data-blank]').forEach(el => {
+    el.addEventListener('input', () => { ans.value[parseInt(el.dataset.blank, 10)] = el.value; });
+  });
+
+  // fill-in-blanks reading (chip click)
+  document.querySelectorAll('.fib-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (chip.disabled) return;
+      const word = chip.dataset.word;
+      const emptyIdx = ans.value.findIndex(v => !v);
+      if (emptyIdx === -1) return;
+      ans.value[emptyIdx] = word;
+      showQuestion();
+    });
+  });
+  document.querySelectorAll('.blank-slot').forEach(slot => {
+    slot.addEventListener('click', () => {
+      if (ans.submitted) return;
+      const idx = parseInt(slot.dataset.blank, 10);
+      ans.value[idx] = null;
+      showQuestion();
+    });
+  });
+
+  // fill-in-blanks reading & writing (dropdowns)
+  document.querySelectorAll('select.blank-dropdown').forEach(sel => {
+    sel.addEventListener('change', () => { ans.value[sel.dataset.blank] = sel.value; });
+  });
+
+  // reorder paragraphs (drag & drop + arrows)
+  const container = document.getElementById('reorder-container');
+  if (container) {
+    let dragEl = null;
+    const syncOrder = () => { ans.value = Array.from(container.querySelectorAll('.reorder-item')).map(i => i.dataset.key); };
+    container.querySelectorAll('.reorder-item').forEach(el => {
+      el.addEventListener('dragstart', () => { dragEl = el; el.classList.add('dragging'); });
+      el.addEventListener('dragend', () => { el.classList.remove('dragging'); syncOrder(); });
+      el.addEventListener('dragover', e => {
+        e.preventDefault();
+        if (!dragEl || dragEl === el) return;
+        const rect = el.getBoundingClientRect();
+        const mid = rect.top + rect.height / 2;
+        container.insertBefore(dragEl, e.clientY < mid ? el : el.nextSibling);
+      });
+    });
+    container.querySelectorAll('.arrows button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (ans.submitted) return;
+        const row = btn.closest('.reorder-item');
+        if (btn.dataset.dir === 'up' && row.previousElementSibling) container.insertBefore(row, row.previousElementSibling);
+        else if (btn.dataset.dir === 'down' && row.nextElementSibling) container.insertBefore(row.nextElementSibling, row);
+        syncOrder();
+      });
+    });
+    syncOrder();
+  }
+
+  // highlight incorrect words (click to toggle)
+  document.querySelectorAll('[data-widx]').forEach(el => {
+    el.addEventListener('click', () => {
+      if (ans.submitted) return;
+      const idx = parseInt(el.dataset.widx, 10);
+      const selected = Array.isArray(ans.value) ? ans.value.slice() : [];
+      const pos = selected.indexOf(idx);
+      if (pos > -1) selected.splice(pos, 1); else selected.push(idx);
+      ans.value = selected;
+      showQuestion();
+    });
+  });
+
+  // audio play button
+  const playBtn = document.getElementById('play-audio-btn');
+  if (playBtn) playBtn.addEventListener('click', () => playItemAudio(fi));
+}
+
+function goNext(fi) {
+  const items = getSectionItems(fi.section);
+  const curIdx = items.indexOf(fi);
+  if (curIdx < items.length - 1) { app.currentIndexInSection = curIdx + 1; showQuestion(); }
+  else advanceSection();
+}
+
+function gatherAnswer(fi, ans) {
+  if (Array.isArray(ans.value)) ans.value = ans.value; // already live-bound for most
+}
+
+/* ============================================================
+   10. AUDIO PLAYBACK
+   ============================================================ */
+function playItemAudio(fi) {
+  const audioEl = document.getElementById('item-audio');
+  const btn = document.getElementById('play-audio-btn');
+  if (!audioEl || app.audioPlayed[fi.id]) return;
+  audioEl.volume = app.volume;
+  app.currentAudioEl = audioEl;
+  btn.textContent = '🔊 Playing…';
+  btn.classList.add('playing');
+  audioEl.addEventListener('error', () => {
+    const note = document.getElementById('audio-missing-note');
+    if (note) { note.classList.remove('hidden'); note.textContent = 'Audio file not found — add assets/audio/' + fi.item.trackNumber + '.mp3'; }
+    onAudioFinished(fi);
+  }, { once: true });
+  audioEl.addEventListener('ended', () => onAudioFinished(fi), { once: true });
+  audioEl.play().catch(() => onAudioFinished(fi));
+}
+function onAudioFinished(fi) {
+  app.audioPlayed[fi.id] = true;
+  const btn = document.getElementById('play-audio-btn');
+  if (btn) { btn.textContent = '✔ Played'; btn.disabled = true; btn.classList.remove('playing'); }
+  beep(660, 150);
+  // for speaking items with audio, timing continues once audio ends
+  if (fi.section === 'speaking') {
+    const ans = app.answers[fi.id];
+    if (fi.type === 'retellLecture') {
+      // Retell Lecture gets a preparation window after the audio, before the response is recorded
+      const tl = fi.task.timeLimit || {};
+      beginPrepPhase(fi, ans, tl.preparation || 10);
+    } else {
+      beginResponsePhase(fi, ans);
+    }
+  }
+}
+
+/* ============================================================
+   11. RECORDING (mic)
+   ============================================================ */
+async function startRecording() {
+  const dot = document.getElementById('rec-dot');
+  const status = document.getElementById('rec-status');
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    app.recordedChunks = [];
+    const mr = new MediaRecorder(stream);
+    app.mediaRecorder = mr;
+    mr.ondataavailable = e => { if (e.data.size > 0) app.recordedChunks.push(e.data); };
+    mr.onstop = () => {
+      stream.getTracks().forEach(t => t.stop());
+      const blob = new Blob(app.recordedChunks, { type: 'audio/webm' });
+      const fi = getCurrentItem();
+      if (fi) app.answers[fi.id].recordingUrl = URL.createObjectURL(blob);
+    };
+    mr.start();
+    app.isRecording = true;
+    if (dot) dot.classList.add('live');
+    if (status) status.textContent = 'Recording…';
+  } catch (err) {
+    app.micDenied = true;
+    const warn = document.getElementById('mic-warning');
+    if (warn) warn.classList.remove('hidden');
+    if (status) status.textContent = 'Timing only (no mic)';
+  }
+}
+function stopRecording() {
+  if (app.mediaRecorder && app.mediaRecorder.state === 'recording') app.mediaRecorder.stop();
+  app.isRecording = false;
+  const dot = document.getElementById('rec-dot');
+  if (dot) dot.classList.remove('live');
+}
+
+/* ============================================================
+   12. PER-ITEM TIMING ORCHESTRATION
+   ============================================================ */
+function initTimingForItem(fi, ans) {
+  const type = fi.type;
+  const item = fi.item;
+
+  if (fi.section === 'speaking') {
+    const tl = fi.task.timeLimit || {};
+    if (['readAloud','describeImage','retellLecture'].includes(type)) {
+      if (type === 'retellLecture') return; // waits for user to press play; response starts on audio end
+      const prep = tl.preparation || 20;
+      beginPrepPhase(fi, ans, prep);
+    } else if (type === 'repeatSentence' || type === 'answerShortQuestion') {
+      // waits for audio play; response begins in onAudioFinished
+    }
+    return;
+  }
+
+  if (fi.section === 'writing') {
+    const seconds = (fi.task.timeLimit || 10) * 60;
+    startPhase('response', seconds, () => { ans.submitted = true; ans.timedOut = true; showQuestion(); });
+    return;
+  }
+
+  if (fi.section === 'listening') {
+    const seconds = ITEM_TIME_DEFAULTS[type] || 60;
+    // for audio-driven types, response phase (self-paced typing) starts once audio finishes;
+    // still show a running response countdown that begins immediately so users feel the pacing.
+    startPhase('response', seconds, () => { ans.submitted = true; ans.timedOut = true; showQuestion(); });
+    return;
+  }
+  // reading: no per-item timer
+}
+
+function beginPrepPhase(fi, ans, seconds) {
+  beep(440, 150);
+  startPhase('prep', seconds, () => { beginResponsePhase(fi, ans); });
+}
+function beginResponsePhase(fi, ans) {
+  const tl = fi.task.timeLimit || {};
+  const seconds = (typeof tl === 'object' ? tl.response : tl) || 30;
+  beep(880, 200);
+  startRecording();
+  startPhase('response', seconds, () => {
+    stopRecording();
+    beep(440, 300);
+    ans.submitted = true;
+    setTimeout(() => showQuestion(), 400);
+  });
+}
+
+/* ============================================================
+   13. NAVIGATOR
+   ============================================================ */
+function updateNavigator() {
+  const items = getSectionItems(app.currentSection);
+  const answered = items.filter(fi => app.answers[fi.id].submitted).length;
+  document.getElementById('nav-title').textContent = SECTION_LABELS[app.currentSection];
+  document.getElementById('nav-progress').textContent = `${answered} of ${items.length} answered`;
+  const grid = document.getElementById('nav-grid');
+  grid.innerHTML = '';
+  items.forEach((fi, i) => {
+    const ans = app.answers[fi.id];
+    const div = document.createElement('div');
+    let cls = 'nav-item';
+    if (i === app.currentIndexInSection) cls += ' current';
+    else if (ans.submitted) cls += ' done';
+    if (ans.flagged) cls += ' flagged';
+    div.className = cls;
+    div.textContent = i + 1;
+    div.addEventListener('click', () => { app.currentIndexInSection = i; showQuestion(); });
+    grid.appendChild(div);
+  });
+}
+
+/* ============================================================
+   14. EXIT / VOLUME
+   ============================================================ */
+document.getElementById('exam-exit-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.remove('hidden'));
+document.getElementById('exit-cancel-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.add('hidden'));
+document.getElementById('exit-confirm-btn').addEventListener('click', () => {
+  document.getElementById('exit-confirm-modal').classList.add('hidden');
+  clearInterval(app.sectionTimerHandle); clearItemTimer(); stopRecording();
+  document.getElementById('view-exam').classList.add('hidden');
+  document.getElementById('view-dashboard').classList.remove('hidden');
+  renderDashboard();
+});
+document.getElementById('volume-slider').addEventListener('input', e => {
+  app.volume = parseFloat(e.target.value);
+  if (app.currentAudioEl) app.currentAudioEl.volume = app.volume;
+});
+
+/* ============================================================
+   15. FINISH EXAM & REVIEW (updated)
+   ============================================================ */
+function finishExam() {
+  clearInterval(app.sectionTimerHandle); clearItemTimer(); stopRecording();
+
+  const progress = loadProgress();
+  // Store expected answer for every question
+  const serializable = app.flatItems.map(fi => {
+    const ans = app.answers[fi.id];
+    return {
+      id: fi.id,
+      section: fi.section,
+      sectionLabel: fi.sectionLabel,
+      type: fi.type,
+      taskLabel: fi.taskLabel,
+      itemLabel: fi.itemLabel,
+      question: fi.item.question || fi.item.text || fi.item.topic || fi.item.title || '',
+      yourAnswer: formatYourAnswer(fi, ans),
+      submitted: ans.submitted,
+      timedOut: !!ans.timedOut,
+      hadRecording: !!ans.recordingUrl,
+      expectedAnswer: getReferenceAnswerText(fi)  // store the preferred answer
+    };
+  });
+  progress[app.testId] = { completedAt: new Date().toISOString(), items: serializable };
+  saveProgress(progress);
+
+  renderReview(app.testId, serializable, app.answers);
+}
+
+function openReviewFromStorage(testId) {
+  const progress = loadProgress();
+  const p = progress[testId];
+  if (!p) return;
+  renderReview(testId, p.items, {});
+}
+
+function renderReview(testId, items, liveAnswers) {
+  document.getElementById('view-exam').classList.add('hidden');
+  document.getElementById('view-dashboard').classList.add('hidden');
+  document.getElementById('view-results').classList.remove('hidden');
+  document.getElementById('results-title').textContent = `${TEST_NAMES[testId] || testId} — Review`;
+
+  const breakdown = document.getElementById('section-breakdown');
+  let bHtml = '';
+  SECTIONS.forEach(sec => {
+    const secItems = items.filter(r => r.section === sec);
+    if (!secItems.length) return;
+    const answered = secItems.filter(r => r.submitted).length;
+    bHtml += `<div style="display:flex;justify-content:space-between;padding:10px 14px;background:var(--white-gray);border-radius:6px;">
+      <span style="font-weight:600;">${SECTION_LABELS[sec]}</span><span>${answered}/${secItems.length} completed</span></div>`;
+  });
+  breakdown.innerHTML = bHtml || '<p style="color:var(--medium-gray);">No data.</p>';
+
+  const listEl = document.getElementById('results-list');
+  listEl.innerHTML = items.map(r => {
+    const status = r.submitted ? (r.timedOut ? '⏰ Time expired' : '✔ Completed') : '— Not attempted';
+    const recording = (liveAnswers[r.id] && liveAnswers[r.id].recordingUrl)
+      ? `<audio controls src="${liveAnswers[r.id].recordingUrl}" style="width:100%;margin-top:6px;"></audio>`
+      : (r.hadRecording ? '<div class="q-sub">Recording was made but is only playable during the session it was recorded in.</div>' : '');
+    // Show expected answer if available
+    const expectedHtml = r.expectedAnswer
+      ? `<div class="ref-answer"><strong>Preferred answer:</strong> ${escapeHtml(r.expectedAnswer)}</div>`
+      : '';
+    return `<div class="result-item">
+      <div class="result-head">
+        <span class="badge badge-context">${status}</span>
+        <span class="badge badge-context">${escapeHtml(r.sectionLabel)} · ${escapeHtml(r.taskLabel)}</span>
+        <span class="badge badge-context">${escapeHtml(r.itemLabel)}</span>
+      </div>
+      <div class="result-q">${escapeHtml(r.question)}</div>
+      <div class="your-answer-box"><strong>Your answer:</strong> ${escapeHtml(r.yourAnswer) || '<em>No answer</em>'}</div>
+      ${recording}
+      ${expectedHtml}
+    </div>`;
+  }).join('') || '<p style="color:var(--medium-gray);">No questions to review.</p>';
+
+  document.getElementById('results-back-btn').onclick = () => {
+    document.getElementById('view-results').classList.add('hidden');
+    document.getElementById('view-dashboard').classList.remove('hidden');
+    renderDashboard();
+  };
+}
+
+/* ============================================================
+   16. INIT
+   ============================================================ */
+async function init() {
+  document.getElementById('view-boot').classList.add('hidden');
+  document.getElementById('view-dashboard').classList.remove('hidden');
+  await renderDashboard();
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

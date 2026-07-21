@@ -1,0 +1,1202 @@
+{
+  "testMetadata": {
+    "testName": "Practice Test 2",
+    "source": "Practice Tests Plus with key (2013)",
+    "pageRange": "62-89",
+    "totalAudioTracks": 40,
+    "totalQuestions": {
+      "speaking": 28,
+      "writing": 4,
+      "reading": 13,
+      "listening": 15
+    }
+  },
+  "scoringRules": {
+    "speaking": {
+      "readAloud": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency"],
+        "timeLimit": {
+          "preparation": 40,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Full text read aloud with natural pronunciation and fluency. No fixed expected answer; evaluated on content delivery, pronunciation, and fluency."
+      },
+      "repeatSentence": {
+        "pointsPerQuestion": 3,
+        "criteria": ["Accuracy", "Pronunciation", "Fluency"],
+        "timeLimit": {
+          "preparation": 0,
+          "response": 10
+        },
+        "expectedAnswerFormat": "Exact repetition of the heard sentence. Evaluated on accuracy, pronunciation, and fluency."
+      },
+      "describeImage": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "timeLimit": {
+          "preparation": 25,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Detailed description of the image covering key features, trends, and relationships. Evaluated on content, pronunciation, fluency, and structure."
+      },
+      "retellLecture": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "timeLimit": {
+          "preparation": 10,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Summary of the lecture in own words covering main points. Evaluated on content, pronunciation, fluency, and structure."
+      },
+      "answerShortQuestion": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"],
+        "timeLimit": {
+          "preparation": 0,
+          "response": 10
+        },
+        "expectedAnswerFormat": "Short, direct answer (1-3 words). See individual question answers."
+      }
+    },
+    "writing": {
+      "summarizeWrittenText": {
+        "pointsPerQuestion": 7,
+        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "wordLimit": "1 sentence",
+        "timeLimit": 10,
+        "expectedAnswerFormat": "Single sentence summarizing the key points of the passage. See sample answers for each passage."
+      },
+      "writeEssay": {
+        "pointsPerQuestion": 20,
+        "criteria": ["Content", "Organization", "Grammar", "Vocabulary", "Cohesion"],
+        "wordLimit": "200-300 words",
+        "timeLimit": "20 minutes",
+        "expectedAnswerFormat": "Well-organized essay with clear position, supporting arguments, and examples. Evaluated on content, organization, grammar, vocabulary, and cohesion."
+      }
+    },
+    "reading": {
+      "multipleChoiceSingle": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "multipleChoiceMultiple": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"],
+        "partialScoring": true
+      },
+      "reorderParagraphs": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"]
+      },
+      "fillInBlanksReading": {
+        "pointsPerQuestion": 4,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      },
+      "fillInBlanksReadingWriting": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      }
+    },
+    "listening": {
+      "summarizeSpokenText": {
+        "pointsPerQuestion": 10,
+        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "wordLimit": "50-70 words",
+        "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points of the lecture. Evaluated on content, grammar, vocabulary, and conciseness."
+      },
+      "multipleChoiceMultiple": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"],
+        "partialScoring": true
+      },
+      "fillInBlanks": {
+        "pointsPerQuestion": 4,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      },
+      "highlightCorrectSummary": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "multipleChoiceSingle": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "selectMissingWord": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "highlightIncorrectWords": {
+        "pointsPerQuestion": 6,
+        "criteria": ["Accuracy"],
+        "pointsPerWord": 1
+      },
+      "writeFromDictation": {
+        "pointsPerQuestion": 3,
+        "criteria": ["Accuracy"],
+        "pointsPerCorrectWord": 1
+      }
+    }
+  },
+  "sections": {
+    "speaking": {
+      "pageStart": 62,
+      "pageEnd": 68,
+      "tasks": [
+        {
+          "id": "S1",
+          "type": "readAloud",
+          "pageNumber": 62,
+          "timeLimit": {
+            "preparation": 40,
+            "response": 40
+          },
+          "prompt": "Look at the text below. In 40 seconds, you must read this text aloud as naturally and as clearly as possible. You have 40 seconds to read aloud.",
+          "expectedAnswerFormat": "Read the full text naturally and clearly.",
+          "items": [
+            {
+              "id": "RA1",
+              "title": "Statistics",
+              "text": "Statistics reflect vital information about the economy, the well-being of the population, and the environment. Society relies on statistics being visible, accessible and robust, and on statistically literate people making the best use of the information to determine future action. Statistical literacy, then, is the ability to accurately understand, interpret and evaluate the data that inform these issues.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA2",
+              "title": "Housing",
+              "text": "Housing fulfils the basic needs that people have for security, privacy and shelter. While the adequacy of housing is an important component of individual well-being, housing also has great impact on the nation's economy, with its influence on investment levels, interest rates, building activity and employment.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA3",
+              "title": "Physical activity",
+              "text": "Being physically active benefits people's health significantly, including reducing the risk of some chronic conditions, helping to control weight, and improving mental health. In recent decades, there has been a decline in physical activity because more people work in offices rather than in manual jobs.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA4",
+              "title": "Leave of Absence",
+              "text": "Students who wish to take a break from their studies will need to put in an application for Leave of Absence. If your application is successful, you will be notified via email. At the end of your Leave of Absence, you must re-enrol at Student Services and in the subjects you intend to study.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA5",
+              "title": "Lie detection",
+              "text": "There are a number of tests available which can suggest if a person is telling the truth, but knowing which ones are accurate is not easy. A newly created test is claimed to be the most accurate yet in lie detection. However, questions have been raised about its accuracy and ethics.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA6",
+              "title": "Student exchange program",
+              "text": "A student exchange program complements formal education, while promoting tolerance, maturity and independence – all highly sought after qualities in today's competitive job market. Living in the host country, not as a tourist or guest but as a member of the community, is what makes the experience both challenging and rewarding.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "type": "repeatSentence",
+          "pageNumber": 63,
+          "timeLimit": {
+            "preparation": 0,
+            "response": 10
+          },
+          "prompt": "You will hear a sentence. Please repeat the sentence exactly as you hear it. You will hear the sentence only once.",
+          "expectedAnswerFormat": "Repeat the sentence exactly as heard.",
+          "items": [
+            {
+              "id": "RS1",
+              "trackNumber": "D42",
+              "sentence": "Students who wish to apply for an extension should approach their tutors.",
+              "expectedAnswer": "Students who wish to apply for an extension should approach their tutors."
+            },
+            {
+              "id": "RS2",
+              "trackNumber": "D43",
+              "sentence": "The research looked at neighbourhood cooperative schemes such as community gardens.",
+              "expectedAnswer": "The research looked at neighbourhood cooperative schemes such as community gardens."
+            },
+            {
+              "id": "RS3",
+              "trackNumber": "D44",
+              "sentence": "Visual aids can make presentations clearer and more interesting.",
+              "expectedAnswer": "Visual aids can make presentations clearer and more interesting."
+            },
+            {
+              "id": "RS4",
+              "trackNumber": "D45",
+              "sentence": "Economy of scale is the increase in efficiency that occurs when more goods are produced.",
+              "expectedAnswer": "Economy of scale is the increase in efficiency that occurs when more goods are produced."
+            },
+            {
+              "id": "RS5",
+              "trackNumber": "D46",
+              "sentence": "The University is working towards being more environmentally sustainable.",
+              "expectedAnswer": "The University is working towards being more environmentally sustainable."
+            },
+            {
+              "id": "RS6",
+              "trackNumber": "D47",
+              "sentence": "Unlike applied arts, fine arts do not serve a practical function.",
+              "expectedAnswer": "Unlike applied arts, fine arts do not serve a practical function."
+            },
+            {
+              "id": "RS7",
+              "trackNumber": "D48",
+              "sentence": "Modern poetry often tests the conventions of language and rhythm.",
+              "expectedAnswer": "Modern poetry often tests the conventions of language and rhythm."
+            },
+            {
+              "id": "RS8",
+              "trackNumber": "D49",
+              "sentence": "The Law Library is closed on Sundays and public holidays.",
+              "expectedAnswer": "The Law Library is closed on Sundays and public holidays."
+            },
+            {
+              "id": "RS9",
+              "trackNumber": "D50",
+              "sentence": "There are no places left in the morning tutorial.",
+              "expectedAnswer": "There are no places left in the morning tutorial."
+            },
+            {
+              "id": "RS10",
+              "trackNumber": "D51",
+              "sentence": "The conference is predicted to draw greater numbers than last year.",
+              "expectedAnswer": "The conference is predicted to draw greater numbers than last year."
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "type": "describeImage",
+          "pageRange": "64-66",
+          "timeLimit": {
+            "preparation": 25,
+            "response": 40
+          },
+          "prompt": "Look at the [plan/graph/graph/table/graph/diagram] below. In 25 seconds, please speak into the microphone and describe in detail what the [plan/graph/graph/table/graph/diagram] is showing. You will have 40 seconds to give your response.",
+          "expectedAnswerFormat": "Detailed description of the image: type of graph, axes/labels, key trends, comparisons, and conclusions.",
+          "items": [
+            {
+              "id": "DI1",
+              "pageNumber": 64,
+              "title": "Student apartment",
+              "imageType": "floor plan",
+              "description": "Floor plan of a student apartment showing: entrance, living area with table/chairs/armchair, study area with desk near window, separate bedroom with bed/wardrobe/windows, small kitchen and bathroom.",
+              "imageFile": "student_apartment_floorplan.png",
+              "expectedAnswer": "This is a floor plan of a student apartment. The entrance leads to a living area with a table, chairs, and an armchair. Adjacent to the living area is a study area with a desk near a window. There is a separate bedroom with a bed, wardrobe, and windows. The apartment also includes a small kitchen and a bathroom."
+            },
+            {
+              "id": "DI2",
+              "pageNumber": 65,
+              "title": "Climate graph, Great Lakes Area, USA",
+              "imageType": "graph",
+              "description": "Line and bar graph showing average temperature (°C) and rainfall (mm) across the year (January–December) for the Great Lakes region.",
+              "imageFile": "great_lakes_climate_graph.png",
+              "expectedAnswer": "This combined line and bar graph shows the climate of the Great Lakes region. The line graph indicates average temperatures, with the coldest months being January and February around -5°C, and the warmest being July and August around 20°C. The bar graph shows rainfall, with the wettest months being June through September, peaking at about 100mm, and the driest months being January through March."
+            },
+            {
+              "id": "DI3",
+              "pageNumber": 65,
+              "title": "Energy consumption 2007",
+              "imageType": "bar graph",
+              "description": "Bar graph comparing energy consumption by source (oil, natural gas, hydroelectric, coal, nuclear) for North America and South America in 2007.",
+              "imageFile": "energy_consumption_2007.png",
+              "expectedAnswer": "This bar graph compares energy consumption in North America and South America in 2007 by source. In North America, oil and natural gas are the dominant sources, while coal and nuclear also contribute significantly. In South America, hydroelectric power is the main source, followed by oil and natural gas. The graph shows clear regional differences in energy preferences."
+            },
+            {
+              "id": "DI4",
+              "pageNumber": 66,
+              "title": "Language college timetable, week 1",
+              "imageType": "table",
+              "description": "Table showing a 7-day schedule with morning (9am-12pm) and afternoon (1pm-4pm) activities: tour, English classes, social activities, excursions, full-day activities, and homestay weekends.",
+              "imageFile": "language_college_timetable.png",
+              "expectedAnswer": "This table shows the first week's schedule at a language college. The week is divided into morning (9am-12pm) and afternoon (1pm-4pm) sessions. Monday starts with a tour followed by English classes. Tuesday through Thursday includes English classes in the mornings and social activities or excursions in the afternoons. Friday has full-day activities. The weekend is reserved for homestay experiences."
+            },
+            {
+              "id": "DI5",
+              "pageNumber": 66,
+              "title": "Proportion of overseas-born people in Australia, 2000-2010",
+              "imageType": "line graph",
+              "description": "Line graph showing percentages of overseas-born people in Australia by country of birth (UK, New Zealand, China, India, Vietnam, Philippines, South Africa, Malaysia, Germany) from 2000-2010.",
+              "imageFile": "overseas_born_australia.png",
+              "expectedAnswer": "This line graph shows the percentage of overseas-born people in Australia by country of birth from 2000 to 2010. The UK consistently has the highest percentage, though it shows a slight decline. New Zealand maintains a relatively stable percentage. China and India show significant increases over the period, reflecting growing immigration from Asia. Other countries like Vietnam, Philippines, South Africa, Malaysia, and Germany remain at lower percentages."
+            },
+            {
+              "id": "DI6",
+              "pageNumber": 66,
+              "title": "Painted Lady Butterfly life cycle",
+              "imageType": "diagram",
+              "description": "Diagram showing the four stages: egg (size of pin head) → larva (black/purple caterpillar with yellow-green stripes) → pupa/chrysalis (reddish brown) → adult butterfly.",
+              "imageFile": "butterfly_life_cycle.png",
+              "expectedAnswer": "This diagram illustrates the life cycle of the Painted Lady Butterfly. It begins with an egg, which is the size of a pin head. This hatches into a larva, which is a black and purple caterpillar with yellow-green stripes. The larva then forms a pupa or chrysalis, which is reddish-brown in color. Finally, the adult butterfly emerges, completing the cycle of metamorphosis."
+            }
+          ]
+        },
+        {
+          "id": "S4",
+          "type": "retellLecture",
+          "pageNumber": 67,
+          "timeLimit": {
+            "preparation": 10,
+            "response": 40
+          },
+          "prompt": "You will hear a lecture. After listening to the lecture, in 10 seconds, please speak into the microphone and retell what you have just heard from the lecture in your own words. You will have 40 seconds to give your response.",
+          "expectedAnswerFormat": "Oral summary of the lecture in own words covering main ideas and key details.",
+          "items": [
+            {
+              "id": "RL1",
+              "trackNumber": "D52",
+              "title": "Purpose of museums",
+              "imageDescription": "Museum interior/exhibit",
+              "imageFile": "museum_interior.png",
+              "audioScriptSummary": "Museums need to move beyond being warehouses of old objects; they should have an educational purpose, engage visitors, and become instruments of social change by providing relevant exhibitions and services.",
+              "audioScriptPage": "161-162",
+              "expectedAnswer": "The lecture argues that museums should evolve from being mere storage spaces for old objects. They need to serve an educational purpose and actively engage visitors. Museums should become instruments of social change by offering exhibitions and services that are relevant to contemporary society and issues."
+            },
+            {
+              "id": "RL2",
+              "trackNumber": "D53",
+              "title": "Graffiti as art",
+              "imageDescription": "Graffiti art",
+              "imageFile": "graffiti_art.png",
+              "audioScriptSummary": "Graffiti has existed for thousands of years (cave walls, Egypt, Rome); modern graffiti began in New York in the late 1960s with spraycans; subway trains became forums for expression; now embraced by art establishment.",
+              "audioScriptPage": "162",
+              "expectedAnswer": "The lecture traces the history of graffiti from ancient times, including cave paintings and Egyptian/Roman examples. Modern graffiti emerged in New York in the late 1960s using spray cans, with subway trains serving as mobile forums for artistic expression. Today, graffiti has gained acceptance and is now embraced by the established art world."
+            },
+            {
+              "id": "RL3",
+              "trackNumber": "D54",
+              "title": "Biomimicry",
+              "imageDescription": "Butterfly",
+              "imageFile": "butterfly.png",
+              "audioScriptSummary": "Nature provides useful concepts for technology; biomimicry = copying/imitating nature; examples: bright phone screens from butterfly wings, anti-reflective coatings from moth eyes, spider web strength, glow-worm light.",
+              "audioScriptPage": "162",
+              "expectedAnswer": "The lecture introduces biomimicry, which is the practice of copying or imitating nature's designs for technological applications. Examples include bright phone screens inspired by butterfly wings, anti-reflective coatings from moth eyes, the incredible strength of spider webs, and efficient lighting from glow-worms. Nature provides valuable concepts for solving human technological challenges."
+            }
+          ]
+        },
+        {
+          "id": "S5",
+          "type": "answerShortQuestion",
+          "pageNumber": 68,
+          "timeLimit": {
+            "preparation": 0,
+            "response": 10
+          },
+          "prompt": "You will hear a question. Please give a simple and short answer. Often just one or a few words is enough.",
+          "expectedAnswerFormat": "Short, direct answer (1-3 words).",
+          "items": [
+            {
+              "id": "ASQ1",
+              "trackNumber": "D55",
+              "question": "What do we call the organs in our chest that we use to breathe?",
+              "answer": "lungs",
+              "expectedAnswer": "lungs"
+            },
+            {
+              "id": "ASQ2",
+              "trackNumber": "D56",
+              "question": "If someone lives in an urban area, where do they live?",
+              "answer": "a city / a town",
+              "expectedAnswer": "a city or a town"
+            },
+            {
+              "id": "ASQ3",
+              "trackNumber": "D57",
+              "question": "What does a king or queen wear on their head at official ceremonies?",
+              "answer": "a crown",
+              "expectedAnswer": "a crown"
+            },
+            {
+              "id": "ASQ4",
+              "trackNumber": "D58",
+              "question": "What do we call a book that contains lists of words with their meanings?",
+              "answer": "a dictionary",
+              "expectedAnswer": "a dictionary"
+            },
+            {
+              "id": "ASQ5",
+              "trackNumber": "D59",
+              "question": "What is the source of solar energy?",
+              "answer": "the sun",
+              "expectedAnswer": "the sun"
+            },
+            {
+              "id": "ASQ6",
+              "trackNumber": "D60",
+              "question": "When the writer of a book is unknown, what word is used for the author?",
+              "answer": "anonymous",
+              "expectedAnswer": "anonymous"
+            },
+            {
+              "id": "ASQ7",
+              "trackNumber": "D61",
+              "question": "What do we call a company or organization that gives money to a sports or arts event in exchange for advertising?",
+              "answer": "a sponsor",
+              "expectedAnswer": "a sponsor"
+            },
+            {
+              "id": "ASQ8",
+              "trackNumber": "D62",
+              "question": "What do we call the study of living things?",
+              "answer": "biology / ecology",
+              "expectedAnswer": "biology or ecology"
+            },
+            {
+              "id": "ASQ9",
+              "trackNumber": "D63",
+              "question": "What are winter, spring, summer and autumn?",
+              "answer": "seasons",
+              "expectedAnswer": "seasons"
+            },
+            {
+              "id": "ASQ10",
+              "trackNumber": "D64",
+              "question": "What is a collective term for cows and bulls, especially on a farm?",
+              "answer": "cattle",
+              "expectedAnswer": "cattle"
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "pageStart": 69,
+      "pageEnd": 71,
+      "tasks": [
+        {
+          "id": "W1",
+          "type": "summarizeWrittenText",
+          "pageRange": "69-70",
+          "timeLimit": 10,
+          "prompt": "Read the passage below and summarize it using one sentence. Type your response in the box at the bottom of the screen. You have 10 minutes to finish this task. Your response will be judged on the quality of your writing and on how well your response presents the key points in the passage.",
+          "expectedAnswerFormat": "One sentence summarizing the key points of the passage.",
+          "items": [
+            {
+              "id": "SWT1",
+              "pageNumber": 69,
+              "title": "Undersea noise pollution",
+              "text": "Passage about how sea creatures use sound for survival, the increase in ocean noise from shipping over the past 50 years, and its harmful effects on marine life. Quote from Sylvia Earle about the 'death of a thousand cuts.'",
+              "expectedAnswer": "The increasing noise pollution in our oceans from shipping over the past 50 years is severely harming marine life that depends on sound for survival, representing what Sylvia Earle describes as a 'death of a thousand cuts' to ocean ecosystems."
+            },
+            {
+              "id": "SWT2",
+              "pageNumber": 70,
+              "title": "Chillies",
+              "text": "Passage about the science behind chilli heat, how capsaicin works, evolution of spiciness to deter mammals and fight fungus, and research in Bolivia on hot vs. mild chillies.",
+              "expectedAnswer": "Chilli plants evolved their spiciness through capsaicin as a defense mechanism against mammals and fungus, with research in Bolivia showing that environmental pressures determine whether chillies develop hot or mild characteristics."
+            }
+          ]
+        },
+        {
+          "id": "W2",
+          "type": "writeEssay",
+          "pageNumber": 71,
+          "timeLimit": 20,
+          "wordLimit": "200-300",
+          "prompt": "You will have 20 minutes to plan, write and revise an essay about the topic below. Your response will be judged on how well you develop a position, organize your ideas, present supporting details, and control the elements of standard written English. You should write 200-300 words.",
+          "expectedAnswerFormat": "Well-structured essay with clear introduction, body paragraphs, and conclusion.",
+          "items": [
+            {
+              "id": "WE1",
+              "topic": "Students should be required to stay in school until the age of eighteen. To what extent do you agree or disagree with this statement? Support your point of view with reasons and/or examples from your own experience.",
+              "expectedAnswer": "Sample essay structure: Introduction - present the debate and state position. Body paragraph 1 - arguments for compulsory education until 18 (foundation for careers, social development, reduced dropout rates). Body paragraph 2 - arguments against (some students benefit from vocational training, apprenticeship opportunities, different learning needs). Body paragraph 3 - personal experience/observations. Conclusion - balanced view advocating for flexibility while recognizing benefits of extended education."
+            },
+            {
+              "id": "WE2",
+              "topic": "Environmental problems are too great to be managed by individuals so real change can only be achieved at government level. To what extent do you agree or disagree with this statement? Support your point of view with reasons and/or examples from your own experience.",
+              "expectedAnswer": "Sample essay structure: Introduction - acknowledge scale of problems and state position. Body paragraph 1 - arguments for government action (policy-making, international agreements, infrastructure investment). Body paragraph 2 - arguments for individual responsibility (consumer choices, daily habits, collective action). Body paragraph 3 - personal experience/observations. Conclusion - propose collaborative approach where government and individuals work together."
+            }
+          ]
+        }
+      ]
+    },
+    "reading": {
+      "pageStart": 72,
+      "pageEnd": 80,
+      "tasks": [
+        {
+          "id": "R1",
+          "type": "multipleChoiceSingle",
+          "pageNumber": 72,
+          "prompt": "Read the text and answer the multiple-choice question by selecting the correct response. Only one response is correct.",
+          "items": [
+            {
+              "id": "MCS1",
+              "title": "Sea snails and submarines",
+              "text": "Passage about limpets/sea snails that attach to submarines and could spread disease in pristine ecosystems. 90% of limpets are infected by parasites.",
+              "question": "What problem does the article mention in relation to sea snails?",
+              "options": [
+                "A) Research into sea snails has been harming the animals themselves.",
+                "B) Sea snails are being carried by submarines to places where they harm other species.",
+                "C) Sea snails are spreading diseases to the research scientists on submarines.",
+                "D) Dirty submarines are endangering the well-being of the sea snails that attach themselves."
+              ],
+              "correctAnswer": "B",
+              "expectedAnswer": "B"
+            },
+            {
+              "id": "MCS2",
+              "title": "Graphic Design degree",
+              "text": "Passage about a Graphic Design degree program: nurturing environment, emphasis on media and marketing, staff are former working artists/theorists/designers, facilities include design studios and darkrooms, computer-based programs.",
+              "question": "What does the Graphic Design degree offer students?",
+              "options": [
+                "A) experience working on new magazines",
+                "B) the opportunity to apply for funds to help with their study",
+                "C) teachers who have practical experience in a creative field",
+                "D) the use of state-of-the-art cameras"
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "type": "multipleChoiceMultiple",
+          "pageRange": "73-74",
+          "prompt": "Read the text and answer the question by selecting all the correct responses. You will need to select more than one response.",
+          "items": [
+            {
+              "id": "MCM1",
+              "pageNumber": 73,
+              "title": "Maori use of flax",
+              "text": "Passage about Maori people using native flax for baskets, mats, fishing nets, ceremonial cloaks; they identified almost 60 types of flax; used mussel shells/rocks to strip leaves; strong ropes/cords for canoes, rigging, sails; also used for roofs and torches.",
+              "question": "For which of the following purposes does the passage say the Maori used flax?",
+              "options": [
+                "A) special clothing",
+                "B) cleaning cloth",
+                "C) equipment for boats",
+                "D) walls for their huts",
+                "E) cooking tools"
+              ],
+              "correctAnswers": ["A", "C"],
+              "expectedAnswers": ["A", "C"]
+            },
+            {
+              "id": "MCM2",
+              "pageNumber": 74,
+              "title": "Neue National Gallery",
+              "text": "Passage about the Neue National Gallery in Berlin designed by Mies van der Rohe, built in 1968, open-plan flexible space, unusual natural illumination, upper level for special exhibits, lower level for themed shows/shops/café/permanent collection, podium roof plaza for sculpture, garden with sculptures, knowledgeable staff.",
+              "question": "What does the passage say can be found at the Neue National Gallery?",
+              "options": [
+                "A) overhead lighting to showcase artwork",
+                "B) substantial pillars in the corners of the building",
+                "C) artwork on top of the building",
+                "D) several separate gallery rooms on each floor",
+                "E) helpful guides to give information about the art"
+              ],
+              "correctAnswers": ["C", "E"],
+              "expectedAnswers": ["C", "E"]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "type": "reorderParagraphs",
+          "pageNumber": 75,
+          "prompt": "The text boxes in the left panel have been placed in a random order. Restore the original order by dragging the text boxes from the left panel to the right panel.",
+          "items": [
+            {
+              "id": "RP1",
+              "title": "Career conference",
+              "sentences": {
+                "A": "It is important to register for sessions with the industry professionals as numbers are limited.",
+                "B": "The conference is part of the career counselling centre's campaign, which has been designed to assist final year students transitioning out of university and getting their careers off to a good start.",
+                "C": "Students will be able to speak with industry professionals and graduates who had the benefit of this assistance last year.",
+                "D": "The University will host its second annual Arts and Commerce Career Readiness Conference on campus next month."
+              },
+              "correctOrder": ["D", "B", "C", "A"],
+              "expectedAnswer": "D → B → C → A"
+            },
+            {
+              "id": "RP2",
+              "title": "Urban planning",
+              "sentences": {
+                "A": "Urban planners must consider these threats and work to allay them.",
+                "B": "Historically, in Europe and many other parts of the world, settlements were built on higher ground for the purposes of defence and to be close to fresh water sources.",
+                "C": "If the dangers are only in specific areas then they can make the affected regions into parkland or a green belt, often providing the added advantage of open space.",
+                "D": "Cities have often spread down from these locations onto coastal plains, putting them at risk of floods and storm surges."
+              },
+              "correctOrder": ["B", "D", "A", "C"],
+              "expectedAnswer": "B → D → A → C"
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "type": "fillInBlanksReading",
+          "pageRange": "76-77",
+          "prompt": "In the text below some words are missing. Drag words from the box below to the appropriate place in the text. To undo an answer choice, drag the word back to the box below the text.",
+          "items": [
+            {
+              "id": "FIBR1",
+              "pageNumber": 76,
+              "title": "Graduation gifts",
+              "textWithBlanks": "The practice of giving graduation gifts seems to be alive and well, despite [___] economic times. A recent study in the US has shown that while families may not have as much to spend, they are being more [___] in the gifts they bestow. Lavish celebrations and large lump [___] seem to have gone by the wayside in favour of smaller, more thoughtful gifts.",
+              "wordBank": ["generous", "hard", "creative", "money", "sums", "favourable"],
+              "correctAnswers": ["hard", "creative", "sums"],
+              "expectedAnswers": ["hard", "creative", "sums"]
+            },
+            {
+              "id": "FIBR2",
+              "pageNumber": 76,
+              "title": "National Portrait Gallery",
+              "textWithBlanks": "The majority of early pictures in the National Portrait Gallery's [___] are by unknown artists, with fundamental questions, such as when, where and why they were painted still remaining to be answered. Through the application of scientific methods, a new project has the [___] to unlock evidence that will allow researchers to determine answers to these questions. They will use a [___] of cutting-edge scientific techniques, such as X-ray and infra-red reflectography, in order to reveal new [___] about individual paintings.",
+              "wordBank": ["information", "potential", "combination", "prospect", "connection", "care", "work"],
+              "correctAnswers": ["care", "potential", "combination", "information"],
+              "expectedAnswers": ["care", "potential", "combination", "information"]
+            },
+            {
+              "id": "FIBR3",
+              "pageNumber": 77,
+              "title": "Gunpowder",
+              "textWithBlanks": "Gunpowder, also referred to as 'black powder', was the only chemical explosive until the mid-nineteenth century. It [___] potassium nitrate, or 'saltpeter', which is an oxidiser, and a combination of charcoal and sulphur serves as fuel. There is [___] consensus that gunpowder was initially invented in China as early as the ninth century. This [___] to its use in fireworks and in gunpowder weapons.",
+              "wordBank": ["includes", "contains", "caused", "academic", "known", "unique", "led"],
+              "correctAnswers": ["contains", "academic", "led"],
+              "expectedAnswers": ["contains", "academic", "led"]
+            },
+            {
+              "id": "FIBR4",
+              "pageNumber": 77,
+              "title": "Marion Dorset",
+              "textWithBlanks": "Marion Dorset (1872-1935) was an influential American biochemist. He began working as a [___] for the U.S. Department of Agriculture in 1894, and worked his way up to become chief of the biochemical [___] in 1904. He made important discoveries in bacterial toxins and animal diseases, and he conducted pioneering work in the [___] of meat products. He co-discovered the virus that causes hog cholera and subsequently developed a [___] to prevent it.",
+              "wordBank": ["researcher", "leader", "serum", "fluid", "inspection", "consumption", "division"],
+              "correctAnswers": ["researcher", "division", "inspection", "serum"],
+              "expectedAnswers": ["researcher", "division", "inspection", "serum"]
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "type": "fillInBlanksReadingWriting",
+          "pageRange": "78-80",
+          "prompt": "Below is a text with blanks. Click on each blank, a list of choices will appear. Select the appropriate choice for each blank.",
+          "items": [
+            {
+              "id": "FIBRW1",
+              "pageNumber": 78,
+              "title": "Victoria University of Wellington",
+              "textWithBlanks": "Professor Warrick Couch [1] an honorary degree for his outstanding contribution to astrophysics. He [2] a key role in the development of the Australian Astronomical Observatory. The University is one of [3] institutions that have benefited from his research, [4] his work on dark energy and galaxy evolution.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) was receiving", "B) had received", "C) is received", "D) received"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) played", "B) found", "C) done", "D) led"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) those", "B) which", "C) they", "D) who"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) in addition to", "B) As a result of", "C) Regarding", "D) Instead of"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW2",
+              "pageNumber": 78,
+              "title": "Keith Haring",
+              "textWithBlanks": "Keith Haring began his career creating underground graffiti in New York subways, where he [1] on blank advertising panels with chalk. He was extremely [2] producing thousands of works before his death. [3], his work was often political, addressing issues such as AIDS, [4] he contracted himself.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) drawers", "B) drawn", "C) drew", "D) draws"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) perceptive", "B) proactive", "C) pedantic", "D) prolific"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) by contrast", "B) at least", "C) actually", "D) in part"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) whose", "B) those", "C) whom", "D) them"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW3",
+              "pageNumber": 79,
+              "title": "Koalas",
+              "textWithBlanks": "[1] koalas are not yet on the threatened species list, their populations [2] rapidly in some areas. In Queensland, numbers [3] by up to 80% in recent years. [4], the federal government has been urged to reassess their status.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) Because", "B) However", "C) Despite", "D) While"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) had been falling", "B) were falling", "C) are falling", "D) had fallen"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) must have decreased", "B) will be decreasing", "C) was decreased", "D) has decreased"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) According to this", "B) For this reason", "C) For instance", "D) In contrast"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW4",
+              "pageNumber": 79,
+              "title": "Department of Fine Arts",
+              "textWithBlanks": "The Department of Fine Arts fosters a [1] environment where students work with [2] professionals. The department has strong [3] with museums and galleries, which [4] students to develop their skills. Small class sizes provide [5] for one-on-one mentoring.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) corresponding", "B) collaborative", "C) combined", "D) common"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) activating", "B) actively", "C) activity", "D) active"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) growing", "B) growth", "C) grown", "D) grow"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) facilitating", "B) facilities", "C) facilitate", "D) facility"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) contingencies", "B) opportunities", "C) occasions", "D) needs"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW5",
+              "pageNumber": 80,
+              "title": "Lyrebirds",
+              "textWithBlanks": "Australian lyrebirds [1] to mimic a wide range of sounds, including chainsaws and pneumatic drills. Male lyrebirds use their songs to attract [2] and often [3] in elaborate courtship displays. The calls are passed down through generations, [4] evolving over time.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) have been known", "B) are being known", "C) are knowing", "D) know"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) companions", "B) spouses", "C) mates", "D) pairs"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) put forward", "B) take place", "C) work out", "D) take part"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) indeed", "B) still", "C) just", "D) yet"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "pageStart": 81,
+      "pageEnd": 89,
+      "tasks": [
+        {
+          "id": "L1",
+          "type": "summarizeSpokenText",
+          "pageNumber": 81,
+          "wordLimit": "50-70",
+          "prompt": "You will hear a short lecture. Write a summary for a fellow student who was not present at the lecture. You should write 50-70 words.",
+          "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points.",
+          "items": [
+            {
+              "id": "SST1",
+              "trackNumber": "D65",
+              "title": "Proofreading",
+              "audioScriptPage": "162",
+              "topic": "Difficulties of proofreading your own work; tips include knowing common errors, checking for logical flow and paragraphing, reading aloud, taking a break before proofreading.",
+              "expectedAnswer": "Proofreading your own work is difficult because you often read what you intended to write. Effective tips include familiarizing yourself with common errors, checking for logical flow and paragraph structure, reading the text aloud to catch mistakes, and taking a break before proofreading to gain fresh perspective."
+            },
+            {
+              "id": "SST2",
+              "trackNumber": "D66",
+              "title": "Local government",
+              "audioScriptPage": "162",
+              "topic": "Research on local government identified three issues: citizens need more involvement, public service needs customer-directed approach, and relationships between national/local government need improvement.",
+              "expectedAnswer": "Research on local government identified three key issues: citizens require greater involvement in decision-making, public services need a more customer-directed approach, and relationships between national and local government must be improved to ensure effective governance and service delivery."
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "type": "multipleChoiceMultiple",
+          "pageNumber": 82,
+          "prompt": "Listen to the recording and answer the question by selecting all the correct responses. You will need to select more than one response.",
+          "items": [
+            {
+              "id": "MCM_L1",
+              "trackNumber": "D67",
+              "title": "Theatre Studies program",
+              "question": "What comments are made about students in the Theatre Studies program?",
+              "options": [
+                "A) They are encouraged to focus their studies on modern productions.",
+                "B) Past students offer them help.",
+                "C) Students can work at their own pace.",
+                "D) They need to be clear from the start about the area they want to work in.",
+                "E) A high percentage complete the degree and get jobs in their field."
+              ],
+              "correctAnswers": ["B", "E"],
+              "expectedAnswers": ["B", "E"]
+            },
+            {
+              "id": "MCM_L2",
+              "trackNumber": "D68",
+              "title": "Rock art in Yunnan and Western Europe",
+              "question": "What was significant about the rock art found in the Yunnan province and in Western Europe?",
+              "options": [
+                "A) The skill in the rock art is superior to that found in other parts of the world.",
+                "B) It suggests that the ancestors of the rock artists may have once lived in the same area.",
+                "C) Rock art in both places depicted animals of interest to humans.",
+                "D) It showed the people in each place had very different lifestyles.",
+                "E) It shows that people in widely separated places thought the same way."
+              ],
+              "correctAnswers": ["C", "E"],
+              "expectedAnswers": ["C", "E"]
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "type": "fillInBlanks",
+          "pageNumber": 83,
+          "prompt": "You will hear a recording. Type the missing words in each blank.",
+          "items": [
+            {
+              "id": "FIBL1",
+              "trackNumber": "D69",
+              "title": "Barred owls",
+              "audioScriptPage": "163",
+              "blanks": [
+                {
+                  "position": 1,
+                  "correctAnswer": "mammals",
+                  "expectedAnswer": "mammals"
+                },
+                {
+                  "position": 2,
+                  "correctAnswer": "adaptable",
+                  "expectedAnswer": "adaptable"
+                },
+                {
+                  "position": 3,
+                  "correctAnswer": "urban",
+                  "expectedAnswer": "urban"
+                },
+                {
+                  "position": 4,
+                  "correctAnswer": "native",
+                  "expectedAnswer": "native"
+                }
+              ]
+            },
+            {
+              "id": "FIBL2",
+              "trackNumber": "D70",
+              "title": "Pearl diving",
+              "audioScriptPage": "163",
+              "blanks": [
+                {
+                  "position": 1,
+                  "correctAnswer": "searched",
+                  "expectedAnswer": "searched"
+                },
+                {
+                  "position": 2,
+                  "correctAnswer": "hostile",
+                  "expectedAnswer": "hostile"
+                },
+                {
+                  "position": 3,
+                  "correctAnswer": "object",
+                  "expectedAnswer": "object"
+                },
+                {
+                  "position": 4,
+                  "correctAnswer": "farms",
+                  "expectedAnswer": "farms"
+                },
+                {
+                  "position": 5,
+                  "correctAnswer": "tourist",
+                  "expectedAnswer": "tourist"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "L4",
+          "type": "highlightCorrectSummary",
+          "pageRange": "84-85",
+          "prompt": "You will hear a recording. Click on the paragraph that best relates to the recording.",
+          "items": [
+            {
+              "id": "HCS1",
+              "trackNumber": "D71",
+              "title": "Telecommuting",
+              "audioScriptPage": "163-164",
+              "summaries": [
+                {
+                  "id": "A",
+                  "text": "Company leaders have to be careful... managers will find that a telecommuting arrangement will simply not work if workers feel isolated and excluded from the company culture."
+                },
+                {
+                  "id": "B",
+                  "text": "Telecommuting has a lot of advantages but to make it work, company leaders need to plan in advance... training, security and communication... hire workers suited to working remotely... equal access to resources and advancement."
+                },
+                {
+                  "id": "C",
+                  "text": "When workers ask if they can work from home, companies should consider a telecommuting arrangement... savings on overheads and training but only independent staff should be allowed."
+                },
+                {
+                  "id": "D",
+                  "text": "Managers should not rush into letting their employees telecommute... if workers' needs are not catered for, company culture will be damaged and they may even be sued."
+                }
+              ],
+              "correctAnswer": "B",
+              "expectedAnswer": "B"
+            },
+            {
+              "id": "HCS2",
+              "trackNumber": "D72",
+              "title": "Consumer choices",
+              "audioScriptPage": "164",
+              "summaries": [
+                {
+                  "id": "A",
+                  "text": "While many of us believe that we enjoy making choices, several studies have shown that this is not in fact the case... consumers became overloaded and abandoned the choice."
+                },
+                {
+                  "id": "B",
+                  "text": "The incredible range of choices... making business difficult for companies... consumers expect choice but give up without making choices if confused."
+                },
+                {
+                  "id": "C",
+                  "text": "Consumers face more choices than in the past... shoppers are attracted if a number of options are presented... options still need to be good quality or they walk away."
+                },
+                {
+                  "id": "D",
+                  "text": "With a wide range of choices, one would expect consumers to buy more... experiment found customers with many choices tried products but didn't buy much... with fewer options, more likely to buy something."
+                }
+              ],
+              "correctAnswer": "D",
+              "expectedAnswer": "D"
+            }
+          ]
+        },
+        {
+          "id": "L5",
+          "type": "multipleChoiceSingle",
+          "pageNumber": 86,
+          "prompt": "Listen to the recording and answer the multiple-choice question by selecting the correct response. Only one response is correct.",
+          "items": [
+            {
+              "id": "MCS_L1",
+              "trackNumber": "D73",
+              "title": "The 'Beehive' (New Zealand Parliament)",
+              "question": "What does the speaker say about the 'Beehive'?",
+              "options": [
+                "A) Its name comes from being a centre of activity.",
+                "B) Its architect saw the project through to completion.",
+                "C) It used to be a symbol of national pride for New Zealand.",
+                "D) It has come back into favour in recent years."
+              ],
+              "correctAnswer": "D",
+              "expectedAnswer": "D"
+            },
+            {
+              "id": "MCS_L2",
+              "trackNumber": "D74",
+              "title": "Study groups",
+              "question": "What does the speaker say can be done to avoid conflict within study groups?",
+              "options": [
+                "A) Group members should have compatible personalities.",
+                "B) Tasks should be approached in a creative way.",
+                "C) The main task should be divided into parts.",
+                "D) Long-range goals need to be given priority."
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            }
+          ]
+        },
+        {
+          "id": "L6",
+          "type": "selectMissingWord",
+          "pageNumber": 87,
+          "prompt": "You will hear a recording about [topic]. At the end of the recording the last word or group of words has been replaced by a beep. Select the correct option to complete the recording.",
+          "items": [
+            {
+              "id": "SMW1",
+              "trackNumber": "D75",
+              "title": "Studying humanities",
+              "options": [
+                "A) from a number of angles",
+                "B) with a specific goal in mind",
+                "C) in a less emotional manner",
+                "D) in a way that enriches society"
+              ],
+              "correctAnswer": "A",
+              "expectedAnswer": "A"
+            },
+            {
+              "id": "SMW2",
+              "trackNumber": "D76",
+              "title": "Surfing",
+              "options": [
+                "A) could fail",
+                "B) took place",
+                "C) were at stake",
+                "D) were discovered"
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            }
+          ]
+        },
+        {
+          "id": "L7",
+          "type": "highlightIncorrectWords",
+          "pageNumber": 88,
+          "prompt": "You will hear a recording. Below is a transcription of the recording. Some words in the transcription differ from what the speaker said. Please click on the words that are different.",
+          "items": [
+            {
+              "id": "HIW1",
+              "trackNumber": "D77",
+              "title": "Speciation",
+              "audioScriptPage": "164",
+              "transcriptWithErrors": "When species diverge from a common ancestor, they may begin to divide in a lagoon. The impact of environmental changes on sensitive systems can be seen in the child fish populations that have adapted to clear waters.",
+              "incorrectWords": ["divide", "lagoon", "effect", "sensory", "child", "clean"],
+              "correctWords": ["diverge", "lake", "impact", "sensitive", "cichlid", "clear"],
+              "expectedAnswers": ["divide", "lagoon", "effect", "sensory", "child", "clean"]
+            },
+            {
+              "id": "HIW2",
+              "trackNumber": "D78",
+              "title": "Social capital",
+              "audioScriptPage": "164",
+              "transcriptWithErrors": "Social capital refers to the reserves available through social networks. The fair to which individuals can access these networks is an important indicator of well-being. Accepting behavior is key to building social capital.",
+              "incorrectWords": ["reserves", "fair", "amount", "index", "accepting"],
+              "correctWords": ["resources", "fete", "extent", "indicator", "trusting"],
+              "expectedAnswers": ["reserves", "fair", "amount", "index", "accepting"]
+            }
+          ]
+        },
+        {
+          "id": "L8",
+          "type": "writeFromDictation",
+          "pageNumber": 89,
+          "prompt": "You will hear a sentence. Type the sentence in the box below exactly as you hear it. Write as much of the sentence as you can. You will hear the sentence only once.",
+          "items": [
+            {
+              "id": "WFD1",
+              "trackNumber": "D79",
+              "sentence": "The course has been updated to reflect the current situation.",
+              "expectedAnswer": "The course has been updated to reflect the current situation."
+            },
+            {
+              "id": "WFD2",
+              "trackNumber": "D80",
+              "sentence": "Agenda items should be submitted by the end of the day.",
+              "expectedAnswer": "Agenda items should be submitted by the end of the day."
+            },
+            {
+              "id": "WFD3",
+              "trackNumber": "D81",
+              "sentence": "Popular culture is now a serious subject of academic inquiry.",
+              "expectedAnswer": "Popular culture is now a serious subject of academic inquiry."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "resourceSummary": {
+    "audioTracks": {
+      "total": 40,
+      "ranges": {
+        "D42-D51": "Repeat Sentence",
+        "D52-D54": "Re-tell Lecture",
+        "D55-D64": "Answer Short Question",
+        "D65-D66": "Summarize Spoken Text",
+        "D67-D68": "Multiple-choice Multiple (Listening)",
+        "D69-D70": "Fill in Blanks (Listening)",
+        "D71-D72": "Highlight Correct Summary",
+        "D73-D74": "Multiple-choice Single (Listening)",
+        "D75-D76": "Select Missing Word",
+        "D77-D78": "Highlight Incorrect Words",
+        "D79-D81": "Write from Dictation"
+      }
+    },
+    "images": {
+      "total": 9,
+      "describeImage": 6,
+      "retellLecture": 3
+    },
+    "textPassages": {
+      "readAloud": 6,
+      "summarizeWrittenText": 2,
+      "readingTasks": 11,
+      "essayTopics": 2
+    }
+  }
+}

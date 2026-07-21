@@ -1,0 +1,1264 @@
+{
+  "testMetadata": {
+    "testName": "Practice Test 1",
+    "source": "Practice Tests Plus with key (2013)",
+    "pageRange": "11-61",
+    "totalAudioTracks": 41,
+    "totalQuestions": {
+      "speaking": 28,
+      "writing": 4,
+      "reading": 13,
+      "listening": 15
+    }
+  },
+  "scoringRules": {
+    "speaking": {
+      "readAloud": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency"],
+        "timeLimit": {
+          "preparation": 40,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Full text read aloud with natural pronunciation and fluency. No fixed expected answer; evaluated on content delivery, pronunciation, and fluency."
+      },
+      "repeatSentence": {
+        "pointsPerQuestion": 3,
+        "criteria": ["Accuracy", "Pronunciation", "Fluency"],
+        "timeLimit": {
+          "preparation": 0,
+          "response": 10
+        },
+        "expectedAnswerFormat": "Exact repetition of the heard sentence. Evaluated on accuracy, pronunciation, and fluency."
+      },
+      "describeImage": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "timeLimit": {
+          "preparation": 25,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Detailed description of the image covering key features, trends, and relationships. Evaluated on content, pronunciation, fluency, and structure."
+      },
+      "retellLecture": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "timeLimit": {
+          "preparation": 10,
+          "response": 40
+        },
+        "expectedAnswerFormat": "Summary of the lecture in own words covering main points. Evaluated on content, pronunciation, fluency, and structure."
+      },
+      "answerShortQuestion": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"],
+        "timeLimit": {
+          "preparation": 0,
+          "response": 10
+        },
+        "expectedAnswerFormat": "Short, direct answer (1-3 words). See individual question answers."
+      }
+    },
+    "writing": {
+      "summarizeWrittenText": {
+        "pointsPerQuestion": 7,
+        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "wordLimit": "1 sentence",
+        "timeLimit": 10,
+        "expectedAnswerFormat": "Single sentence summarizing the key points of the passage. See sample answers for each passage."
+      },
+      "writeEssay": {
+        "pointsPerQuestion": 20,
+        "criteria": ["Content", "Organization", "Grammar", "Vocabulary", "Cohesion"],
+        "wordLimit": "200-300 words",
+        "timeLimit": 20,
+        "expectedAnswerFormat": "Well-organized essay with clear position, supporting arguments, and examples. Evaluated on content, organization, grammar, vocabulary, and cohesion."
+      }
+    },
+    "reading": {
+      "multipleChoiceSingle": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "multipleChoiceMultiple": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"],
+        "partialScoring": true
+      },
+      "reorderParagraphs": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"]
+      },
+      "fillInBlanksReading": {
+        "pointsPerQuestion": 4,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      },
+      "fillInBlanksReadingWriting": {
+        "pointsPerQuestion": 5,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      }
+    },
+    "listening": {
+      "summarizeSpokenText": {
+        "pointsPerQuestion": 10,
+        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "wordLimit": "50-70 words",
+        "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points of the lecture. Evaluated on content, grammar, vocabulary, and conciseness."
+      },
+      "multipleChoiceMultiple": {
+        "pointsPerQuestion": 2,
+        "criteria": ["Accuracy"],
+        "partialScoring": true
+      },
+      "fillInBlanks": {
+        "pointsPerQuestion": 4,
+        "criteria": ["Accuracy"],
+        "pointsPerBlank": 1
+      },
+      "highlightCorrectSummary": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "multipleChoiceSingle": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "selectMissingWord": {
+        "pointsPerQuestion": 1,
+        "criteria": ["Accuracy"]
+      },
+      "highlightIncorrectWords": {
+        "pointsPerQuestion": 6,
+        "criteria": ["Accuracy"],
+        "pointsPerWord": 1
+      },
+      "writeFromDictation": {
+        "pointsPerQuestion": 3,
+        "criteria": ["Accuracy"],
+        "pointsPerCorrectWord": 1
+      }
+    }
+  },
+  "sections": {
+    "speaking": {
+      "pageStart": 12,
+      "pageEnd": 23,
+      "tasks": [
+        {
+          "id": "S1",
+          "type": "readAloud",
+          "pageNumber": 13,
+          "timeLimit": {
+            "preparation": 40,
+            "response": 40
+          },
+          "prompt": "Look at the text below. In 40 seconds, you must read this text aloud as naturally and as clearly as possible. You have 40 seconds to read aloud.",
+          "expectedAnswerFormat": "Read the full text naturally and clearly.",
+          "items": [
+            {
+              "id": "RA1",
+              "title": "Market research",
+              "text": "Market research is a vital part of the planning of any business. However experienced you or your staff may be in a particular field, if you are thinking of introducing a service to a new area, it is important to find out what the local population thinks about it first.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA2",
+              "title": "Transportation of goods by water",
+              "text": "Not a lot is known about how the transportation of goods by water first began. Large cargo boats were being used in some parts of the world up to five thousand years ago. However, sea trade became more widespread when large sailing boats travelled between ports, carrying spices, perfumes and objects made by hand.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA3",
+              "title": "Young artist",
+              "text": "When the young artist was asked about his drawing, he explained that he had started by taking a photograph of himself sitting by a window at home. He then drew his face from the photograph and replaced the buildings which were outside the window with trees. This gave the picture a softer, more artistic background.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA4",
+              "title": "Energy and pollution",
+              "text": "Humans need to use energy in order to exist. So it is unsurprising that the way people have been producing energy is largely responsible for current environmental problems. Pollution comes in many forms, but those that are most concerning, because of their impact on health, result from the combustion of fuels in power stations and cars.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA5",
+              "title": "Retirement",
+              "text": "Clearly, times are changing and while many people are saving for their retirement, many more still need to do so. Most countries have a range of pension schemes that are designed to provide individuals with an income once they stop working. People need to take advantage of these if they are to have sufficient money throughout their retirement years.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            },
+            {
+              "id": "RA6",
+              "title": "Good weather and mood",
+              "text": "According to recent research, sunshine and warm weather have a positive effect on our moods. The British Journal of Psychology has published a report in which it claims that anxiety levels fall when temperatures rise, while increased exposure to sunshine makes us think more positively about our lives.",
+              "expectedAnswer": "Read aloud the provided text with clear pronunciation, appropriate pace, and natural intonation. No exact answer; evaluated on delivery."
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "type": "repeatSentence",
+          "pageNumber": 15,
+          "timeLimit": {
+            "preparation": 0,
+            "response": 10
+          },
+          "prompt": "You will hear a sentence. Please repeat the sentence exactly as you hear it. You will hear the sentence only once.",
+          "expectedAnswerFormat": "Repeat the sentence exactly as heard.",
+          "items": [
+            {
+              "id": "RS1",
+              "trackNumber": "D1",
+              "sentence": "Factors such as cost and function influence the design of a bridge.",
+              "expectedAnswer": "Factors such as cost and function influence the design of a bridge."
+            },
+            {
+              "id": "RS2",
+              "trackNumber": "D2",
+              "sentence": "It's important that humans dispose of their waste in appropriate ways.",
+              "expectedAnswer": "It's important that humans dispose of their waste in appropriate ways."
+            },
+            {
+              "id": "RS3",
+              "trackNumber": "D3",
+              "sentence": "If you are unable to complete the task in time please notify me by email.",
+              "expectedAnswer": "If you are unable to complete the task in time please notify me by email."
+            },
+            {
+              "id": "RS4",
+              "trackNumber": "D4",
+              "sentence": "The financial report for the last quarter will be available this afternoon.",
+              "expectedAnswer": "The financial report for the last quarter will be available this afternoon."
+            },
+            {
+              "id": "RS5",
+              "trackNumber": "D5",
+              "sentence": "Extra seminars will be scheduled to assist you with revision.",
+              "expectedAnswer": "Extra seminars will be scheduled to assist you with revision."
+            },
+            {
+              "id": "RS6",
+              "trackNumber": "D6",
+              "sentence": "Please switch off all electronic devices when you are attending a conference session.",
+              "expectedAnswer": "Please switch off all electronic devices when you are attending a conference session."
+            },
+            {
+              "id": "RS7",
+              "trackNumber": "D7",
+              "sentence": "It is important that you work as a team on this project.",
+              "expectedAnswer": "It is important that you work as a team on this project."
+            },
+            {
+              "id": "RS8",
+              "trackNumber": "D8",
+              "sentence": "The study showed that people's mood can be affected by news and weather reports.",
+              "expectedAnswer": "The study showed that people's mood can be affected by news and weather reports."
+            },
+            {
+              "id": "RS9",
+              "trackNumber": "D9",
+              "sentence": "Detailed analysis of population growth has revealed some alarming predictions.",
+              "expectedAnswer": "Detailed analysis of population growth has revealed some alarming predictions."
+            },
+            {
+              "id": "RS10",
+              "trackNumber": "D10",
+              "sentence": "Please note that the college laboratories will be closed for cleaning next week.",
+              "expectedAnswer": "Please note that the college laboratories will be closed for cleaning next week."
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "type": "describeImage",
+          "pageRange": "17-20",
+          "timeLimit": {
+            "preparation": 25,
+            "response": 40
+          },
+          "prompt": "Look at the [graph/charts/chart/graph/diagram] below. In 25 seconds, please speak into the microphone and describe in detail what the [graph/charts/chart/graph/diagram] is showing. You will have 40 seconds to give your response.",
+          "expectedAnswerFormat": "Detailed description of the image: type of graph, axes/labels, key trends, comparisons, and conclusions.",
+          "items": [
+            {
+              "id": "DI1",
+              "pageNumber": 17,
+              "title": "Percentage world population by region",
+              "imageType": "line graph",
+              "description": "Line graph showing Asia and Europe from 1750 to 2000.",
+              "imageFile": "world_population_by_region.png",
+              "expectedAnswer": "This line graph shows the percentage of world population in Asia and Europe from 1750 to 2000. Asia's population remained the largest throughout, while Europe's share declined. Both regions show fluctuations, with Asia peaking around 1950 and Europe steadily decreasing from 1900 onwards."
+            },
+            {
+              "id": "DI2",
+              "pageNumber": 18,
+              "title": "Reasons for no longer attending school",
+              "imageType": "bar charts",
+              "description": "Two bar charts comparing reasons (completed study, obtained employment, personal/family, illness, other) for males and females.",
+              "imageFile": "school_dropout_reasons.png",
+              "expectedAnswer": "The bar charts compare reasons for leaving school between males and females. For males, the main reasons are obtaining employment and completing study, while for females, personal/family reasons are more significant. Both genders show similar rates for illness and other reasons."
+            },
+            {
+              "id": "DI3",
+              "pageNumber": 19,
+              "title": "US citizens over 65 years",
+              "imageType": "line graph",
+              "description": "Line graph predicting percentage of US population aged 65+ from 2010 to 2035.",
+              "imageFile": "us_senior_population.png",
+              "expectedAnswer": "The line graph projects the percentage of US citizens aged 65 and over from 2010 to 2035. Starting at about 13% in 2010, it shows a steady increase to over 20% by 2035, with the most rapid growth occurring after 2020."
+            },
+            {
+              "id": "DI4",
+              "pageNumber": 19,
+              "title": "Revenue growth graph",
+              "imageType": "line graph",
+              "description": "Line graph showing projected revenue for Company X and Company Y from 2006 to 2024.",
+              "imageFile": "revenue_growth.png",
+              "expectedAnswer": "This line graph shows revenue projections for Company X and Company Y from 2006 to 2024. Company Y's revenue is consistently higher and shows more growth, increasing from approximately $40M to over $120M, while Company X grows from about $10M to $40M over the same period."
+            },
+            {
+              "id": "DI5",
+              "pageNumber": 20,
+              "title": "Reading achievement - Grade 1 to Grade 3",
+              "imageType": "line graph",
+              "description": "Line graph showing oral reading fluency (words per minute) for successful and struggling readers across three grades and seasons.",
+              "imageFile": "reading_achievement.png",
+              "expectedAnswer": "This line graph shows oral reading fluency for successful and struggling readers from Grade 1 to Grade 3. Successful readers show steady improvement, reaching about 110 words per minute by Grade 3, while struggling readers improve more slowly, reaching about 50 words per minute by Grade 3."
+            },
+            {
+              "id": "DI6",
+              "pageNumber": 20,
+              "title": "Shadouf - water collection",
+              "imageType": "diagram",
+              "description": "Diagram of a shadouf (a lever-and-bucket water collection system).",
+              "imageFile": "shadouf_diagram.png",
+              "expectedAnswer": "The diagram shows a shadouf, a traditional water collection system. It consists of a long pole balanced on a pivot, with a bucket attached to one end and a counterweight on the other. The system uses a lever principle to raise water from a well or water source."
+            }
+          ]
+        },
+        {
+          "id": "S4",
+          "type": "retellLecture",
+          "pageNumber": 21,
+          "timeLimit": {
+            "preparation": 10,
+            "response": 40
+          },
+          "prompt": "You will hear a lecture. After listening to the lecture, in 10 seconds, please speak into the microphone and retell what you have just heard from the lecture in your own words. You will have 40 seconds to give your response.",
+          "expectedAnswerFormat": "Oral summary of the lecture in own words covering main ideas and key details.",
+          "items": [
+            {
+              "id": "RL1",
+              "trackNumber": "D12",
+              "title": "Air pollution",
+              "imageDescription": "City with smog",
+              "imageFile": "city_smog.png",
+              "audioScriptSummary": "Changes in air pollution from 1950s (visible smog from factories) to today (invisible pollution from vehicles); Clean Air Act of 1956; 1952 London smog caused 4,000 deaths.",
+              "audioScriptPage": "157",
+              "expectedAnswer": "The lecture discusses the evolution of air pollution. In the 1950s, visible smog from factories was the main concern, but today, invisible pollution from vehicles is the primary issue. The Clean Air Act of 1956 was introduced following the 1952 London smog, which caused around 4,000 deaths. The speaker emphasizes the shift from visible to invisible pollutants."
+            },
+            {
+              "id": "RL2",
+              "trackNumber": "D13",
+              "title": "Focus Groups",
+              "imageDescription": "Group discussion",
+              "imageFile": "focus_group.png",
+              "audioScriptSummary": "Tips on using focus groups: ideal size (6-7 people), need a moderator, use materials (pictures, diagrams) to start discussion.",
+              "audioScriptPage": "157",
+              "expectedAnswer": "The lecture provides tips for conducting effective focus groups. The ideal group size is 6-7 participants, and a skilled moderator is essential to guide the discussion. Using visual materials like pictures and diagrams can help initiate and stimulate conversation among participants."
+            },
+            {
+              "id": "RL3",
+              "trackNumber": "D14",
+              "title": "Setting up a website",
+              "imageDescription": "Computer/website",
+              "imageFile": "website_computer.png",
+              "audioScriptSummary": "Three key points: define target audience, ensure accessibility (links/social media), and retain users by keeping content up-to-date.",
+              "audioScriptPage": "157-158",
+              "expectedAnswer": "The lecture outlines three key considerations for setting up a successful website. First, define your target audience to tailor content appropriately. Second, ensure accessibility through functional links and social media integration. Third, retain users by keeping the website content fresh and up-to-date."
+            }
+          ]
+        },
+        {
+          "id": "S5",
+          "type": "answerShortQuestion",
+          "pageNumber": 23,
+          "timeLimit": {
+            "preparation": 0,
+            "response": 10
+          },
+          "prompt": "You will hear a question. Please give a simple and short answer. Often just one or a few words is enough.",
+          "expectedAnswerFormat": "Short, direct answer (1-3 words).",
+          "items": [
+            {
+              "id": "ASQ1",
+              "trackNumber": "D15",
+              "question": "Which section of a train timetable will tell you what time your train leaves?",
+              "answer": "departures",
+              "expectedAnswer": "departures"
+            },
+            {
+              "id": "ASQ2",
+              "trackNumber": "D16",
+              "question": "What do we call the list of steps that tell you how to put something together?",
+              "answer": "instructions",
+              "expectedAnswer": "instructions"
+            },
+            {
+              "id": "ASQ3",
+              "trackNumber": "D17",
+              "question": "What do we call the meeting where an employer asks a potential employee questions about their work experience?",
+              "answer": "interview",
+              "expectedAnswer": "interview"
+            },
+            {
+              "id": "ASQ4",
+              "trackNumber": "D18",
+              "question": "What desk should you go to when you first arrive to stay at a hotel?",
+              "answer": "reception / check-in",
+              "expectedAnswer": "reception or check-in"
+            },
+            {
+              "id": "ASQ5",
+              "trackNumber": "D19",
+              "question": "What is the job title of someone who designs buildings?",
+              "answer": "architect",
+              "expectedAnswer": "architect"
+            },
+            {
+              "id": "ASQ6",
+              "trackNumber": "D20",
+              "question": "What term is used for the amount of money you pay a landlord for living in their house or apartment?",
+              "answer": "rent",
+              "expectedAnswer": "rent"
+            },
+            {
+              "id": "ASQ7",
+              "trackNumber": "D21",
+              "question": "What do we call the first meal of the day?",
+              "answer": "breakfast",
+              "expectedAnswer": "breakfast"
+            },
+            {
+              "id": "ASQ8",
+              "trackNumber": "D22",
+              "question": "What word is used for someone who watches a sports event?",
+              "answer": "spectator",
+              "expectedAnswer": "spectator"
+            },
+            {
+              "id": "ASQ9",
+              "trackNumber": "D23",
+              "question": "What object would you use to climb up to the roof of a house?",
+              "answer": "ladder",
+              "expectedAnswer": "ladder"
+            },
+            {
+              "id": "ASQ10",
+              "trackNumber": "D24",
+              "question": "If you don't feel like eating, what do we say you don't have?",
+              "answer": "appetite",
+              "expectedAnswer": "appetite"
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "pageStart": 24,
+      "pageEnd": 28,
+      "tasks": [
+        {
+          "id": "W1",
+          "type": "summarizeWrittenText",
+          "pageRange": "25-26",
+          "timeLimit": 10,
+          "prompt": "Read the passage below and summarize it using one sentence. Type your response in the box at the bottom of the screen. You have 10 minutes to finish this task. Your response will be judged on the quality of your writing and on how well your response presents the key points in the passage.",
+          "expectedAnswerFormat": "One sentence summarizing the key points of the passage.",
+          "items": [
+            {
+              "id": "SWT1",
+              "pageNumber": 25,
+              "title": "Tea",
+              "text": "Full passage about tea as the second most popular drink, its growing conditions, and its worldwide export and variety.",
+              "expectedAnswer": "Tea, the world's second most popular beverage, requires specific growing conditions including high altitudes, tropical climates, and well-drained soil, with its global export encompassing numerous varieties across different regions."
+            },
+            {
+              "id": "SWT2",
+              "pageNumber": 26,
+              "title": "Over-fishing",
+              "text": "Passage about increased fish consumption, overfishing, declining catches, and the need for conservation.",
+              "expectedAnswer": "The growing demand for fish has led to overfishing and declining catches, necessitating urgent conservation measures to ensure the sustainability of fish stocks for future generations."
+            }
+          ]
+        },
+        {
+          "id": "W2",
+          "type": "writeEssay",
+          "pageNumber": 28,
+          "timeLimit": 20,
+          "wordLimit": "200-300",
+          "prompt": "You will have 20 minutes to plan, write and revise an essay about the topic below. Your response will be judged on how well you develop a position, organize your ideas, present supporting details, and control the elements of standard written English. You should write 200-300 words.",
+          "expectedAnswerFormat": "Well-structured essay with clear introduction, body paragraphs, and conclusion.",
+          "items": [
+            {
+              "id": "WE1",
+              "topic": "As a result of advances in medical care, average life expectancy is increasing for men and women. Do you think most people will see this as a positive development? What are the disadvantages of an ageing population for individuals and society? Support your point of view with reasons and/or examples from your own experience or observations.",
+              "expectedAnswer": "Sample essay structure: Introduction - acknowledge advances and present balanced view. Body paragraph 1 - discuss positive aspects (longer time with family, more wisdom, extended careers). Body paragraph 2 - discuss disadvantages (healthcare costs, pension pressure, workforce shortage). Body paragraph 3 - personal experience/observation. Conclusion - weigh benefits against challenges, suggest balanced approach."
+            },
+            {
+              "id": "WE2",
+              "topic": "'Schools should prepare students for university, rather than for work.' How far do you agree with this statement? Support your point of view with reasons and/or examples from your own experience or observations.",
+              "expectedAnswer": "Sample essay structure: Introduction - present the debate and state position. Body paragraph 1 - arguments for university preparation (academic skills, critical thinking, research abilities). Body paragraph 2 - arguments for work preparation (practical skills, employability, vocational training). Body paragraph 3 - personal experience/observations. Conclusion - propose balanced approach between university and work preparation."
+            }
+          ]
+        }
+      ]
+    },
+    "reading": {
+      "pageStart": 30,
+      "pageEnd": 43,
+      "tasks": [
+        {
+          "id": "R1",
+          "type": "multipleChoiceSingle",
+          "pageNumber": 31,
+          "prompt": "Read the text and answer the multiple-choice question by selecting the correct response. Only one response is correct.",
+          "items": [
+            {
+              "id": "MCS1",
+              "title": "Geothermal power in Britain",
+              "text": "Passage about geothermal energy potential in Britain, its benefits and challenges.",
+              "question": "What is the writer's main purpose in this paragraph?",
+              "options": [
+                "A) to show how common the use of geothermal power is in Britain",
+                "B) to describe the problems related to using geothermal power in Britain",
+                "C) to highlight the potential benefits of geothermal power for Britain",
+                "D) to give a detailed description of how geothermal energy is produced in Britain"
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            },
+            {
+              "id": "MCS2",
+              "title": "Innovation",
+              "text": "Passage about how innovations often evolve from existing ideas, not sudden genius.",
+              "question": "What is the writer's main point about innovation?",
+              "options": [
+                "A) Many new products fail to interest consumers.",
+                "B) New products are not always based on new ideas.",
+                "C) Creators of new products require a unique set of skills.",
+                "D) New products are easy to distinguish from old ones."
+              ],
+              "correctAnswer": "B",
+              "expectedAnswer": "B"
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "type": "multipleChoiceMultiple",
+          "pageRange": "33-34",
+          "prompt": "Read the text and answer the question by selecting all the correct responses. You will need to select more than one response.",
+          "items": [
+            {
+              "id": "MCM1",
+              "pageNumber": 33,
+              "title": "Old Man of the Lake",
+              "text": "Passage about a floating tree stump in Crater Lake that has become a tourist attraction, its description, movements, and safety concerns.",
+              "question": "Which of the following are true of the Old Man of the Lake according to the passage?",
+              "options": [
+                "A) It has been a tourist attraction for decades.",
+                "B) It is a drifting piece of wood.",
+                "C) It is close to the edge of Crater Lake.",
+                "D) It is owned by a local businessman.",
+                "E) It can quickly move about the lake.",
+                "F) It can be a danger to boat users.",
+                "G) It is too small for someone to stand on."
+              ],
+              "correctAnswers": ["B", "E", "F"],
+              "expectedAnswers": ["B", "E", "F"]
+            },
+            {
+              "id": "MCM2",
+              "pageNumber": 34,
+              "title": "Dark soil in rainforests",
+              "text": "Passage about dark, fertile soil found near ancient settlements in rainforests, overturning ideas about farming.",
+              "question": "What is significant about the 'dark soil' that the writer is referring to?",
+              "options": [
+                "A) It indicates the presence of good soil below it.",
+                "B) It is not present in rainforests.",
+                "C) It has resulted from agricultural activity.",
+                "D) It is more common in South America than Africa.",
+                "E) It is being found near where humans have lived.",
+                "F) It has confirmed what people have believed for a long time.",
+                "G) It is less productive than people once thought."
+              ],
+              "correctAnswers": ["C", "E"],
+              "expectedAnswers": ["C", "E"]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "type": "reorderParagraphs",
+          "pageNumber": 36,
+          "prompt": "The text boxes in the left panel have been placed in a random order. Restore the original order by dragging the text boxes from the left panel to the right panel.",
+          "items": [
+            {
+              "id": "RP1",
+              "title": "Grand Canyon",
+              "sentences": {
+                "A": "Clearly, a number of factors have contributed to its remarkable appearance.",
+                "B": "The result is a unique story of land collisions and erosions, and of rising and falling water levels.",
+                "C": "Experts who have analysed the rock formations say that, historically, it goes back nearly two billion years.",
+                "D": "Anyone who has ever visited the Grand Canyon will agree that it is one of the most incredible sights in the world.",
+                "E": "The geological processes that have taken place since then are exposed for everyone to see, not hidden beneath vegetation or a fast-flowing water course."
+              },
+              "correctOrder": ["D", "A", "C", "E", "B"],
+              "expectedAnswer": "D → A → C → E → B"
+            },
+            {
+              "id": "RP2",
+              "title": "Organic farming",
+              "sentences": {
+                "A": "It was a time when managers had to take a critical look at every aspect of their production process and make improvements where necessary.",
+                "B": "As a result, some people believe it is now time to re-assess many companies in terms of the standards they agreed to some years ago.",
+                "C": "In the late 1900s, food manufacturers were challenged by the organic community to ensure they were using ingredients that had been produced in natural, healthy ways.",
+                "D": "Whether these systems have been maintained seems questionable, particularly as contracts depend so heavily on efficiency and quick sales.",
+                "E": "Over the last half-century, organic farming has become a driving force in the world's food market."
+              },
+              "correctOrder": ["E", "C", "A", "D", "B"],
+              "expectedAnswer": "E → C → A → D → B"
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "type": "fillInBlanksReading",
+          "pageRange": "38-39",
+          "prompt": "In the text below some words are missing. Drag words from the box below to the appropriate place in the text. To undo an answer choice, drag the word back to the box below the text.",
+          "items": [
+            {
+              "id": "FIBR1",
+              "pageNumber": 38,
+              "title": "Technology and flexible work",
+              "textWithBlanks": "Technology and flexible work have had a significant impact on today's busy companies. In terms of productivity, it seems the [___] has shifted from managing employees in the workplace to monitoring their total [___] no matter where they choose to work. Whether this trend will continue depends to some [___] on how well it works for everyone concerned.",
+              "wordBank": ["focus", "deals", "way", "practices", "selling", "output", "extent"],
+              "correctAnswers": ["focus", "output", "extent"],
+              "expectedAnswers": ["focus", "output", "extent"]
+            },
+            {
+              "id": "FIBR2",
+              "pageNumber": 38,
+              "title": "Elephants' communication",
+              "textWithBlanks": "Elephants have a very [___] communication system, which helps them maintain their close [___] bonds. When they are near each other, they use verbal and visual signals to express a wide [___] of emotions. As they move further [___] they use less common, rumbling [___] that can be heard over two kilometres away.",
+              "wordBank": ["distant", "variety", "family", "ranging", "apart", "sounds", "complex", "round"],
+              "correctAnswers": ["complex", "family", "variety", "apart", "sounds"],
+              "expectedAnswers": ["complex", "family", "variety", "apart", "sounds"]
+            },
+            {
+              "id": "FIBR3",
+              "pageNumber": 39,
+              "title": "Wind farms",
+              "textWithBlanks": "People are naturally concerned about the polluting [___] of energy sources such as oil or coal. But are wind farms the [___]? With their enormous rotating blades, these huge [___] are becoming more commonplace in certain [___] of the world. Yet for some people, they are an unwelcome [___] of the landscape.",
+              "wordBank": ["machines", "product", "sight", "feature", "answer", "regions", "damages", "effects"],
+              "correctAnswers": ["effects", "answer", "machines", "regions", "feature"],
+              "expectedAnswers": ["effects", "answer", "machines", "regions", "feature"]
+            },
+            {
+              "id": "FIBR4",
+              "pageNumber": 39,
+              "title": "Professional astronomers",
+              "textWithBlanks": "Professional astronomers, [___] their amateur counterparts, have no particular interest in the aesthetic quality of their photographs. What [___] to them is the contribution their images can [___] to research, and to the [___] of data scientists in their field for research purposes.",
+              "wordBank": ["make", "equipped", "unlike", "matters", "use", "collection", "put", "concerns"],
+              "correctAnswers": ["unlike", "matters", "make", "collection"],
+              "expectedAnswers": ["unlike", "matters", "make", "collection"]
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "type": "fillInBlanksReadingWriting",
+          "pageRange": "41-43",
+          "prompt": "Below is a text with blanks. Click on each blank, a list of choices will appear. Select the appropriate choice for each blank.",
+          "items": [
+            {
+              "id": "FIBRW1",
+              "pageNumber": 41,
+              "title": "Electricity",
+              "textWithBlanks": "The use of electricity [1] the quality of life for billions of people. However, the generation of electricity still relies heavily on coal, which has negative environmental [2]. The demand for electricity has been rising steadily [3] the industrial revolution, and this trend is expected to continue. This [4] that alternatives to fossil fuels must be developed. The [5] of renewable energy in the global energy mix is still relatively small.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) helps improving", "B) helps to improve", "C) help improve", "D) help improved"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) levels", "B) ranks", "C) stages", "D) degrees"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) for", "B) in", "C) since", "D) at"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) means", "B) factor", "C) aspect", "D) course"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) total", "B) sum", "C) volume", "D) figure"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW2",
+              "pageNumber": 41,
+              "title": "Longevity and sales",
+              "textWithBlanks": "As people live longer, businesses are beginning to recognise the [1] age of their customers. This has [2] marketers to develop products specifically for older consumers, [3] trying to appeal to a younger demographic. [4], companies that target older consumers are seeing significant growth. For many businesses, the older market represents a [5] that they cannot afford to ignore.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) usual", "B) precise", "C) right", "D) honest"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) linked", "B) mixed", "C) concerned", "D) involved"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) rather than", "B) by", "C) even when", "D) while"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) While", "B) Similarly", "C) Even", "D) Really"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) desire", "B) favour", "C) bonus", "D) promise"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW3",
+              "pageNumber": 42,
+              "title": "Wetland plant species",
+              "textWithBlanks": "A new handbook on wetland plants provides a comprehensive [1] of over 500 species. The book aims to [2] botanists in identifying plants in the field. As [3] the plants, the handbook includes detailed photographs and descriptions. The authors have succeeded in [4] the key features that distinguish similar species. [5] species is described in detail, making the handbook an invaluable resource.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) piece", "B) report", "C) book", "D) material"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) manage", "B) assist", "C) contribute", "D) hand"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) it can sense", "B) one sense", "C) you can sense", "D) he senses"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) highlighting", "B) focusing", "C) bringing", "D) involving"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) The other", "B) Any one of", "C) Every", "D) All"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW4",
+              "pageNumber": 42,
+              "title": "Language loss",
+              "textWithBlanks": "Languages around the world are disappearing at an alarming rate, with thousands of languages at risk [1] extinct within the next century. Many communities [2] to speak their native languages, choosing instead to adopt more widely spoken languages. The loss of a language [3] a profound impact on the culture and knowledge of a community. A great [4] of cultural heritage is lost when a language dies. Some linguists [5] that efforts to preserve endangered languages should be intensified.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) have become", "B) to become", "C) of becoming", "D) became"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) prefer", "B) fancy", "C) select", "D) must"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) have", "B) would have", "C) having had", "D) has had"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) size", "B) deal", "C) capacity", "D) load"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) speak", "B) tell", "C) argue", "D) explore"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                }
+              ]
+            },
+            {
+              "id": "FIBRW5",
+              "pageNumber": 43,
+              "title": "Bamboo",
+              "textWithBlanks": "Bamboo is one of the most versatile materials in the world. The term 'bamboo' [1] to over 1,000 species of giant grasses. The [2] of bamboo include its strength, flexibility, and rapid growth rate. Some species can reach their full [3] in just a few months. Bamboo [4] in Asia for thousands of years for construction, paper-making, and food. Builders [5] work with bamboo appreciate its sustainability and durability.",
+              "options": [
+                {
+                  "blank": 1,
+                  "options": ["A) implies", "B) mentions", "C) indicates", "D) refers"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 2,
+                  "options": ["A) abilities", "B) qualities", "C) talents", "D) values"],
+                  "correctAnswer": "B",
+                  "expectedAnswer": "B"
+                },
+                {
+                  "blank": 3,
+                  "options": ["A) mass", "B) top", "C) summit", "D) height"],
+                  "correctAnswer": "D",
+                  "expectedAnswer": "D"
+                },
+                {
+                  "blank": 4,
+                  "options": ["A) has cultivated", "B) cultivate", "C) cultivates", "D) had cultivated"],
+                  "correctAnswer": "A",
+                  "expectedAnswer": "A"
+                },
+                {
+                  "blank": 5,
+                  "options": ["A) which", "B) may", "C) who", "D) are"],
+                  "correctAnswer": "C",
+                  "expectedAnswer": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "pageStart": 45,
+      "pageEnd": 61,
+      "tasks": [
+        {
+          "id": "L1",
+          "type": "summarizeSpokenText",
+          "pageNumber": 46,
+          "wordLimit": "50-70",
+          "prompt": "You will hear a short lecture. Write a summary for a fellow student who was not present at the lecture. You should write 50-70 words.",
+          "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points.",
+          "items": [
+            {
+              "id": "SST1",
+              "trackNumber": "D25",
+              "title": "Technological nature",
+              "audioScriptPage": "158",
+              "topic": "Comparing real nature views with computer-generated virtual nature; experiment shows real views reduce stress faster.",
+              "expectedAnswer": "The lecture compares real nature views with virtual nature experiences. An experiment showed that while both can reduce stress, real nature views are more effective and reduce stress levels faster than computer-generated alternatives. This suggests that authentic natural environments have unique restorative benefits."
+            },
+            {
+              "id": "SST2",
+              "trackNumber": "D26",
+              "title": "Memories in criminal trials",
+              "audioScriptPage": "158",
+              "topic": "Memory unreliability in court; new information can distort witness memory; research with video and added details.",
+              "expectedAnswer": "The lecture discusses the unreliability of memory in criminal trials. Research shows that new information can distort witness memories, making them unreliable. An experiment using video footage demonstrated that adding details after the event can significantly alter what witnesses recall, raising concerns about the use of memory in legal proceedings."
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "type": "multipleChoiceMultiple",
+          "pageNumber": 48,
+          "prompt": "Listen to the recording and answer the question by selecting all the correct responses. You will need to select more than one response.",
+          "items": [
+            {
+              "id": "MCM_L1",
+              "trackNumber": "D27",
+              "title": "Subway construction",
+              "question": "Which aspects of subway construction will the speaker talk about in this lecture?",
+              "options": [
+                "A) the funding of projects",
+                "B) the speed of trains",
+                "C) geological conditions",
+                "D) employing professionals",
+                "E) public approval",
+                "F) passenger movement"
+              ],
+              "correctAnswers": ["C", "D"],
+              "expectedAnswers": ["C", "D"]
+            },
+            {
+              "id": "MCM_L2",
+              "trackNumber": "D28",
+              "title": "Community problems in Brickendon",
+              "question": "According to the speaker, which of the following measures helped reduce community problems in Brickendon?",
+              "options": [
+                "A) allowing residents to patrol the area",
+                "B) interviewing residents about the problems",
+                "C) organising regular community meetings",
+                "D) giving families financial support",
+                "E) identifying hotspots for crime",
+                "F) removing litter from the streets"
+              ],
+              "correctAnswers": ["B", "F"],
+              "expectedAnswers": ["B", "F"]
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "type": "fillInBlanks",
+          "pageNumber": 50,
+          "prompt": "You will hear a recording. Type the missing words in each blank.",
+          "items": [
+            {
+              "id": "FIBL1",
+              "trackNumber": "D29",
+              "title": "Learning a language",
+              "audioScriptPage": "159",
+              "blanks": [
+                {
+                  "position": 1,
+                  "correctAnswer": "frankly",
+                  "expectedAnswer": "frankly"
+                },
+                {
+                  "position": 2,
+                  "correctAnswer": "options",
+                  "expectedAnswer": "options"
+                },
+                {
+                  "position": 3,
+                  "correctAnswer": "basic",
+                  "expectedAnswer": "basic"
+                },
+                {
+                  "position": 4,
+                  "correctAnswer": "employees",
+                  "expectedAnswer": "employees"
+                },
+                {
+                  "position": 5,
+                  "correctAnswer": "significant",
+                  "expectedAnswer": "significant"
+                }
+              ]
+            },
+            {
+              "id": "FIBL2",
+              "trackNumber": "D30",
+              "title": "Holiday assignment",
+              "audioScriptPage": "159",
+              "blanks": [
+                {
+                  "position": 1,
+                  "correctAnswer": "practical",
+                  "expectedAnswer": "practical"
+                },
+                {
+                  "position": 2,
+                  "correctAnswer": "element",
+                  "expectedAnswer": "element"
+                },
+                {
+                  "position": 3,
+                  "correctAnswer": "collect",
+                  "expectedAnswer": "collect"
+                },
+                {
+                  "position": 4,
+                  "correctAnswer": "review",
+                  "expectedAnswer": "review"
+                },
+                {
+                  "position": 5,
+                  "correctAnswer": "description",
+                  "expectedAnswer": "description"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "L4",
+          "type": "highlightCorrectSummary",
+          "pageRange": "52-53",
+          "prompt": "You will hear a recording. Click on the paragraph that best relates to the recording.",
+          "items": [
+            {
+              "id": "HCS1",
+              "trackNumber": "D31",
+              "title": "Business school grades",
+              "audioScriptPage": "159",
+              "summaries": [
+                {
+                  "id": "A",
+                  "text": "Business students are finding it increasingly difficult to get employment..."
+                },
+                {
+                  "id": "B",
+                  "text": "In order to improve the chances of their students obtaining jobs... some business schools are adjusting their grades... but instead of benefiting the students it is, in some instances, having the opposite effect."
+                },
+                {
+                  "id": "C",
+                  "text": "Some business schools have realized that their grading system has been inaccurate since 2007..."
+                },
+                {
+                  "id": "D",
+                  "text": "Since 2007, the education of business students has been improving..."
+                }
+              ],
+              "correctAnswer": "B",
+              "expectedAnswer": "B"
+            },
+            {
+              "id": "HCS2",
+              "trackNumber": "D32",
+              "title": "Urban development in Perth",
+              "audioScriptPage": "159-160",
+              "summaries": [
+                {
+                  "id": "A",
+                  "text": "Many existing buildings in city centres... are being cleared..."
+                },
+                {
+                  "id": "B",
+                  "text": "Developers in Perth... suggest that it would be better to build much-needed homes within the city centre..."
+                },
+                {
+                  "id": "C",
+                  "text": "Cities like Perth... are experiencing rapid growth in urban development, and the current trend is to expand into surrounding regions... some think this is more cost effective... others believe it's having a harmful effect on the environment..."
+                },
+                {
+                  "id": "D",
+                  "text": "The housing shortage in Perth is being addressed by encouraging people to move to other cities..."
+                }
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            }
+          ]
+        },
+        {
+          "id": "L5",
+          "type": "multipleChoiceSingle",
+          "pageNumber": 55,
+          "prompt": "Listen to the recording and answer the multiple-choice question by selecting the correct response. Only one response is correct.",
+          "items": [
+            {
+              "id": "MCS_L1",
+              "trackNumber": "D33",
+              "title": "American population trends",
+              "question": "What is the speaker's main focus?",
+              "options": [
+                "A) reasons why Americans have relocated",
+                "B) the growth in the American population",
+                "C) the expansion of suburban towns",
+                "D) trends in where Americans live"
+              ],
+              "correctAnswer": "D",
+              "expectedAnswer": "D"
+            },
+            {
+              "id": "MCS_L2",
+              "trackNumber": "D34",
+              "title": "Early views on malaria",
+              "question": "What do the speakers feel about early views on malaria?",
+              "options": [
+                "A) They were understandable at the time.",
+                "B) They resulted in unnecessary illness.",
+                "C) They have contributed to current findings.",
+                "D) They will be remembered in the future."
+              ],
+              "correctAnswer": "A",
+              "expectedAnswer": "A"
+            }
+          ]
+        },
+        {
+          "id": "L6",
+          "type": "selectMissingWord",
+          "pageNumber": 57,
+          "prompt": "You will hear a recording about [topic]. At the end of the recording the last word or group of words has been replaced by a beep. Select the correct option to complete the recording.",
+          "items": [
+            {
+              "id": "SMW1",
+              "trackNumber": "D35",
+              "title": "Fiction writing",
+              "options": [
+                "A) suits some writers better than others",
+                "B) is becoming more popular",
+                "C) has changed over time",
+                "D) makes reading easier"
+              ],
+              "correctAnswer": "C",
+              "expectedAnswer": "C"
+            },
+            {
+              "id": "SMW2",
+              "trackNumber": "D36",
+              "title": "Biology (microscope)",
+              "options": [
+                "A) complex",
+                "B) unreal",
+                "C) confusing",
+                "D) invisible"
+              ],
+              "correctAnswer": "A",
+              "expectedAnswer": "A"
+            }
+          ]
+        },
+        {
+          "id": "L7",
+          "type": "highlightIncorrectWords",
+          "pageNumber": 59,
+          "prompt": "You will hear a recording. Below is a transcription of the recording. Some words in the transcription differ from what the speaker said. Please click on the words that are different.",
+          "items": [
+            {
+              "id": "HIW1",
+              "trackNumber": "D37",
+              "title": "Earth's core",
+              "audioScriptPage": "160",
+              "transcriptWithErrors": "Scientists have used great pressure and temperature to study the Earth's core. Recent techniques have revealed new information about how the planet was formed. These findings have improved our understanding of the inside structure of the Earth.",
+              "incorrectWords": ["great", "techniques", "formed", "findings", "inside"],
+              "correctWords": ["high", "methods", "created", "discoveries", "internal"],
+              "expectedAnswers": ["great", "techniques", "formed", "findings", "inside"]
+            },
+            {
+              "id": "HIW2",
+              "trackNumber": "D38",
+              "title": "Bird migration",
+              "audioScriptPage": "160",
+              "transcriptWithErrors": "Birds migrate over long miles each year. They survive to travel thousands of kilometers. Studies done by researchers have identified the main reason that influences their migration patterns. Some birds achieve their destination in a few days, while others take weeks. The first migratory routes were established thousands of years ago.",
+              "incorrectWords": ["miles", "survive", "done", "reason", "achieve", "first"],
+              "correctWords": ["distances", "manage", "conducted", "factor", "reach", "original"],
+              "expectedAnswers": ["miles", "survive", "done", "reason", "achieve", "first"]
+            }
+          ]
+        },
+        {
+          "id": "L8",
+          "type": "writeFromDictation",
+          "pageNumber": 61,
+          "prompt": "You will hear a sentence. Type the sentence in the box below exactly as you hear it. Write as much of the sentence as you can. You will hear the sentence only once.",
+          "items": [
+            {
+              "id": "WFD1",
+              "trackNumber": "D39",
+              "sentence": "You should draw your graph on a separate page.",
+              "expectedAnswer": "You should draw your graph on a separate page."
+            },
+            {
+              "id": "WFD2",
+              "trackNumber": "D40",
+              "sentence": "Some young people find city life rather stressful.",
+              "expectedAnswer": "Some young people find city life rather stressful."
+            },
+            {
+              "id": "WFD3",
+              "trackNumber": "D41",
+              "sentence": "Weather patterns have changed significantly over the past two hundred years.",
+              "expectedAnswer": "Weather patterns have changed significantly over the past two hundred years."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "resourceSummary": {
+    "audioTracks": {
+      "total": 41,
+      "ranges": {
+        "D1-D10": "Repeat Sentence",
+        "D12-D14": "Re-tell Lecture",
+        "D15-D24": "Answer Short Question",
+        "D25-D26": "Summarize Spoken Text",
+        "D27-D28": "Multiple-choice Multiple (Listening)",
+        "D29-D30": "Fill in Blanks (Listening)",
+        "D31-D32": "Highlight Correct Summary",
+        "D33-D34": "Multiple-choice Single (Listening)",
+        "D35-D36": "Select Missing Word",
+        "D37-D38": "Highlight Incorrect Words",
+        "D39-D41": "Write from Dictation"
+      }
+    },
+    "images": {
+      "total": 9,
+      "describeImage": 6,
+      "retellLecture": 3
+    },
+    "textPassages": {
+      "readAloud": 6,
+      "summarizeWrittenText": 2,
+      "readingTasks": 11,
+      "essayTopics": 2
+    }
+  },
+  "comparisonWithPracticeTest2": {
+    "practiceTest2": {
+      "audioTracks": 40,
+      "images": 9,
+      "readAloudPassages": 6,
+      "repeatSentenceItems": 10,
+      "describeImageItems": 6,
+      "retellLectureItems": 3,
+      "answerShortQuestions": 10,
+      "summarizeWrittenText": 2,
+      "essayTopics": 2
+    },
+    "practiceTest1": {
+      "audioTracks": 41,
+      "images": 9,
+      "readAloudPassages": 6,
+      "repeatSentenceItems": 10,
+      "describeImageItems": 6,
+      "retellLectureItems": 3,
+      "answerShortQuestions": 10,
+      "summarizeWrittenText": 2,
+      "essayTopics": 2
+    },
+    "differences": "Practice Test 1 has one additional audio track (D11), but the structure and number of tasks are identical to Practice Test 2."
+  }
+}
