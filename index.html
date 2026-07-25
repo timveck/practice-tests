@@ -106,7 +106,7 @@
   .word-count { font-size: 13px; color: var(--medium-gray); text-align: right; margin-top: 4px; }
 
   .media-box { background: var(--white-gray); border: 2px dashed var(--concrete); border-radius: 8px; padding: 18px; text-align: center; margin: 12px 0; color: var(--medium-gray); }
-  .media-box img { max-width: 100%; max-height: 450px; border-radius: 4px; }
+  .media-box img { max-width: 100%; max-height: 280px; border-radius: 4px; }
   .media-missing { font-size: 13.5px; color: var(--danger); margin-top: 6px; }
 
   .audio-panel { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
@@ -123,6 +123,8 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
   .record-panel audio { width: 100%; margin-top: 6px; }
   .mic-warning { font-size: 13px; color: #8a5a00; background: #fff2d9; padding: 8px 12px; border-radius: 6px; }
+  .wave-bars { display: flex; align-items: flex-end; justify-content: center; gap: 3px; height: 34px; }
+  .wave-bars span { width: 4px; min-height: 4px; background: var(--pearson-blue); border-radius: 2px; transition: height .05s linear; }
 
   .fib-bank { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; padding: 12px; background: var(--white-gray); border-radius: 8px; }
   .fib-chip { background: var(--white); border: 1px solid var(--pearson-blue); color: var(--ink-blue); padding: 6px 14px; border-radius: 16px; font-size: 14.5px; cursor: pointer; font-weight: 600; }
@@ -206,6 +208,9 @@
         <span>⏱️ ~2 hours · one sitting</span>
         <span>🎧 Real audio cues &amp; mic recording</span>
         <span>📘 4 practice tests</span>
+      </div>
+      <div style="margin-top:14px;">
+        <button class="btn btn-sunshine" id="back-to-app-btn">← Back to the practice app</button>
       </div>
     </div>
 
@@ -344,7 +349,7 @@ let app = {
   sectionRemaining: 0, phase: null, phaseRemaining: 0,
   volume: 1, audioPlayed: {}, currentAudioEl: null,
   mediaRecorder: null, recordedChunks: [], isRecording: false, micDenied: false,
-  audioCtx: null
+  audioCtx: null, waveRAF: null, waveAnalyser: null, waveSource: null
 };
 
 /* ============================================================
@@ -774,9 +779,14 @@ function buildAudioPanel(fi) {
   </div>`;
 }
 function buildRecordPanel(fi, ans) {
+  const status = ans.submitted ? (ans.recordingUrl ? 'Recording complete' : 'Time expired') : 'Not started';
+  const waveBars = Array(24).fill('<span></span>').join('');
   return `<div class="record-panel" id="record-panel">
-    <div class="record-indicator"><span class="rec-dot" id="rec-dot"></span><span id="rec-status">Not started</span></div>
+    <div class="record-indicator"><span class="rec-dot" id="rec-dot"></span><span id="rec-status">${status}</span></div>
+    <div class="wave-bars hidden" id="wave-bars">${waveBars}</div>
+    <button class="btn btn-danger btn-sm hidden" id="record-stop-btn">⏹ Stop recording</button>
     ${ans.recordingUrl ? `<audio controls src="${ans.recordingUrl}"></audio>` : ''}
+    ${ans.submitted ? `<button class="btn btn-outline btn-sm" id="record-again-btn">🔄 Record again</button>` : ''}
     <div id="mic-warning" class="mic-warning hidden">Microphone unavailable — timing will still run, but no audio will be captured.</div>
   </div>`;
 }
@@ -1017,6 +1027,12 @@ function attachHandlers(fi, ans) {
   // audio play button
   const playBtn = document.getElementById('play-audio-btn');
   if (playBtn) playBtn.addEventListener('click', () => playItemAudio(fi));
+
+  // recording controls
+  const stopRecBtn = document.getElementById('record-stop-btn');
+  if (stopRecBtn) stopRecBtn.addEventListener('click', () => manualStopRecording(fi, ans));
+  const recordAgainBtn = document.getElementById('record-again-btn');
+  if (recordAgainBtn) recordAgainBtn.addEventListener('click', () => recordAgain(fi, ans));
 }
 
 function goNext(fi) {
@@ -1073,6 +1089,8 @@ function onAudioFinished(fi) {
 async function startRecording() {
   const dot = document.getElementById('rec-dot');
   const status = document.getElementById('rec-status');
+  const stopBtn = document.getElementById('record-stop-btn');
+  const waveEl = document.getElementById('wave-bars');
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     app.recordedChunks = [];
@@ -1089,6 +1107,8 @@ async function startRecording() {
     app.isRecording = true;
     if (dot) dot.classList.add('live');
     if (status) status.textContent = 'Recording…';
+    if (stopBtn) stopBtn.classList.remove('hidden');
+    if (waveEl) { waveEl.classList.remove('hidden'); startWaveMeter(stream, waveEl); }
   } catch (err) {
     app.micDenied = true;
     const warn = document.getElementById('mic-warning');
@@ -1101,6 +1121,63 @@ function stopRecording() {
   app.isRecording = false;
   const dot = document.getElementById('rec-dot');
   if (dot) dot.classList.remove('live');
+  const stopBtn = document.getElementById('record-stop-btn');
+  if (stopBtn) stopBtn.classList.add('hidden');
+  const waveEl = document.getElementById('wave-bars');
+  if (waveEl) waveEl.classList.add('hidden');
+  stopWaveMeter();
+}
+
+/* ---- Live sound wave, so the student can see the mic is picking up audio ---- */
+function startWaveMeter(stream, waveEl) {
+  stopWaveMeter();
+  if (!waveEl) return;
+  try {
+    app.audioCtx = app.audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const source = app.audioCtx.createMediaStreamSource(stream);
+    const analyser = app.audioCtx.createAnalyser();
+    analyser.fftSize = 64;
+    source.connect(analyser);
+    app.waveAnalyser = analyser;
+    app.waveSource = source;
+    const data = new Uint8Array(analyser.frequencyBinCount);
+    const bars = waveEl.querySelectorAll('span');
+    const draw = () => {
+      analyser.getByteFrequencyData(data);
+      bars.forEach((bar, i) => {
+        const level = data[i % data.length] / 255;
+        bar.style.height = Math.max(4, level * 32) + 'px';
+      });
+      app.waveRAF = requestAnimationFrame(draw);
+    };
+    draw();
+  } catch (err) { /* wave meter is a visual extra — safe to skip if unsupported */ }
+}
+function stopWaveMeter() {
+  if (app.waveRAF) cancelAnimationFrame(app.waveRAF);
+  app.waveRAF = null;
+  if (app.waveSource) { try { app.waveSource.disconnect(); } catch (e) {} app.waveSource = null; }
+  app.waveAnalyser = null;
+}
+
+/* ---- Manual stop / record again, for finishing before the timer runs out ---- */
+function manualStopRecording(fi, ans) {
+  clearItemTimer();
+  stopRecording();
+  beep(440, 300);
+  ans.submitted = true;
+  setTimeout(() => showQuestion(), 400);
+}
+function recordAgain(fi, ans) {
+  clearItemTimer();
+  ans.submitted = false;
+  ans.recordingUrl = null;
+  ans.timedOut = false;
+  const panel = document.getElementById('record-panel');
+  if (panel) panel.outerHTML = buildRecordPanel(fi, ans);
+  const stopBtn = document.getElementById('record-stop-btn');
+  if (stopBtn) stopBtn.addEventListener('click', () => manualStopRecording(fi, ans));
+  beginResponsePhase(fi, ans);
 }
 
 /* ============================================================
@@ -1111,6 +1188,7 @@ function initTimingForItem(fi, ans) {
   const item = fi.item;
 
   if (fi.section === 'speaking') {
+    if (ans.submitted) return; // already answered — don't restart prep/recording on revisit
     const tl = fi.task.timeLimit || {};
     if (['readAloud','describeImage','retellLecture'].includes(type)) {
       if (type === 'retellLecture') return; // waits for user to press play; response starts on audio end
@@ -1183,6 +1261,7 @@ function updateNavigator() {
    14. EXIT / VOLUME
    ============================================================ */
 document.getElementById('exam-exit-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.remove('hidden'));
+document.getElementById('back-to-app-btn').addEventListener('click', () => { window.location.href = 'https://timveck.github.io/pte-quiz/index.html'; });
 document.getElementById('exit-cancel-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.add('hidden'));
 document.getElementById('exit-confirm-btn').addEventListener('click', () => {
   document.getElementById('exit-confirm-modal').classList.add('hidden');
