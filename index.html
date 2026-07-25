@@ -339,6 +339,7 @@ const TEST_NAMES = { p1:'Practice Test 1', p2:'Practice Test 2', p3:'Practice Te
 const WARMUP_PER_TYPE = 2; // how many random items to pull per question type for the warm-up set
 const SECTIONS = ['speaking','writing','reading','listening'];
 const SECTION_LABELS = { speaking:'Speaking', writing:'Writing', reading:'Reading', listening:'Listening' };
+const SECTION_ICONS = { speaking:'🗣️', writing:'✍️', reading:'📖', listening:'🎧' };
 const TYPE_LABELS = {
   readAloud:'Read Aloud', repeatSentence:'Repeat Sentence', describeImage:'Describe Image',
   retellLecture:'Re-tell Lecture', answerShortQuestion:'Answer Short Question',
@@ -367,7 +368,7 @@ let app = {
   currentSection: null, currentIndexInSection: 0,
   sectionTimerHandle: null, itemTimerHandle: null,
   sectionRemaining: 0, phase: null, phaseRemaining: 0,
-  volume: 1, audioPlayed: {}, currentAudioEl: null, isWarmup: false,
+  volume: 1, audioPlayed: {}, currentAudioEl: null, isWarmup: false, sectionFilter: null, progressKey: null,
   mediaRecorder: null, recordedChunks: [], isRecording: false, micDenied: false,
   audioCtx: null, waveRAF: null, waveAnalyser: null, waveSource: null
 };
@@ -505,6 +506,8 @@ async function startWarmup() {
     app.testId = 'warmup';
     app.testData = null;
     app.isWarmup = true;
+    app.sectionFilter = null;
+    app.progressKey = 'warmup';
     app.flatItems = items;
     app.answers = {};
     app.audioPlayed = {};
@@ -531,19 +534,23 @@ async function startWarmup() {
 async function renderDashboard() {
   const progress = loadProgress();
   const progEl = document.getElementById('progress-list');
-  const hasAny = TESTS.some(t => progress[t]);
+  const hasAny = TESTS.some(t => progress[t] || SECTIONS.some(sec => progress[t + '_' + sec])) || !!progress.warmup;
   progEl.innerHTML = hasAny ? '' : '<p style="color:var(--medium-gray);">Complete a test to see your attempt history here.</p>';
-  TESTS.forEach(t => {
-    if (!progress[t]) return;
-    const p = progress[t];
+  const addProgressCard = (key, fallbackLabel) => {
+    const p = progress[key];
+    if (!p) return;
     const div = document.createElement('div');
     div.className = 'test-card';
     div.innerHTML = `
-      <div class="info"><h3>${TEST_NAMES[t]}</h3>
+      <div class="info"><h3>${escapeHtml(p.label || fallbackLabel)}</h3>
       <div class="sub">Last completed ${new Date(p.completedAt).toLocaleString()}</div></div>
-      <button class="btn btn-outline btn-sm" data-review="${t}">View review</button>`;
-    div.querySelector('button').addEventListener('click', () => openReviewFromStorage(t));
+      <button class="btn btn-outline btn-sm" data-review="${key}">View review</button>`;
+    div.querySelector('button').addEventListener('click', () => openReviewFromStorage(key));
     progEl.appendChild(div);
+  };
+  TESTS.forEach(t => {
+    addProgressCard(t, TEST_NAMES[t]);
+    SECTIONS.forEach(sec => addProgressCard(t + '_' + sec, `${TEST_NAMES[t]} — ${SECTION_LABELS[sec]} only`));
   });
 
   const listEl = document.getElementById('test-list');
@@ -555,13 +562,24 @@ async function renderDashboard() {
     try { meta = (await fetchTestData(t)).testMetadata; } catch (e) { meta = null; }
     const available = !!meta;
     if (!available) card.classList.add('disabled');
+    const sectionBtns = SECTIONS.map(sec =>
+      `<button class="btn btn-outline btn-sm" data-sec="${sec}" title="${SECTION_LABELS[sec]} only" ${available ? '' : 'disabled'}>${SECTION_ICONS[sec]}</button>`
+    ).join('');
     card.innerHTML = `
       <div class="info">
         <h3>${TEST_NAMES[t]}</h3>
         <div class="sub">${available ? (meta.testName || TEST_NAMES[t]) + ' · ' + (meta.source || '') : 'Add ' + t + '.json alongside index.html to unlock'}</div>
       </div>
-      <button class="btn btn-primary btn-sm" ${available ? '' : 'disabled'}>${progress[t] ? 'Retake' : 'Start'}</button>`;
-    if (available) card.querySelector('button').addEventListener('click', () => startExam(t));
+      <div class="flex" style="gap:8px;">
+        ${sectionBtns}
+        <button class="btn btn-primary btn-sm" data-full="1" ${available ? '' : 'disabled'}>${progress[t] ? 'Retake Full Test' : 'Start Full Test'}</button>
+      </div>`;
+    if (available) {
+      card.querySelector('[data-full]').addEventListener('click', () => startExam(t));
+      card.querySelectorAll('[data-sec]').forEach(btn => {
+        btn.addEventListener('click', () => startExam(t, btn.dataset.sec));
+      });
+    }
     listEl.appendChild(card);
   }
 
@@ -581,27 +599,31 @@ async function renderDashboard() {
 /* ============================================================
    4. START EXAM
    ============================================================ */
-async function startExam(testId) {
+async function startExam(testId, section) {
   try {
     const data = await fetchTestData(testId);
     app.testId = testId;
     app.testData = data;
     app.isWarmup = false;
+    app.sectionFilter = section || null;
+    app.progressKey = testId + (section ? ('_' + section) : '');
     app.flatItems = flattenTestItems(data);
+    if (section) app.flatItems = app.flatItems.filter(fi => fi.section === section);
     app.answers = {};
     app.audioPlayed = {};
     app.flatItems.forEach(fi => {
       app.answers[fi.id] = { value: null, submitted: false, flagged: false, recordingUrl: null, timedOut: false };
     });
-    app.currentSection = 'speaking';
+    app.currentSection = section || 'speaking';
     app.currentIndexInSection = 0;
 
     document.getElementById('view-dashboard').classList.add('hidden');
     document.getElementById('view-results').classList.add('hidden');
     document.getElementById('view-exam').classList.remove('hidden');
-    document.getElementById('exam-title').textContent = (data.testMetadata?.testName || TEST_NAMES[testId]);
+    const baseTitle = (data.testMetadata?.testName || TEST_NAMES[testId]);
+    document.getElementById('exam-title').textContent = section ? `${baseTitle} — ${SECTION_LABELS[section]} only` : baseTitle;
 
-    enterSection('speaking');
+    enterSection(section || 'speaking');
   } catch (err) {
     alert('Could not load ' + testId + '.json — ' + err.message);
   }
@@ -633,6 +655,8 @@ document.getElementById('section-expiry-continue').addEventListener('click', () 
 });
 
 function advanceSection() {
+  // single-section runs (and warm-up) don't move on to the next section — they finish here
+  if (app.sectionFilter || app.isWarmup) { finishExam(); return; }
   const idx = SECTIONS.indexOf(app.currentSection);
   if (idx < SECTIONS.length - 1) enterSection(SECTIONS[idx + 1]);
   else finishExam();
@@ -1407,6 +1431,10 @@ function finishExam() {
   clearInterval(app.sectionTimerHandle); clearItemTimer(); stopRecording();
 
   const progress = loadProgress();
+  const key = app.progressKey || app.testId;
+  const label = app.isWarmup
+    ? TEST_NAMES.warmup
+    : (TEST_NAMES[app.testId] || app.testId) + (app.sectionFilter ? ` — ${SECTION_LABELS[app.sectionFilter]} only` : '');
   // Store expected answer for every question
   const serializable = app.flatItems.map(fi => {
     const ans = app.answers[fi.id];
@@ -1425,24 +1453,24 @@ function finishExam() {
       expectedAnswer: getReferenceAnswerText(fi)  // store the preferred answer
     };
   });
-  progress[app.testId] = { completedAt: new Date().toISOString(), items: serializable };
+  progress[key] = { completedAt: new Date().toISOString(), items: serializable, label };
   saveProgress(progress);
 
-  renderReview(app.testId, serializable, app.answers);
+  renderReview(key, serializable, app.answers, label);
 }
 
-function openReviewFromStorage(testId) {
+function openReviewFromStorage(key) {
   const progress = loadProgress();
-  const p = progress[testId];
+  const p = progress[key];
   if (!p) return;
-  renderReview(testId, p.items, {});
+  renderReview(key, p.items, {}, p.label);
 }
 
-function renderReview(testId, items, liveAnswers) {
+function renderReview(key, items, liveAnswers, label) {
   document.getElementById('view-exam').classList.add('hidden');
   document.getElementById('view-dashboard').classList.add('hidden');
   document.getElementById('view-results').classList.remove('hidden');
-  document.getElementById('results-title').textContent = `${TEST_NAMES[testId] || testId} — Review`;
+  document.getElementById('results-title').textContent = `${label || TEST_NAMES[key] || key} — Review`;
 
   const breakdown = document.getElementById('section-breakdown');
   let bHtml = '';
