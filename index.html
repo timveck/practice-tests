@@ -209,9 +209,6 @@
         <span>🎧 Real audio cues &amp; mic recording</span>
         <span>📘 4 practice tests</span>
       </div>
-      <div style="margin-top:14px;">
-        <button class="btn btn-sunshine" id="back-to-app-btn">← Back to the practice app</button>
-      </div>
     </div>
 
     <div class="info-banner">
@@ -224,6 +221,25 @@
     <div class="section-card">
       <div class="heading"><h2>Your Progress</h2><span class="badge badge-blue">Attempts</span></div>
       <div id="progress-list"></div>
+    </div>
+
+    <div class="section-card" id="warmup-card">
+      <div class="heading"><h2>Warm-Up</h2><span class="badge badge-gold">2 mins to set up</span></div>
+      <p style="color:var(--graphite);margin-bottom:14px;">
+        A short mixed set — 2 random questions for every question type (Read Aloud, Describe Image, Retell Lecture,
+        Fill in the Blanks, etc.), pulled at random from across all four practice tests and shuffled. Same timings,
+        audio and recording as the full exam, with a results &amp; review page at the end.
+      </p>
+      <div class="test-card" style="margin-bottom:0;">
+        <div class="info">
+          <h3>Warm-Up Practice</h3>
+          <div class="sub" id="warmup-sub">~35–45 questions · every question type, twice · randomised each time</div>
+        </div>
+        <div class="flex">
+          <button class="btn btn-outline btn-sm hidden" id="warmup-review-btn">Review last warm-up</button>
+          <button class="btn btn-sunshine btn-sm" id="warmup-start-btn">Start Warm-Up</button>
+        </div>
+      </div>
     </div>
 
     <div class="section-card">
@@ -319,7 +335,8 @@
    0. CONSTANTS
    ============================================================ */
 const TESTS = ['p1','p2','p3','p4'];
-const TEST_NAMES = { p1:'Practice Test 1', p2:'Practice Test 2', p3:'Practice Test 3', p4:'Practice Test 4' };
+const TEST_NAMES = { p1:'Practice Test 1', p2:'Practice Test 2', p3:'Practice Test 3', p4:'Practice Test 4', warmup:'Warm-Up Practice' };
+const WARMUP_PER_TYPE = 2; // how many random items to pull per question type for the warm-up set
 const SECTIONS = ['speaking','writing','reading','listening'];
 const SECTION_LABELS = { speaking:'Speaking', writing:'Writing', reading:'Reading', listening:'Listening' };
 const TYPE_LABELS = {
@@ -336,7 +353,10 @@ const TYPE_LABELS = {
 // default per-item response time (seconds) for types without an explicit timeLimit in the JSON
 const ITEM_TIME_DEFAULTS = {
   summarizeSpokenText: 600, multipleChoiceMultiple: 60, fillInBlanks: 90, highlightCorrectSummary: 60,
-  multipleChoiceSingle: 60, selectMissingWord: 30, highlightIncorrectWords: 60, writeFromDictation: 60
+  multipleChoiceSingle: 60, selectMissingWord: 30, highlightIncorrectWords: 60, writeFromDictation: 60,
+  // reading types below have no per-item timer in a full test (reading uses one section clock instead),
+  // but the warm-up mode has no section clock, so it needs its own fallback time per item
+  reorderParagraphs: 120, fillInBlanksReading: 90, fillInBlanksReadingWriting: 120
 };
 const READING_SECTION_SECONDS = 32 * 60;
 const LISTENING_SECTION_SECONDS = 47 * 60;
@@ -347,7 +367,7 @@ let app = {
   currentSection: null, currentIndexInSection: 0,
   sectionTimerHandle: null, itemTimerHandle: null,
   sectionRemaining: 0, phase: null, phaseRemaining: 0,
-  volume: 1, audioPlayed: {}, currentAudioEl: null,
+  volume: 1, audioPlayed: {}, currentAudioEl: null, isWarmup: false,
   mediaRecorder: null, recordedChunks: [], isRecording: false, micDenied: false,
   audioCtx: null, waveRAF: null, waveAnalyser: null, waveSource: null
 };
@@ -366,6 +386,14 @@ function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 function wordCount(str) { return (str || '').trim().split(/\s+/).filter(Boolean).length; }
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 function loadProgress() { try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch(e) { return {}; } }
 function saveProgress(p) { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }
 
@@ -414,6 +442,90 @@ function getSectionItems(section) { return app.flatItems.filter(fi => fi.section
 function getCurrentItem() { return getSectionItems(app.currentSection)[app.currentIndexInSection] || null; }
 
 /* ============================================================
+   2b. WARM-UP MODE
+   Pulls WARMUP_PER_TYPE random items for every question type,
+   drawn from across p1–p4 (preferring different source tests
+   the way a tutor would pick them by hand), then shuffles the
+   order within each section. Item ids are namespaced with the
+   source test so they never collide with a full-test attempt.
+   ============================================================ */
+async function buildWarmupItems() {
+  const pools = {}; // type -> [{ testId, section, task, item }]
+  for (const testId of TESTS) {
+    let data;
+    try { data = await fetchTestData(testId); } catch (e) { continue; } // skip missing test files
+    SECTIONS.forEach(sec => {
+      const sectionData = data.sections[sec];
+      if (!sectionData || !sectionData.tasks) return;
+      sectionData.tasks.forEach(task => {
+        if (!task.items) return;
+        task.items.forEach(item => {
+          (pools[task.type] = pools[task.type] || []).push({ testId, section: sec, task, item });
+        });
+      });
+    });
+  }
+
+  let picked = [];
+  Object.keys(pools).forEach(type => {
+    const pool = shuffle(pools[type]);
+    const chosen = [];
+    const usedTests = new Set();
+    // pass 1: prefer one item per distinct source test, e.g. Retell Lecture from Test 1 + Test 4
+    for (const cand of pool) {
+      if (chosen.length >= WARMUP_PER_TYPE) break;
+      if (!usedTests.has(cand.testId)) { chosen.push(cand); usedTests.add(cand.testId); }
+    }
+    // pass 2: top up from whatever remains if a type has fewer source tests than slots
+    for (const cand of pool) {
+      if (chosen.length >= WARMUP_PER_TYPE) break;
+      if (chosen.indexOf(cand) === -1) chosen.push(cand);
+    }
+    picked = picked.concat(chosen);
+  });
+
+  const flat = picked.map(p => ({
+    id: p.testId + '_' + p.item.id, section: p.section, sectionLabel: SECTION_LABELS[p.section],
+    task: p.task, item: p.item, type: p.task.type, taskLabel: TYPE_LABELS[p.task.type] || p.task.type,
+    itemLabel: p.item.title || p.item.id, sourceTest: p.testId, sourceLabel: TEST_NAMES[p.testId]
+  }));
+
+  // group by section (keeps the existing section-by-section navigation working), shuffle within each
+  const bySection = {};
+  flat.forEach(fi => { (bySection[fi.section] = bySection[fi.section] || []).push(fi); });
+  let result = [];
+  SECTIONS.forEach(sec => { if (bySection[sec]) result = result.concat(shuffle(bySection[sec])); });
+  return result;
+}
+
+async function startWarmup() {
+  try {
+    const items = await buildWarmupItems();
+    if (!items.length) { alert('Could not build a warm-up set — make sure p1.json–p4.json are alongside index.html.'); return; }
+    app.testId = 'warmup';
+    app.testData = null;
+    app.isWarmup = true;
+    app.flatItems = items;
+    app.answers = {};
+    app.audioPlayed = {};
+    app.flatItems.forEach(fi => {
+      app.answers[fi.id] = { value: null, submitted: false, flagged: false, recordingUrl: null, timedOut: false };
+    });
+    app.currentSection = 'speaking';
+    app.currentIndexInSection = 0;
+
+    document.getElementById('view-dashboard').classList.add('hidden');
+    document.getElementById('view-results').classList.add('hidden');
+    document.getElementById('view-exam').classList.remove('hidden');
+    document.getElementById('exam-title').textContent = 'Warm-Up Practice';
+
+    enterSection('speaking');
+  } catch (err) {
+    alert('Could not build the warm-up set — ' + err.message);
+  }
+}
+
+/* ============================================================
    3. DASHBOARD
    ============================================================ */
 async function renderDashboard() {
@@ -453,6 +565,11 @@ async function renderDashboard() {
     listEl.appendChild(card);
   }
 
+  const warmupReviewBtn = document.getElementById('warmup-review-btn');
+  warmupReviewBtn.classList.toggle('hidden', !progress.warmup);
+  warmupReviewBtn.onclick = () => openReviewFromStorage('warmup');
+  document.getElementById('warmup-start-btn').onclick = () => startWarmup();
+
   document.getElementById('reset-all-btn').addEventListener('click', () => {
     if (confirm('Clear all saved attempts? This cannot be undone.')) {
       localStorage.removeItem(PROGRESS_KEY);
@@ -469,6 +586,7 @@ async function startExam(testId) {
     const data = await fetchTestData(testId);
     app.testId = testId;
     app.testData = data;
+    app.isWarmup = false;
     app.flatItems = flattenTestItems(data);
     app.answers = {};
     app.audioPlayed = {};
@@ -489,7 +607,7 @@ async function startExam(testId) {
   }
 }
 
-function sectionHasTimer(section) { return section === 'reading' || section === 'listening'; }
+function sectionHasTimer(section) { return !app.isWarmup && (section === 'reading' || section === 'listening'); }
 
 function enterSection(section) {
   clearInterval(app.sectionTimerHandle);
@@ -581,8 +699,11 @@ function showQuestion() {
 function buildQuestionHTML(fi, ans) {
   const items = getSectionItems(fi.section);
   const posInSection = items.indexOf(fi) + 1;
+  const sourceBadge = (app.isWarmup && fi.sourceLabel)
+    ? `<span class="q-tag" style="background:var(--ice-blue);color:var(--ink-blue);">${escapeHtml(fi.sourceLabel)}</span>` : '';
   let html = `<div class="q-meta">
       <span class="q-tag">${fi.sectionLabel} · ${fi.taskLabel} · Q${posInSection}/${items.length}</span>
+      ${sourceBadge}
     </div>`;
   const prompt = fi.task.prompt || '';
   if (prompt) html += `<p class="q-instruction">${escapeHtml(prompt)}</p>`;
@@ -1213,7 +1334,12 @@ function initTimingForItem(fi, ans) {
     startPhase('response', seconds, () => { ans.submitted = true; ans.timedOut = true; showQuestion(); });
     return;
   }
-  // reading: no per-item timer
+  // reading: no per-item timer in a full test (it relies on the section clock instead) —
+  // but warm-up mode has no section clock, so give reading items their own fallback timer
+  if (fi.section === 'reading' && app.isWarmup) {
+    const seconds = ITEM_TIME_DEFAULTS[type] || 90;
+    startPhase('response', seconds, () => { ans.submitted = true; ans.timedOut = true; showQuestion(); });
+  }
 }
 
 function beginPrepPhase(fi, ans, seconds) {
@@ -1261,7 +1387,6 @@ function updateNavigator() {
    14. EXIT / VOLUME
    ============================================================ */
 document.getElementById('exam-exit-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.remove('hidden'));
-document.getElementById('back-to-app-btn').addEventListener('click', () => { window.location.href = 'https://timveck.github.io/pte-quiz/index.html'; });
 document.getElementById('exit-cancel-btn').addEventListener('click', () => document.getElementById('exit-confirm-modal').classList.add('hidden'));
 document.getElementById('exit-confirm-btn').addEventListener('click', () => {
   document.getElementById('exit-confirm-modal').classList.add('hidden');
