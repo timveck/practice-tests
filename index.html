@@ -106,7 +106,7 @@
   .word-count { font-size: 13px; color: var(--medium-gray); text-align: right; margin-top: 4px; }
 
   .media-box { background: var(--white-gray); border: 2px dashed var(--concrete); border-radius: 8px; padding: 18px; text-align: center; margin: 12px 0; color: var(--medium-gray); }
-  .media-box img { max-width: 100%; max-height: 580px; border-radius: 4px; }
+  .media-box img { max-width: 100%; max-height: 280px; border-radius: 4px; }
   .media-missing { font-size: 13.5px; color: var(--danger); margin-top: 6px; }
 
   .audio-panel { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
@@ -368,7 +368,7 @@ let app = {
   currentSection: null, currentIndexInSection: 0,
   sectionTimerHandle: null, itemTimerHandle: null,
   sectionRemaining: 0, phase: null, phaseRemaining: 0,
-  volume: 1, audioPlayed: {}, currentAudioEl: null, isWarmup: false, sectionFilter: null, progressKey: null,
+  volume: 1, audioPlayed: {}, currentAudioEl: null, isWarmup: false, sectionFilter: null, progressKey: null, dashboardRendering: false,
   mediaRecorder: null, recordedChunks: [], isRecording: false, micDenied: false,
   audioCtx: null, waveRAF: null, waveAnalyser: null, waveSource: null
 };
@@ -532,6 +532,9 @@ async function startWarmup() {
    3. DASHBOARD
    ============================================================ */
 async function renderDashboard() {
+  if (app.dashboardRendering) return;
+  app.dashboardRendering = true;
+  try {
   const progress = loadProgress();
   const progEl = document.getElementById('progress-list');
   const hasAny = TESTS.some(t => progress[t] || SECTIONS.some(sec => progress[t + '_' + sec])) || !!progress.warmup;
@@ -588,12 +591,15 @@ async function renderDashboard() {
   warmupReviewBtn.onclick = () => openReviewFromStorage('warmup');
   document.getElementById('warmup-start-btn').onclick = () => startWarmup();
 
-  document.getElementById('reset-all-btn').addEventListener('click', () => {
+  document.getElementById('reset-all-btn').onclick = () => {
     if (confirm('Clear all saved attempts? This cannot be undone.')) {
       localStorage.removeItem(PROGRESS_KEY);
       renderDashboard();
     }
-  });
+  };
+  } finally {
+    app.dashboardRendering = false;
+  }
 }
 
 /* ============================================================
@@ -1174,16 +1180,20 @@ function attachHandlers(fi, ans) {
     syncOrder();
   }
 
-  // highlight incorrect words (click to toggle)
+  // highlight incorrect words (click to toggle) — update the clicked
+  // word in place rather than calling showQuestion(), since a full
+  // re-render would recreate the <audio> element and kill playback.
   document.querySelectorAll('[data-widx]').forEach(el => {
     el.addEventListener('click', () => {
       if (ans.submitted) return;
       const idx = parseInt(el.dataset.widx, 10);
       const selected = Array.isArray(ans.value) ? ans.value.slice() : [];
       const pos = selected.indexOf(idx);
+      const nowSelected = pos === -1;
       if (pos > -1) selected.splice(pos, 1); else selected.push(idx);
       ans.value = selected;
-      showQuestion();
+      el.style.border = nowSelected ? '1px solid var(--pearson-blue)' : '1px solid transparent';
+      el.style.background = nowSelected ? 'var(--ice-blue)' : 'transparent';
     });
   });
 
