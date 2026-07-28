@@ -786,8 +786,9 @@ function buildMcSingle(fi, ans) {
     const sel = ans.value === opt ? 'selected' : '';
     return `<label class="option ${sel}"><input type="radio" name="mcs" value="${escapeHtml(opt)}" ${ans.value === opt ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(opt)}</label>`;
   }).join('');
+  const audio = fi.item.trackNumber ? buildAudioPanel(fi) : '';
   const passage = fi.item.text ? `<div class="q-passage">${escapeHtml(fi.item.text)}</div>` : '';
-  return `${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+  return `${audio}${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
 }
 function buildMcMultiple(fi, ans) {
   const selected = Array.isArray(ans.value) ? ans.value : [];
@@ -795,8 +796,9 @@ function buildMcMultiple(fi, ans) {
     const sel = selected.includes(opt) ? 'selected' : '';
     return `<label class="option ${sel}"><input type="checkbox" value="${escapeHtml(opt)}" ${selected.includes(opt) ? 'checked' : ''} ${ans.submitted ? 'disabled' : ''}>${escapeHtml(opt)}</label>`;
   }).join('');
+  const audio = fi.item.trackNumber ? buildAudioPanel(fi) : '';
   const passage = fi.item.text ? `<div class="q-passage">${escapeHtml(fi.item.text)}</div>` : '';
-  return `${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
+  return `${audio}${passage}<p class="q-instruction">${escapeHtml(fi.item.question || '')}</p><div class="options">${opts}</div>${buildRefAnswer(fi, ans)}`;
 }
 function buildReorder(fi, ans) {
   const sentences = fi.item.sentences || {};
@@ -865,6 +867,22 @@ function buildFibListening(fi, ans) {
   const blanks = fi.item.blanks || [];
   const value = Array.isArray(ans.value) && ans.value.length === blanks.length ? ans.value : new Array(blanks.length).fill('');
   ans.value = value;
+  const text = fi.item.textWithBlanks || '';
+  if (text) {
+    // Render the paragraph inline, with a text input dropped in at each [___] marker.
+    const parts = text.split('[___]');
+    let html = '<div class="fib-text">';
+    parts.forEach((part, i) => {
+      html += escapeHtml(part);
+      if (i < blanks.length) {
+        html += `<input type="text" class="text-input fib-inline-input" data-blank="${i}" style="display:inline-block;width:110px;margin:0 4px;" placeholder="${blanks[i].position || i + 1}" value="${escapeHtml(value[i])}" ${ans.submitted ? 'disabled' : ''}>`;
+      }
+    });
+    html += '</div>';
+    return `${buildAudioPanel(fi)}<p class="q-sub">Type the missing word(s) for each blank, in order.</p>
+      ${html}${buildRefAnswer(fi, ans)}`;
+  }
+  // Fallback for any item that still has no stored paragraph text.
   const row = blanks.map((b, i) => `<input type="text" class="text-input" data-blank="${i}" placeholder="Blank ${b.position || i+1}" value="${escapeHtml(value[i])}" ${ans.submitted ? 'disabled' : ''}>`).join('');
   return `${buildAudioPanel(fi)}<p class="q-sub">Type the missing word(s) for each blank, in order.</p>
     <div class="dictation-row">${row}</div>${buildRefAnswer(fi, ans)}`;

@@ -1,7 +1,7 @@
 {
   "testMetadata": {
     "testName": "Practice Test 3",
-    "source": "Practice Tests Plus with key (2013)",
+    "source": "Practice Tests Plus with key",
     "pageRange": "90-116",
     "totalAudioTracks": 40,
     "totalQuestions": {
@@ -15,7 +15,11 @@
     "speaking": {
       "readAloud": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency"
+        ],
         "timeLimit": {
           "preparation": 40,
           "response": 40
@@ -24,7 +28,11 @@
       },
       "repeatSentence": {
         "pointsPerQuestion": 3,
-        "criteria": ["Accuracy", "Pronunciation", "Fluency"],
+        "criteria": [
+          "Accuracy",
+          "Pronunciation",
+          "Fluency"
+        ],
         "timeLimit": {
           "preparation": 0,
           "response": 10
@@ -33,7 +41,12 @@
       },
       "describeImage": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency",
+          "Structure"
+        ],
         "timeLimit": {
           "preparation": 25,
           "response": 40
@@ -42,7 +55,12 @@
       },
       "retellLecture": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency",
+          "Structure"
+        ],
         "timeLimit": {
           "preparation": 10,
           "response": 40
@@ -51,7 +69,9 @@
       },
       "answerShortQuestion": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "timeLimit": {
           "preparation": 0,
           "response": 10
@@ -62,14 +82,25 @@
     "writing": {
       "summarizeWrittenText": {
         "pointsPerQuestion": 7,
-        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "criteria": [
+          "Content",
+          "Grammar",
+          "Vocabulary",
+          "Conciseness"
+        ],
         "wordLimit": "1 sentence",
         "timeLimit": 10,
         "expectedAnswerFormat": "Single sentence summarizing the key points of the passage. See sample answers for each passage."
       },
       "writeEssay": {
         "pointsPerQuestion": 20,
-        "criteria": ["Content", "Organization", "Grammar", "Vocabulary", "Cohesion"],
+        "criteria": [
+          "Content",
+          "Organization",
+          "Grammar",
+          "Vocabulary",
+          "Cohesion"
+        ],
         "wordLimit": "200-300 words",
         "timeLimit": 20,
         "expectedAnswerFormat": "Well-organized essay with clear position, supporting arguments, and examples. Evaluated on content, organization, grammar, vocabulary, and cohesion."
@@ -78,65 +109,94 @@
     "reading": {
       "multipleChoiceSingle": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "multipleChoiceMultiple": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "partialScoring": true
       },
       "reorderParagraphs": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "fillInBlanksReading": {
         "pointsPerQuestion": 4,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       },
       "fillInBlanksReadingWriting": {
         "pointsPerQuestion": 5,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       }
     },
     "listening": {
       "summarizeSpokenText": {
         "pointsPerQuestion": 10,
-        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "criteria": [
+          "Content",
+          "Grammar",
+          "Vocabulary",
+          "Conciseness"
+        ],
         "wordLimit": "50-70 words",
         "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points of the lecture. Evaluated on content, grammar, vocabulary, and conciseness."
       },
       "multipleChoiceMultiple": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "partialScoring": true
       },
       "fillInBlanks": {
         "pointsPerQuestion": 4,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       },
       "highlightCorrectSummary": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "multipleChoiceSingle": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "selectMissingWord": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "highlightIncorrectWords": {
         "pointsPerQuestion": 6,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerWord": 1
       },
       "writeFromDictation": {
         "pointsPerQuestion": 3,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerCorrectWord": 1
       }
     }
@@ -573,8 +633,14 @@
                 "D) Sleet develops at less than two degrees centigrade.",
                 "E) Dry snow falls in colder temperatures than wet snow."
               ],
-              "correctAnswers": ["A", "E"],
-              "expectedAnswers": ["A", "E"]
+              "correctAnswers": [
+                "A",
+                "E"
+              ],
+              "expectedAnswers": [
+                "A",
+                "E"
+              ]
             },
             {
               "id": "MCM2",
@@ -589,8 +655,14 @@
                 "D) Rain is a safer source of water for human consumption than aquifers.",
                 "E) Water in reservoirs is chemically treated to remove harmful bacteria."
               ],
-              "correctAnswers": ["B", "C"],
-              "expectedAnswers": ["B", "C"]
+              "correctAnswers": [
+                "B",
+                "C"
+              ],
+              "expectedAnswers": [
+                "B",
+                "C"
+              ]
             }
           ]
         },
@@ -609,7 +681,12 @@
                 "C": "Therefore, alternatives are being investigated.",
                 "D": "A result of not being connected to the electricity grid in rural areas of some countries means people light their homes using kerosene lamps."
               },
-              "correctOrder": ["D", "B", "C", "A"],
+              "correctOrder": [
+                "D",
+                "B",
+                "C",
+                "A"
+              ],
               "expectedAnswer": "D → B → C → A"
             },
             {
@@ -622,7 +699,13 @@
                 "D": "Despite the financial stability a high salary brings, research has shown that the majority of top earners are not happy in their jobs.",
                 "E": "Interestingly, it is not the risk of a decrease in salary which prevents this move."
               },
-              "correctOrder": ["D", "C", "B", "E", "A"],
+              "correctOrder": [
+                "D",
+                "C",
+                "B",
+                "E",
+                "A"
+              ],
               "expectedAnswer": "D → C → B → E → A"
             }
           ]
@@ -637,33 +720,96 @@
               "id": "FIBR1",
               "title": "Questionnaires",
               "textWithBlanks": "Using questionnaires to gather information from people is a well-used quantitative research method. It is considered to be an easy [___] but in reality it is actually very difficult to design a good questionnaire. Question type, clarity of language, length of questionnaire and layout are just some of the many [___] which all need to be carefully considered when designing the questionnaire. Another issue, which [___] some deliberation, is how to ensure a high response [___].",
-              "wordBank": ["option", "opportunity", "selection", "influences", "requires", "factors", "rate"],
-              "correctAnswers": ["option", "factors", "requires", "rate"],
-              "expectedAnswers": ["option", "factors", "requires", "rate"]
+              "wordBank": [
+                "option",
+                "opportunity",
+                "selection",
+                "influences",
+                "requires",
+                "factors",
+                "rate"
+              ],
+              "correctAnswers": [
+                "option",
+                "factors",
+                "requires",
+                "rate"
+              ],
+              "expectedAnswers": [
+                "option",
+                "factors",
+                "requires",
+                "rate"
+              ]
             },
             {
               "id": "FIBR2",
               "title": "Psychology",
               "textWithBlanks": "Psychology is a suitable course of study for those [___] in all aspects of human thought and behaviour. It can be [___] as the scientific study of how humans function on a biological, social and mental level. There are a range of influential approaches to the subject, which are [___] to such areas as child development, health, education and sports.",
-              "wordBank": ["practised", "defined", "affected", "interested", "applied", "diagnosed"],
-              "correctAnswers": ["interested", "defined", "applied"],
-              "expectedAnswers": ["interested", "defined", "applied"]
+              "wordBank": [
+                "practised",
+                "defined",
+                "affected",
+                "interested",
+                "applied",
+                "diagnosed"
+              ],
+              "correctAnswers": [
+                "interested",
+                "defined",
+                "applied"
+              ],
+              "expectedAnswers": [
+                "interested",
+                "defined",
+                "applied"
+              ]
             },
             {
               "id": "FIBR3",
               "title": "Migration",
               "textWithBlanks": "Migration could be described as the well-defined journey animals make to a familiar [___] at specific seasons or times of the year. All species that migrate do so for a common [___] in order to survive. Migration allows them to spend their life in more than one area and thus [___] problems that can occur in one habitat, such as lack of food, shelter or exposure to harsh weather.",
-              "wordBank": ["position", "purpose", "destination", "experience", "situation", "avoid"],
-              "correctAnswers": ["destination", "purpose", "avoid"],
-              "expectedAnswers": ["destination", "purpose", "avoid"]
+              "wordBank": [
+                "position",
+                "purpose",
+                "destination",
+                "experience",
+                "situation",
+                "avoid"
+              ],
+              "correctAnswers": [
+                "destination",
+                "purpose",
+                "avoid"
+              ],
+              "expectedAnswers": [
+                "destination",
+                "purpose",
+                "avoid"
+              ]
             },
             {
               "id": "FIBR4",
               "title": "Multinational companies",
               "textWithBlanks": "Multinational companies are often criticised for a number of reasons, but we cannot deny their [___] impact. Employment opportunities are generated for locals in the overseas country. When multinational companies set up manufacturing plants, there is often an increased [___] of products for local consumers, which profits the local economy. Training is also sometimes provided in the use of technology; moreover, the experience and knowledge that the employees [___] strengthens their skills and overall employability.",
-              "wordBank": ["positive", "gain", "purchase", "negative", "availability", "benefit"],
-              "correctAnswers": ["positive", "availability", "gain"],
-              "expectedAnswers": ["positive", "availability", "gain"]
+              "wordBank": [
+                "positive",
+                "gain",
+                "purchase",
+                "negative",
+                "availability",
+                "benefit"
+              ],
+              "correctAnswers": [
+                "positive",
+                "availability",
+                "gain"
+              ],
+              "expectedAnswers": [
+                "positive",
+                "availability",
+                "gain"
+              ]
             }
           ]
         },
@@ -681,25 +827,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) have been", "B) were", "C) have", "D) was"],
+                  "options": [
+                    "A) have been",
+                    "B) were",
+                    "C) have",
+                    "D) was"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) purpose", "B) feature", "C) aspect", "D) plan"],
+                  "options": [
+                    "A) purpose",
+                    "B) feature",
+                    "C) aspect",
+                    "D) plan"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) Alternatively", "B) Fortunately", "C) However", "D) Thus"],
+                  "options": [
+                    "A) Alternatively",
+                    "B) Fortunately",
+                    "C) However",
+                    "D) Thus"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) process", "B) form", "C) way", "D) use"],
+                  "options": [
+                    "A) process",
+                    "B) form",
+                    "C) way",
+                    "D) use"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 }
@@ -713,25 +879,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) experimenters", "B) investigators", "C) performers", "D) participants"],
+                  "options": [
+                    "A) experimenters",
+                    "B) investigators",
+                    "C) performers",
+                    "D) participants"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) circumstance", "B) situation", "C) condition", "D) basis"],
+                  "options": [
+                    "A) circumstance",
+                    "B) situation",
+                    "C) condition",
+                    "D) basis"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) therefore", "B) instead of", "C) because", "D) so"],
+                  "options": [
+                    "A) therefore",
+                    "B) instead of",
+                    "C) because",
+                    "D) so"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) which", "B) also", "C) this", "D) it"],
+                  "options": [
+                    "A) which",
+                    "B) also",
+                    "C) this",
+                    "D) it"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 }
@@ -745,25 +931,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) influenced", "B) agreed", "C) judged", "D) fixed"],
+                  "options": [
+                    "A) influenced",
+                    "B) agreed",
+                    "C) judged",
+                    "D) fixed"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) considered", "B) accidental", "C) deliberate", "D) balanced"],
+                  "options": [
+                    "A) considered",
+                    "B) accidental",
+                    "C) deliberate",
+                    "D) balanced"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) being selected", "B) have selected", "C) are selected", "D) selected"],
+                  "options": [
+                    "A) being selected",
+                    "B) have selected",
+                    "C) are selected",
+                    "D) selected"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) placement", "B) space", "C) area", "D) size"],
+                  "options": [
+                    "A) placement",
+                    "B) space",
+                    "C) area",
+                    "D) size"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 }
@@ -777,25 +983,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) necessary", "B) another", "C) other", "D) more"],
+                  "options": [
+                    "A) necessary",
+                    "B) another",
+                    "C) other",
+                    "D) more"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) will have improved", "B) will be improved", "C) was improved", "D) is improved"],
+                  "options": [
+                    "A) will have improved",
+                    "B) will be improved",
+                    "C) was improved",
+                    "D) is improved"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) except", "B) but", "C) yet", "D) so"],
+                  "options": [
+                    "A) except",
+                    "B) but",
+                    "C) yet",
+                    "D) so"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) memorable", "B) familiar", "C) common", "D) known"],
+                  "options": [
+                    "A) memorable",
+                    "B) familiar",
+                    "C) common",
+                    "D) known"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 }
@@ -809,31 +1035,56 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) otherwise", "B) although", "C) besides", "D) despite"],
+                  "options": [
+                    "A) otherwise",
+                    "B) although",
+                    "C) besides",
+                    "D) despite"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) handled", "B) effected", "C) advised", "D) applied"],
+                  "options": [
+                    "A) handled",
+                    "B) effected",
+                    "C) advised",
+                    "D) applied"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) influence", "B) reason", "C) effect", "D) factor"],
+                  "options": [
+                    "A) influence",
+                    "B) reason",
+                    "C) effect",
+                    "D) factor"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) Consequently", "B) Whether", "C) Either", "D) If"],
+                  "options": [
+                    "A) Consequently",
+                    "B) Whether",
+                    "C) Either",
+                    "D) If"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 5,
-                  "options": ["A) become", "B) involve", "C) remain", "D) stay"],
+                  "options": [
+                    "A) become",
+                    "B) involve",
+                    "C) remain",
+                    "D) stay"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 }
@@ -892,8 +1143,14 @@
                 "D) The findings of a research project are described.",
                 "E) Technology is too expensive to implement in schools."
               ],
-              "correctAnswers": ["B", "D"],
-              "expectedAnswers": ["B", "D"]
+              "correctAnswers": [
+                "B",
+                "D"
+              ],
+              "expectedAnswers": [
+                "B",
+                "D"
+              ]
             },
             {
               "id": "MCM_L2",
@@ -908,8 +1165,14 @@
                 "D) Sharks have existed for over 100 million years.",
                 "E) The speaker expresses concern for shark populations."
               ],
-              "correctAnswers": ["C", "E"],
-              "expectedAnswers": ["C", "E"]
+              "correctAnswers": [
+                "C",
+                "E"
+              ],
+              "expectedAnswers": [
+                "C",
+                "E"
+              ]
             }
           ]
         },
@@ -955,7 +1218,8 @@
                   "correctAnswer": "excellent",
                   "expectedAnswer": "excellent"
                 }
-              ]
+              ],
+              "textWithBlanks": "To be honest, the biggest problem for most undergraduate students, in terms of academic writing, is not only adapting to a far more [___] and formal style, but also learning how to ascertain the difference between important, [___] information and unnecessary, or even irrelevant [___]. In my experience, I would say it takes students their first year, if not longer, to [___] what is required and to start to implement those requirements in their writing. What they really should be doing, if they are struggling with written [___], is to seek help from the [___] support services which are available at the University."
             },
             {
               "id": "FIBL2",
@@ -983,7 +1247,8 @@
                   "correctAnswer": "assessed",
                   "expectedAnswer": "assessed"
                 }
-              ]
+              ],
+              "textWithBlanks": "An important question about education is, then, why do some types of student achieve success easily and others struggle to do well? Well, one theory is that there is a [___] reason for academic achievement. What I mean by that is, a certain innate, measurable level of [___]. Another frequently discussed theory is environmental factors, such as the effect of home and family upbringing. A final reason is related to the teaching and learning [___] within educational institutions, and the way it is organized, administered and [___]."
             }
           ]
         },
@@ -1129,9 +1394,27 @@
               "title": "Lifelong learning",
               "audioScriptPage": "169",
               "transcriptWithErrors": "Lifelong learning is essential for personal development and career growth. It is viewed by employers as a respected quality. Dedicated employees who demonstrate their talents are more likely to succeed in today's competitive environment.",
-              "incorrectWords": ["development", "viewed", "respected", "dedicated", "talents"],
-              "correctWords": ["growth", "seen", "valued", "enthusiastic", "attributes"],
-              "expectedAnswers": ["development", "viewed", "respected", "dedicated", "talents"]
+              "incorrectWords": [
+                "development",
+                "viewed",
+                "respected",
+                "dedicated",
+                "talents"
+              ],
+              "correctWords": [
+                "growth",
+                "seen",
+                "valued",
+                "enthusiastic",
+                "attributes"
+              ],
+              "expectedAnswers": [
+                "development",
+                "viewed",
+                "respected",
+                "dedicated",
+                "talents"
+              ]
             },
             {
               "id": "HIW2",
@@ -1139,9 +1422,27 @@
               "title": "Video conferencing",
               "audioScriptPage": "169",
               "transcriptWithErrors": "Video conferencing has become a common method of communication for businesses. Many companies now use multiple video platforms to connect with their complicated networks. This technology is particularly useful for teams who work abroad, providing a more personal environment for collaboration.",
-              "incorrectWords": ["method", "many", "complicated", "abroad", "environment"],
-              "correctWords": ["means", "multiple", "complex", "overseas", "context"],
-              "expectedAnswers": ["method", "many", "complicated", "abroad", "environment"]
+              "incorrectWords": [
+                "method",
+                "many",
+                "complicated",
+                "abroad",
+                "environment"
+              ],
+              "correctWords": [
+                "means",
+                "multiple",
+                "complex",
+                "overseas",
+                "context"
+              ],
+              "expectedAnswers": [
+                "method",
+                "many",
+                "complicated",
+                "abroad",
+                "environment"
+              ]
             }
           ]
         },

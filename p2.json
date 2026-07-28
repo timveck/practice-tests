@@ -1,7 +1,7 @@
 {
   "testMetadata": {
     "testName": "Practice Test 2",
-    "source": "Practice Tests Plus with key (2013)",
+    "source": "Practice Tests Plus with key",
     "pageRange": "62-89",
     "totalAudioTracks": 40,
     "totalQuestions": {
@@ -15,7 +15,11 @@
     "speaking": {
       "readAloud": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency"
+        ],
         "timeLimit": {
           "preparation": 40,
           "response": 40
@@ -24,7 +28,11 @@
       },
       "repeatSentence": {
         "pointsPerQuestion": 3,
-        "criteria": ["Accuracy", "Pronunciation", "Fluency"],
+        "criteria": [
+          "Accuracy",
+          "Pronunciation",
+          "Fluency"
+        ],
         "timeLimit": {
           "preparation": 0,
           "response": 10
@@ -33,7 +41,12 @@
       },
       "describeImage": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency",
+          "Structure"
+        ],
         "timeLimit": {
           "preparation": 25,
           "response": 40
@@ -42,7 +55,12 @@
       },
       "retellLecture": {
         "pointsPerQuestion": 5,
-        "criteria": ["Content", "Pronunciation", "Fluency", "Structure"],
+        "criteria": [
+          "Content",
+          "Pronunciation",
+          "Fluency",
+          "Structure"
+        ],
         "timeLimit": {
           "preparation": 10,
           "response": 40
@@ -51,7 +69,9 @@
       },
       "answerShortQuestion": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "timeLimit": {
           "preparation": 0,
           "response": 10
@@ -62,14 +82,25 @@
     "writing": {
       "summarizeWrittenText": {
         "pointsPerQuestion": 7,
-        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "criteria": [
+          "Content",
+          "Grammar",
+          "Vocabulary",
+          "Conciseness"
+        ],
         "wordLimit": "1 sentence",
         "timeLimit": 10,
         "expectedAnswerFormat": "Single sentence summarizing the key points of the passage. See sample answers for each passage."
       },
       "writeEssay": {
         "pointsPerQuestion": 20,
-        "criteria": ["Content", "Organization", "Grammar", "Vocabulary", "Cohesion"],
+        "criteria": [
+          "Content",
+          "Organization",
+          "Grammar",
+          "Vocabulary",
+          "Cohesion"
+        ],
         "wordLimit": "200-300 words",
         "timeLimit": "20 minutes",
         "expectedAnswerFormat": "Well-organized essay with clear position, supporting arguments, and examples. Evaluated on content, organization, grammar, vocabulary, and cohesion."
@@ -78,65 +109,94 @@
     "reading": {
       "multipleChoiceSingle": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "multipleChoiceMultiple": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "partialScoring": true
       },
       "reorderParagraphs": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "fillInBlanksReading": {
         "pointsPerQuestion": 4,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       },
       "fillInBlanksReadingWriting": {
         "pointsPerQuestion": 5,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       }
     },
     "listening": {
       "summarizeSpokenText": {
         "pointsPerQuestion": 10,
-        "criteria": ["Content", "Grammar", "Vocabulary", "Conciseness"],
+        "criteria": [
+          "Content",
+          "Grammar",
+          "Vocabulary",
+          "Conciseness"
+        ],
         "wordLimit": "50-70 words",
         "expectedAnswerFormat": "Concise summary (50-70 words) covering the main points of the lecture. Evaluated on content, grammar, vocabulary, and conciseness."
       },
       "multipleChoiceMultiple": {
         "pointsPerQuestion": 2,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "partialScoring": true
       },
       "fillInBlanks": {
         "pointsPerQuestion": 4,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerBlank": 1
       },
       "highlightCorrectSummary": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "multipleChoiceSingle": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "selectMissingWord": {
         "pointsPerQuestion": 1,
-        "criteria": ["Accuracy"]
+        "criteria": [
+          "Accuracy"
+        ]
       },
       "highlightIncorrectWords": {
         "pointsPerQuestion": 6,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerWord": 1
       },
       "writeFromDictation": {
         "pointsPerQuestion": 3,
-        "criteria": ["Accuracy"],
+        "criteria": [
+          "Accuracy"
+        ],
         "pointsPerCorrectWord": 1
       }
     }
@@ -573,8 +633,14 @@
                 "D) walls for their huts",
                 "E) cooking tools"
               ],
-              "correctAnswers": ["A", "C"],
-              "expectedAnswers": ["A", "C"]
+              "correctAnswers": [
+                "A",
+                "C"
+              ],
+              "expectedAnswers": [
+                "A",
+                "C"
+              ]
             },
             {
               "id": "MCM2",
@@ -589,8 +655,14 @@
                 "D) several separate gallery rooms on each floor",
                 "E) helpful guides to give information about the art"
               ],
-              "correctAnswers": ["C", "E"],
-              "expectedAnswers": ["C", "E"]
+              "correctAnswers": [
+                "C",
+                "E"
+              ],
+              "expectedAnswers": [
+                "C",
+                "E"
+              ]
             }
           ]
         },
@@ -609,7 +681,12 @@
                 "C": "Students will be able to speak with industry professionals and graduates who had the benefit of this assistance last year.",
                 "D": "The University will host its second annual Arts and Commerce Career Readiness Conference on campus next month."
               },
-              "correctOrder": ["D", "B", "C", "A"],
+              "correctOrder": [
+                "D",
+                "B",
+                "C",
+                "A"
+              ],
               "expectedAnswer": "D → B → C → A"
             },
             {
@@ -621,7 +698,12 @@
                 "C": "If the dangers are only in specific areas then they can make the affected regions into parkland or a green belt, often providing the added advantage of open space.",
                 "D": "Cities have often spread down from these locations onto coastal plains, putting them at risk of floods and storm surges."
               },
-              "correctOrder": ["B", "D", "A", "C"],
+              "correctOrder": [
+                "B",
+                "D",
+                "A",
+                "C"
+              ],
               "expectedAnswer": "B → D → A → C"
             }
           ]
@@ -637,36 +719,103 @@
               "pageNumber": 76,
               "title": "Graduation gifts",
               "textWithBlanks": "The practice of giving graduation gifts seems to be alive and well, despite [___] economic times. A recent study in the US has shown that while families may not have as much to spend, they are being more [___] in the gifts they bestow. Lavish celebrations and large lump [___] seem to have gone by the wayside in favour of smaller, more thoughtful gifts.",
-              "wordBank": ["generous", "hard", "creative", "money", "sums", "favourable"],
-              "correctAnswers": ["hard", "creative", "sums"],
-              "expectedAnswers": ["hard", "creative", "sums"]
+              "wordBank": [
+                "generous",
+                "hard",
+                "creative",
+                "money",
+                "sums",
+                "favourable"
+              ],
+              "correctAnswers": [
+                "hard",
+                "creative",
+                "sums"
+              ],
+              "expectedAnswers": [
+                "hard",
+                "creative",
+                "sums"
+              ]
             },
             {
               "id": "FIBR2",
               "pageNumber": 76,
               "title": "National Portrait Gallery",
               "textWithBlanks": "The majority of early pictures in the National Portrait Gallery's [___] are by unknown artists, with fundamental questions, such as when, where and why they were painted still remaining to be answered. Through the application of scientific methods, a new project has the [___] to unlock evidence that will allow researchers to determine answers to these questions. They will use a [___] of cutting-edge scientific techniques, such as X-ray and infra-red reflectography, in order to reveal new [___] about individual paintings.",
-              "wordBank": ["information", "potential", "combination", "prospect", "connection", "care", "work"],
-              "correctAnswers": ["care", "potential", "combination", "information"],
-              "expectedAnswers": ["care", "potential", "combination", "information"]
+              "wordBank": [
+                "information",
+                "potential",
+                "combination",
+                "prospect",
+                "connection",
+                "care",
+                "work"
+              ],
+              "correctAnswers": [
+                "care",
+                "potential",
+                "combination",
+                "information"
+              ],
+              "expectedAnswers": [
+                "care",
+                "potential",
+                "combination",
+                "information"
+              ]
             },
             {
               "id": "FIBR3",
               "pageNumber": 77,
               "title": "Gunpowder",
               "textWithBlanks": "Gunpowder, also referred to as 'black powder', was the only chemical explosive until the mid-nineteenth century. It [___] potassium nitrate, or 'saltpeter', which is an oxidiser, and a combination of charcoal and sulphur serves as fuel. There is [___] consensus that gunpowder was initially invented in China as early as the ninth century. This [___] to its use in fireworks and in gunpowder weapons.",
-              "wordBank": ["includes", "contains", "caused", "academic", "known", "unique", "led"],
-              "correctAnswers": ["contains", "academic", "led"],
-              "expectedAnswers": ["contains", "academic", "led"]
+              "wordBank": [
+                "includes",
+                "contains",
+                "caused",
+                "academic",
+                "known",
+                "unique",
+                "led"
+              ],
+              "correctAnswers": [
+                "contains",
+                "academic",
+                "led"
+              ],
+              "expectedAnswers": [
+                "contains",
+                "academic",
+                "led"
+              ]
             },
             {
               "id": "FIBR4",
               "pageNumber": 77,
               "title": "Marion Dorset",
               "textWithBlanks": "Marion Dorset (1872-1935) was an influential American biochemist. He began working as a [___] for the U.S. Department of Agriculture in 1894, and worked his way up to become chief of the biochemical [___] in 1904. He made important discoveries in bacterial toxins and animal diseases, and he conducted pioneering work in the [___] of meat products. He co-discovered the virus that causes hog cholera and subsequently developed a [___] to prevent it.",
-              "wordBank": ["researcher", "leader", "serum", "fluid", "inspection", "consumption", "division"],
-              "correctAnswers": ["researcher", "division", "inspection", "serum"],
-              "expectedAnswers": ["researcher", "division", "inspection", "serum"]
+              "wordBank": [
+                "researcher",
+                "leader",
+                "serum",
+                "fluid",
+                "inspection",
+                "consumption",
+                "division"
+              ],
+              "correctAnswers": [
+                "researcher",
+                "division",
+                "inspection",
+                "serum"
+              ],
+              "expectedAnswers": [
+                "researcher",
+                "division",
+                "inspection",
+                "serum"
+              ]
             }
           ]
         },
@@ -684,25 +833,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) was receiving", "B) had received", "C) is received", "D) received"],
+                  "options": [
+                    "A) was receiving",
+                    "B) had received",
+                    "C) is received",
+                    "D) received"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) played", "B) found", "C) done", "D) led"],
+                  "options": [
+                    "A) played",
+                    "B) found",
+                    "C) done",
+                    "D) led"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) those", "B) which", "C) they", "D) who"],
+                  "options": [
+                    "A) those",
+                    "B) which",
+                    "C) they",
+                    "D) who"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) in addition to", "B) As a result of", "C) Regarding", "D) Instead of"],
+                  "options": [
+                    "A) in addition to",
+                    "B) As a result of",
+                    "C) Regarding",
+                    "D) Instead of"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 }
@@ -716,25 +885,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) drawers", "B) drawn", "C) drew", "D) draws"],
+                  "options": [
+                    "A) drawers",
+                    "B) drawn",
+                    "C) drew",
+                    "D) draws"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) perceptive", "B) proactive", "C) pedantic", "D) prolific"],
+                  "options": [
+                    "A) perceptive",
+                    "B) proactive",
+                    "C) pedantic",
+                    "D) prolific"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) by contrast", "B) at least", "C) actually", "D) in part"],
+                  "options": [
+                    "A) by contrast",
+                    "B) at least",
+                    "C) actually",
+                    "D) in part"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) whose", "B) those", "C) whom", "D) them"],
+                  "options": [
+                    "A) whose",
+                    "B) those",
+                    "C) whom",
+                    "D) them"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 }
@@ -748,25 +937,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) Because", "B) However", "C) Despite", "D) While"],
+                  "options": [
+                    "A) Because",
+                    "B) However",
+                    "C) Despite",
+                    "D) While"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) had been falling", "B) were falling", "C) are falling", "D) had fallen"],
+                  "options": [
+                    "A) had been falling",
+                    "B) were falling",
+                    "C) are falling",
+                    "D) had fallen"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) must have decreased", "B) will be decreasing", "C) was decreased", "D) has decreased"],
+                  "options": [
+                    "A) must have decreased",
+                    "B) will be decreasing",
+                    "C) was decreased",
+                    "D) has decreased"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) According to this", "B) For this reason", "C) For instance", "D) In contrast"],
+                  "options": [
+                    "A) According to this",
+                    "B) For this reason",
+                    "C) For instance",
+                    "D) In contrast"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 }
@@ -780,31 +989,56 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) corresponding", "B) collaborative", "C) combined", "D) common"],
+                  "options": [
+                    "A) corresponding",
+                    "B) collaborative",
+                    "C) combined",
+                    "D) common"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) activating", "B) actively", "C) activity", "D) active"],
+                  "options": [
+                    "A) activating",
+                    "B) actively",
+                    "C) activity",
+                    "D) active"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) growing", "B) growth", "C) grown", "D) grow"],
+                  "options": [
+                    "A) growing",
+                    "B) growth",
+                    "C) grown",
+                    "D) grow"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) facilitating", "B) facilities", "C) facilitate", "D) facility"],
+                  "options": [
+                    "A) facilitating",
+                    "B) facilities",
+                    "C) facilitate",
+                    "D) facility"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 5,
-                  "options": ["A) contingencies", "B) opportunities", "C) occasions", "D) needs"],
+                  "options": [
+                    "A) contingencies",
+                    "B) opportunities",
+                    "C) occasions",
+                    "D) needs"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 }
@@ -818,25 +1052,45 @@
               "options": [
                 {
                   "blank": 1,
-                  "options": ["A) have been known", "B) are being known", "C) are knowing", "D) know"],
+                  "options": [
+                    "A) have been known",
+                    "B) are being known",
+                    "C) are knowing",
+                    "D) know"
+                  ],
                   "correctAnswer": "A",
                   "expectedAnswer": "A"
                 },
                 {
                   "blank": 2,
-                  "options": ["A) companions", "B) spouses", "C) mates", "D) pairs"],
+                  "options": [
+                    "A) companions",
+                    "B) spouses",
+                    "C) mates",
+                    "D) pairs"
+                  ],
                   "correctAnswer": "C",
                   "expectedAnswer": "C"
                 },
                 {
                   "blank": 3,
-                  "options": ["A) put forward", "B) take place", "C) work out", "D) take part"],
+                  "options": [
+                    "A) put forward",
+                    "B) take place",
+                    "C) work out",
+                    "D) take part"
+                  ],
                   "correctAnswer": "D",
                   "expectedAnswer": "D"
                 },
                 {
                   "blank": 4,
-                  "options": ["A) indeed", "B) still", "C) just", "D) yet"],
+                  "options": [
+                    "A) indeed",
+                    "B) still",
+                    "C) just",
+                    "D) yet"
+                  ],
                   "correctAnswer": "B",
                   "expectedAnswer": "B"
                 }
@@ -894,8 +1148,14 @@
                 "D) They need to be clear from the start about the area they want to work in.",
                 "E) A high percentage complete the degree and get jobs in their field."
               ],
-              "correctAnswers": ["B", "E"],
-              "expectedAnswers": ["B", "E"]
+              "correctAnswers": [
+                "B",
+                "E"
+              ],
+              "expectedAnswers": [
+                "B",
+                "E"
+              ]
             },
             {
               "id": "MCM_L2",
@@ -909,8 +1169,14 @@
                 "D) It showed the people in each place had very different lifestyles.",
                 "E) It shows that people in widely separated places thought the same way."
               ],
-              "correctAnswers": ["C", "E"],
-              "expectedAnswers": ["C", "E"]
+              "correctAnswers": [
+                "C",
+                "E"
+              ],
+              "expectedAnswers": [
+                "C",
+                "E"
+              ]
             }
           ]
         },
@@ -946,7 +1212,8 @@
                   "correctAnswer": "native",
                   "expectedAnswer": "native"
                 }
-              ]
+              ],
+              "textWithBlanks": "Barred owls can be found in dense forests right across North America. They feed on small [___], fish, birds and small reptiles — pretty much anything that comes their way. The barred owl grows up to half a metre tall and has emerged as a very [___] nocturnal predator. Whereas they have been long-thought to live in old-growth forests, they are now building up quite an [___] population. In Charlotte, North Carolina, barred owls tend to nest in the cavities of the numerous willow oak trees that line the city's streets. Far from being endangered, the owls have expanded their range; and now, in some places, conservationists are worried about the effects they might have on other [___] species."
             },
             {
               "id": "FIBL2",
@@ -979,7 +1246,8 @@
                   "correctAnswer": "tourist",
                   "expectedAnswer": "tourist"
                 }
-              ]
+              ],
+              "textWithBlanks": "Before the beginning of the 1900s, the only way to obtain pearls was by collecting very large numbers of pearl oysters from the ocean floor by hand. The oysters — or sometimes mussels — were brought to the surface, opened, and [___]. More than a ton of these had to be checked in order to find just three or four quality pearls. Divers often descended to depths of over 100 feet on just one single breath. Now, of course this exposed them to [___] creatures and dangerous waves, not to mention drowning. In some areas, divers put grease on their bodies to conserve heat and they held a large [___], like a rock, to descend so they didn't have to exert effort going down. Today, pearl diving has pretty much been supplanted by cultured pearl [___]. Particles are implanted in the oyster to encourage the formation of pearls, and this allows for more predictable production. The divers who still work, do so mainly for the [___] industry."
             }
           ]
         },
@@ -1124,20 +1392,59 @@
               "trackNumber": "D77",
               "title": "Speciation",
               "audioScriptPage": "164",
-              "transcriptWithErrors": "When species diverge from a common ancestor, they may begin to divide in a lagoon. The impact of environmental changes on sensitive systems can be seen in the child fish populations that have adapted to clear waters.",
-              "incorrectWords": ["divide", "lagoon", "effect", "sensory", "child", "clean"],
-              "correctWords": ["diverge", "lake", "impact", "sensitive", "cichlid", "clear"],
-              "expectedAnswers": ["divide", "lagoon", "effect", "sensory", "child", "clean"]
+              "transcriptWithErrors": "Well, there are many factors that can cause one species to divide into two. One of these is when populations get isolated from each other by something like a lagoon forming or forest being cleared. And there's another idea that as individuals adapt to their environment, this might have a knock-on effect on mate choice, a process called sensory drive speciation. Now this seems to occur in child fish. They have shown that a female preference for either red or blue striped males only exists in clean water, where they are actually able to see.",
+              "incorrectWords": [
+                "divide",
+                "lagoon",
+                "effect",
+                "sensory",
+                "child",
+                "clean"
+              ],
+              "correctWords": [
+                "diverge",
+                "lake",
+                "impact",
+                "sensitive",
+                "cichlid",
+                "clear"
+              ],
+              "expectedAnswers": [
+                "divide",
+                "lagoon",
+                "effect",
+                "sensory",
+                "child",
+                "clean"
+              ]
             },
             {
               "id": "HIW2",
               "trackNumber": "D78",
               "title": "Social capital",
               "audioScriptPage": "164",
-              "transcriptWithErrors": "Social capital refers to the reserves available through social networks. The fair to which individuals can access these networks is an important indicator of well-being. Accepting behavior is key to building social capital.",
-              "incorrectWords": ["reserves", "fair", "amount", "index", "accepting"],
-              "correctWords": ["resources", "fete", "extent", "indicator", "trusting"],
-              "expectedAnswers": ["reserves", "fair", "amount", "index", "accepting"]
+              "transcriptWithErrors": "Social capital is a concept that was introduced by sociologists, many years ago. It's actually the networks and reserves that people use to deliver social outcomes. For instance, it might be holding a sporting event, running a community fair, being part of a club. It is difficult to measure social capital and one way of looking at it is the amount that people volunteer in their local community. So you can consider the volunteering rate as an index for how healthy a community is. You can also look at something called a well-being index — the way people think about their lives and how accepting they are of others, their general perception of the value of their life.",
+              "incorrectWords": [
+                "reserves",
+                "fair",
+                "amount",
+                "index",
+                "accepting"
+              ],
+              "correctWords": [
+                "resources",
+                "fete",
+                "extent",
+                "indicator",
+                "trusting"
+              ],
+              "expectedAnswers": [
+                "reserves",
+                "fair",
+                "amount",
+                "index",
+                "accepting"
+              ]
             }
           ]
         },
